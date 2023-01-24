@@ -2,13 +2,54 @@
   font-size: 80px;
 }
 
+.homepageForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .difficultySelection {
   display: flex;
-  width: 200px;
+  width: 260px;
   justify-content: space-between;
-  margin: 20px 0;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 4px;
 }
 
 .nameInput {
+  margin: 20px 0;
+}
+
+.difficultyButton {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-size: large;
+}
+
+.selected {
+  color: white;
+  background-color: #0f7bff;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.nameInput {
+  padding: 12px;
+  font-size: large;
+  width: 440px;
+  text-align: center;
+}
+
+.startButton {
+  cursor: pointer;
+  border: 1px solid #0f7bff;
+  border-radius: 4px;
+  color: #0f7bff;
+  background-color: transparent;
+  font-size: x-large;
+  font-weight: 800;
+  padding: 12px 32px;
   margin: 20px 0;
 }
