@@ -12,12 +12,16 @@ export default function Home() {
         <h1 className={styles.homepageTitle}>React.js Jeopardy!</h1>
         <h3>Hone in on your React skills with React Jeopardy!</h3>
         <h2>Game Difficulty</h2>
-        <div>
-          <p>Easy</p>
-          <p>Normal</p>
-          <p>Hard</p>
+        <div className={styles.difficultySelection}>
+          <div>Easy</div>
+          <div>Normal</div>
+          <div>Hard</div>
         </div>
-        <input type="text" placeholder="Enter Your Name" />
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          className={styles.nameInput}
+        />
         <button>Start</button>
       </PageContainer>
     </>
