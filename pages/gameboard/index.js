@@ -14,15 +14,17 @@ export default function Gameboard() {
     <PageContainer>
       <div className={styles.topRow}>
         <h1>Single Jeopardy</h1>
-        <div className={styles.playerScores}></div>
+        <div className={styles.playerScores}>Player1: Player2: Player3:</div>
         <div className={styles.menuButton}>&#9776;</div>
       </div>
       <div className={styles.categoryRow}>
         {mockCategories.map((category) => (
-          <div className={styles.categoryContainer}>{category}</div>
+          <div key={category} className={styles.categoryContainer}>
+            {category}
+          </div>
         ))}
       </div>
-      <div className={styles.valueGrid}>Value Grid</div>
+      <div className={styles.valueGrid}>{}</div>
     </PageContainer>
   );
 }
