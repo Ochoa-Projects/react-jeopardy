@@ -1,4 +1,5 @@
 import PageContainer from "../../components/PageContainer";
+import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
@@ -14,7 +15,11 @@ export default function Gameboard() {
     <PageContainer>
       <div className={styles.topRow}>
         <h1>Single Jeopardy</h1>
-        <div className={styles.playerScores}>Player1: Player2: Player3:</div>
+        <div className={styles.playerScores}>
+          <div>Player1:</div>
+          <div>Player2:</div>
+          <div>Player3:</div>
+        </div>
         <div className={styles.menuButton}>&#9776;</div>
       </div>
       <div className={styles.categoryRow}>
@@ -24,7 +29,7 @@ export default function Gameboard() {
           </div>
         ))}
       </div>
-      <div className={styles.valueGrid}></div>
+      <ValueBoard />
     </PageContainer>
   );
 }
