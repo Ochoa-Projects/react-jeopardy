@@ -24,7 +24,7 @@ export default function Gameboard() {
           </div>
         ))}
       </div>
-      <div className={styles.valueGrid}>{}</div>
+      <div className={styles.valueGrid}></div>
     </PageContainer>
   );
 }
