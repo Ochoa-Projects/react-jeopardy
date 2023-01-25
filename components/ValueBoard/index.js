@@ -14,7 +14,7 @@ const ValueBoard = () => {
       {Object.keys(mockQuestions).map((key, i) =>
         mockQuestions[key].map((question, j) => (
           <div style={{ gridColumn: i + 1, gridRow: j + 1 }} key={question}>
-            {(j + 1) * 200}
+            ${(j + 1) * 200}
           </div>
         ))
       )}

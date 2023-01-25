@@ -14,11 +14,11 @@ export default function Gameboard() {
   return (
     <PageContainer>
       <div className={styles.topRow}>
-        <h1>Single Jeopardy</h1>
+        <h1>SINGLE JEOPARDY</h1>
         <div className={styles.playerScores}>
-          <div>Player1:</div>
-          <div>Player2:</div>
-          <div>Player3:</div>
+          <div>Player1: $$$</div>
+          <div>Player2: $$$</div>
+          <div>Player3: $$$</div>
         </div>
         <div className={styles.menuButton}>&#9776;</div>
       </div>

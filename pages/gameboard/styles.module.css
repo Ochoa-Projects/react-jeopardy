@@ -1,34 +1,41 @@
 .topRow {
   display: flex;
-  justify-content: space-around;
-  width: 792px;
+  justify-content: space-between;
+  align-items: center;
+  width: 856px;
 }
 
 .playerScores {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 140px;
-  height: 100px;
-  border: 1px solid black;
+  width: 240px;
+  height: 92px;
+  border: 3px solid black;
   padding: 4px;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .menuButton {
   font-size: xx-large;
+  align-self: flex-start;
 }
 
 .categoryRow {
   display: flex;
-  margin: 8px;
-  border-bottom: 1px solid black;
+  margin: 32px 0 8px;
   border-top: 1px solid black;
-  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .categoryContainer {
-  width: 140px;
-  height: 100px;
-  text-align: center;
-  border-left: 1px solid black;
+  width: 170px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: x-large;
 }

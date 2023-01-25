@@ -1,7 +1,7 @@
 .valueGrid {
   display: grid;
-  grid-template-columns: repeat(5, 140px);
-  grid-template-rows: repeat(5, 100px);
+  grid-template-columns: repeat(5, 171px);
+  grid-template-rows: repeat(5, 110px);
   border-top: 1px solid black;
   border-left: 1px solid black;
 }
@@ -9,4 +9,8 @@
 .valueGrid > div {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
 }
