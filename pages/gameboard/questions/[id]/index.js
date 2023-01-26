@@ -12,7 +12,7 @@ export default function Question() {
         </h2>
       </div>
       <p className={styles.timer}>X seconds remaining...</p>
-      <form method="post" className={styles.answerForm}>
+      <form method="post" action="/gameboard" className={styles.answerForm}>
         <input id="answer" placeholder="Enter answer here..." />
         <button type="submit">Submit</button>
       </form>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PageContainer from "../../components/PageContainer";
 import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
@@ -20,7 +21,9 @@ export default function Gameboard() {
           <div>Player2: $$$</div>
           <div>Player3: $$$</div>
         </div>
-        <div className={styles.menuButton}>&#9776;</div>
+        <Link href="/" className={styles.menuButton}>
+          &#9776;
+        </Link>
       </div>
       <div className={styles.categoryRow}>
         {mockCategories.map((category) => (

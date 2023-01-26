@@ -6,11 +6,16 @@
   border-left: 1px solid black;
 }
 
-.valueGrid > div {
+.valueBoardItem {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: x-large;
+}
+
+.valueBoardItem > a {
+  color: blue;
+  text-decoration: none;
 }

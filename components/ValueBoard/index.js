@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 const ValueBoard = () => {
   const mockQuestions = {
@@ -13,8 +14,12 @@ const ValueBoard = () => {
     <div className={styles.valueGrid}>
       {Object.keys(mockQuestions).map((key, i) =>
         mockQuestions[key].map((question, j) => (
-          <div style={{ gridColumn: i + 1, gridRow: j + 1 }} key={question}>
-            ${(j + 1) * 200}
+          <div
+            className={styles.valueBoardItem}
+            style={{ gridColumn: i + 1, gridRow: j + 1 }}
+            key={question}
+          >
+            <Link href="/gameboard/questions/1">${(j + 1) * 200}</Link>
           </div>
         ))
       )}
