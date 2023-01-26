@@ -1,19 +1,19 @@
 import PageContainer from "../../../../components/PageContainer";
+import styles from "./styles.module.css";
 
 export default function Question() {
   return (
     <PageContainer>
-      <h1>CATEGORY - $600</h1>
-      <div>
+      <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
+      <div className={styles.questionContainer}>
         <h2>
           This React tool is used to share state and other important information
           with the use of "prop drilling".
         </h2>
       </div>
-      <p>X seconds remaining...</p>
-      <form method="post">
-        <label for="answer">Please Enter your answer:</label>
-        <input id="answer" placeholder="Answer here..." />
+      <p className={styles.timer}>X seconds remaining...</p>
+      <form method="post" className={styles.answerForm}>
+        <input id="answer" placeholder="Enter answer here..." />
         <button type="submit">Submit</button>
       </form>
     </PageContainer>
