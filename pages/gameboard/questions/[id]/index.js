@@ -8,7 +8,7 @@ export default function Question() {
       <div className={styles.questionContainer}>
         <h2>
           This React tool is used to share state and other important information
-          with the use of "prop drilling".
+          without the use of "prop drilling".
         </h2>
       </div>
       <p className={styles.timer}>X seconds remaining...</p>
