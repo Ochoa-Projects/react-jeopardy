@@ -1,11 +1,16 @@
 .homepageTitle {
   font-size: 80px;
+  color: var(--yellow);
 }
 
 .homepageForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.difficultyHeading {
+  font-size: 40px;
 }
 
 .difficultySelection {
@@ -17,20 +22,20 @@
   padding: 4px;
 }
 
-.nameInput {
-  margin: 20px 0;
-}
-
 .difficultyButton {
   padding: 8px;
   cursor: pointer;
   text-align: center;
-  font-size: large;
+  font-size: 24px;
+}
+
+.nameInput {
+  margin: 20px 0;
 }
 
 .selected {
-  color: white;
-  background-color: #0f7bff;
+  color: var(--yellow);
+  background-color: var(--dark-blue);
   border-radius: 4px;
   cursor: default;
 }
@@ -44,10 +49,10 @@
 
 .startButton {
   cursor: pointer;
-  border: 1px solid #0f7bff;
+  border: 1px solid var(--yellow);
   border-radius: 4px;
-  color: #0f7bff;
-  background-color: transparent;
+  color: var(--yellow);
+  background-color: var(--dark-blue);
   font-size: x-large;
   font-weight: 800;
   padding: 12px 32px;

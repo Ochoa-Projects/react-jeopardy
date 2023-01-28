@@ -19,8 +19,8 @@ export default function Home() {
       <PageContainer>
         <h1 className={styles.homepageTitle}>React.js Jeopardy!</h1>
         <h3>Hone in on your React skills with React Jeopardy!</h3>
-        <h2>Game Difficulty</h2>
-        <form className={styles.homepageForm}>
+        <h2 className={styles.difficultyHeading}>Game Difficulty</h2>
+        <form action="/gameboard" className={styles.homepageForm}>
           <div className={styles.difficultySelection}>
             {difficulties.map((difficulty) => (
               <div
