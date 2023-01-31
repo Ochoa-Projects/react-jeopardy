@@ -31,7 +31,8 @@
 }
 
 .border {
-  padding: 16px;
+  padding: 12px;
+  margin-top: 32px;
   background: linear-gradient(#240080, #634bc3, #240080);
   border: 1px solid rgb(80, 64, 255);
   border-radius: 6px;
