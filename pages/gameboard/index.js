@@ -25,14 +25,16 @@ export default function Gameboard() {
           &#9776;
         </Link>
       </div>
-      <div className={styles.categoryRow}>
-        {mockCategories.map((category) => (
-          <div key={category} className={styles.categoryContainer}>
-            {category}
-          </div>
-        ))}
+      <div className={styles.border}>
+        <div className={styles.categoryRow}>
+          {mockCategories.map((category) => (
+            <div key={category} className={styles.categoryContainer}>
+              {category}
+            </div>
+          ))}
+        </div>
+        <ValueBoard />
       </div>
-      <ValueBoard />
     </PageContainer>
   );
 }

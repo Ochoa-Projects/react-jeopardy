@@ -30,9 +30,16 @@
   text-decoration: none;
 }
 
+.border {
+  padding: 16px;
+  background: linear-gradient(#240080, #634bc3, #240080);
+  border: 1px solid rgb(80, 64, 255);
+  border-radius: 6px;
+}
+
 .categoryRow {
   display: flex;
-  margin: 32px 0 -2px;
+  margin: 0 0 -2px;
   border-top: 3px solid black;
   border-left: 3px solid black;
 }
