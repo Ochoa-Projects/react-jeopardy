@@ -2,6 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 0;
   min-width: 1003px;
+  height: 100vh;
 }
