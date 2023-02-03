@@ -3,6 +3,8 @@
   --dark-blue: #00005d;
   --white: #faf0e6;
   --yellow: rgb(226, 226, 0);
+  --light-blue-gradient: linear-gradient(#41a3ff, rgb(0, 72, 255));
+  --blue-radial-gradient: radial-gradient(#0072fd, #001078);
 }
 
 html,
@@ -13,5 +15,5 @@ body {
   padding: 0;
   height: 100vh;
   color: var(--white);
-  background-color: var(--blue);
+  background-color: var(--dark-blue);
 }

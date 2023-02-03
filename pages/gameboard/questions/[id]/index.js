@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 export default function Question() {
   return (
-    <PageContainer>
+    <PageContainer color="var(--light-blue-gradient)">
       <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
       <div className={styles.questionContainer}>
         <h2>

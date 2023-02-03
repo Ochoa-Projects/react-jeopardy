@@ -1,6 +1,7 @@
 .questionHeading {
   font-size: 64px;
   color: var(--yellow);
+  text-shadow: 1px 2px 3px black;
 }
 
 .questionContainer {
@@ -11,6 +12,7 @@
 .questionContainer > h2 {
   font-size: 48px;
   text-align: center;
+  text-shadow: 1px 1px 2px black;
 }
 
 .timer {
@@ -39,9 +41,10 @@
   border: 1px solid var(--yellow);
   border-radius: 4px;
   color: var(--yellow);
-  background-color: var(--dark-blue);
+  background: var(--blue-radial-gradient);
   font-size: x-large;
   font-weight: 800;
   padding: 12px 32px;
   margin: 20px 0;
+  text-shadow: 1px 1px 1px black;
 }

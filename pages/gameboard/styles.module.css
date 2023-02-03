@@ -3,11 +3,21 @@
   justify-content: space-between;
   align-items: center;
   width: 1003px;
+  margin-top: 32px;
 }
 
 .topRow > h1 {
   font-size: 52px;
   color: var(--yellow);
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
+    0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.playerScoresBorder {
+  padding: 8px;
+  background: linear-gradient(#240080, #634bc3, #240080);
+  border: 1px solid rgb(80, 64, 255);
+  border-radius: 6px;
 }
 
 .playerScores {
@@ -16,10 +26,13 @@
   justify-content: space-around;
   width: 280px;
   height: 92px;
-  border: 3px solid black;
+  border: 2px solid black;
+  color: var(--yellow);
+  text-shadow: 1px 1px 2px black;
   padding: 4px;
   border-radius: 4px;
   font-weight: 500;
+  background: var(--blue-radial-gradient);
 }
 
 .menuButton {
@@ -27,14 +40,22 @@
   align-self: flex-start;
   color: var(--yellow);
   text-decoration: none;
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gameboardBorder {
+  padding: 12px;
+  margin-top: 32px;
+  background: linear-gradient(#240080, #634bc3, #240080);
+  border: 1px solid rgb(80, 64, 255);
+  border-radius: 6px;
 }
 
 .categoryRow {
   display: flex;
-  margin: 32px 0 8px;
+  margin: 0 0 -2px;
   border-top: 3px solid black;
   border-left: 3px solid black;
-  background: var(--dark-blue);
 }
 
 .categoryContainer {
@@ -47,4 +68,6 @@
   border-bottom: 3px solid black;
   font-size: 28px;
   font-weight: 600;
+  background: var(--blue-radial-gradient);
+  text-shadow: 1px 1px 2px black;
 }

@@ -1,6 +1,8 @@
 .homepageTitle {
   font-size: 80px;
   color: var(--yellow);
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
+    0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
 .homepageForm {
@@ -11,6 +13,7 @@
 
 .difficultyHeading {
   font-size: 40px;
+  text-shadow: 2px 2px 4px black;
 }
 
 .difficultySelection {
@@ -27,6 +30,7 @@
   cursor: pointer;
   text-align: center;
   font-size: 24px;
+  text-shadow: 1px 1px 2px black;
 }
 
 .nameInput {
@@ -35,9 +39,11 @@
 
 .selected {
   color: var(--yellow);
-  background-color: var(--dark-blue);
+  background: transparent;
+  border: 1px solid var(--yellow);
   border-radius: 4px;
   cursor: default;
+  text-shadow: 1px 1px 2px black;
 }
 
 .nameInput {
@@ -52,9 +58,10 @@
   border: 1px solid var(--yellow);
   border-radius: 4px;
   color: var(--yellow);
-  background-color: var(--dark-blue);
+  background: transparent;
   font-size: x-large;
   font-weight: 800;
   padding: 12px 32px;
   margin: 20px 0;
+  text-shadow: 1px 1px 2px black;
 }
