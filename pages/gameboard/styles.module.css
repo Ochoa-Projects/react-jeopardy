@@ -28,24 +28,3 @@
   border: 1px solid rgb(80, 64, 255);
   border-radius: 6px;
 }
-
-.categoryRow {
-  display: flex;
-  margin: 0 0 -2px;
-  border-top: 3px solid black;
-  border-left: 3px solid black;
-}
-
-.categoryContainer {
-  width: 197px;
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 3px solid black;
-  border-bottom: 3px solid black;
-  font-size: 28px;
-  font-weight: 600;
-  background: var(--blue-radial-gradient);
-  text-shadow: 1px 1px 2px black;
-}

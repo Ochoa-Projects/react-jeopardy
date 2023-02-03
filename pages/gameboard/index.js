@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
+import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
@@ -23,13 +24,7 @@ export default function Gameboard() {
         </Link>
       </div>
       <div className={styles.gameboardBorder}>
-        <div className={styles.categoryRow}>
-          {mockCategories.map((category) => (
-            <div key={category} className={styles.categoryContainer}>
-              {category}
-            </div>
-          ))}
-        </div>
+        <CatergoriesRow categories={mockCategories} />
         <ValueBoard />
       </div>
     </PageContainer>
