@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageContainer from "../../components/PageContainer";
+import PlayerScores from "../../components/PlayerScores";
 import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
@@ -16,13 +17,7 @@ export default function Gameboard() {
     <PageContainer>
       <div className={styles.topRow}>
         <h1>SINGLE JEOPARDY</h1>
-        <div className={styles.playerScoresBorder}>
-          <div className={styles.playerScores}>
-            <div>Player1: $$$</div>
-            <div>Player2: $$$</div>
-            <div>Player3: $$$</div>
-          </div>
-        </div>
+        <PlayerScores />
         <Link href="/" className={styles.menuButton}>
           &#9776;
         </Link>

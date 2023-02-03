@@ -13,28 +13,6 @@
     0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
 }
 
-.playerScoresBorder {
-  padding: 8px;
-  background: linear-gradient(#240080, #634bc3, #240080);
-  border: 1px solid rgb(80, 64, 255);
-  border-radius: 6px;
-}
-
-.playerScores {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 280px;
-  height: 92px;
-  border: 2px solid black;
-  color: var(--yellow);
-  text-shadow: 1px 1px 2px black;
-  padding: 4px;
-  border-radius: 4px;
-  font-weight: 500;
-  background: var(--blue-radial-gradient);
-}
-
 .menuButton {
   font-size: 48px;
   align-self: flex-start;
