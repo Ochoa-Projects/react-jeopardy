@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import PageContainer from "../components/PageContainer";
 import GameStartForm from "../components/GameStartForm";
 import styles from "./styles.module.css";
 
 export default function Home() {
+  const [response, setResponse] = useState();
+  useEffect(() => {
+    async function loadResponse() {
+      const res = await fetch("/api/response");
+      const data = await res.json();
+      setResponse(data);
+    }
+    loadResponse();
+  }, []);
+
+  console.log(response);
   return (
     <>
       <Head>
