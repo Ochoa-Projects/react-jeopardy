@@ -4,8 +4,8 @@ import { motion as m } from "framer-motion";
 const PageContainer = ({ children, color = "--dark-blue" }) => {
   return (
     <m.div
-      initial={{ scale: 0.1 }}
-      animate={{ scale: 1 }}
+      initial={{ opacity: 0, scale: 0.1 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
       style={{ background: color }}
       className={styles.pageContainer}
