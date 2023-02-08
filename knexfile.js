@@ -1,15 +1,24 @@
 const { loadEnvConfig } = require("@next/env");
 
 const dev = process.env.NODE_ENV !== "production";
-const { PG_URI } = loadEnvConfig("./", dev).combinedEnv;
+const { DB_ENVIRONMENT } = loadEnvConfig("./", dev).combinedEnv;
 
 module.exports = {
-  client: "pg",
-  connection: PG_URI,
-  migrations: {
-    directory: "./knex/migrations",
+  development: {
+    client: "sqlite3",
+    connection: {
+      filename: "./data/questions.sqlite3",
+    },
+    migrations: {
+      directory: "./knex/migrations",
+    },
+    seeds: {
+      directory: "./knex/seeds",
+    },
+    useNullAsDefault: true,
   },
-  seeds: {
-    directory: "./knex/seeds",
+  production: {
+    client: "pg",
+    connection: DB_ENVIRONMENT,
   },
 };

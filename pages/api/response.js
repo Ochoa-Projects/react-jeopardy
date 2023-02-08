@@ -1,4 +1,4 @@
-import { getKnex } from "../../knex";
+import { getKnex } from "../../knex/knexcache.js";
 
 export default async function handler(req, res) {
   const knex = getKnex();

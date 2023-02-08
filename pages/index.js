@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 
 export default function Home() {
   const [response, setResponse] = useState();
+
   useEffect(() => {
     async function loadResponse() {
       const res = await fetch("/api/response");
