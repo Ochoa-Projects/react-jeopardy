@@ -6,6 +6,7 @@ const PageContainer = ({ children, color = "--dark-blue" }) => {
     <m.div
       initial={{ scale: 0.1 }}
       animate={{ scale: 1 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
       style={{ background: color }}
       className={styles.pageContainer}
     >
