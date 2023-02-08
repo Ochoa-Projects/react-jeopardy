@@ -1,10 +1,16 @@
 import styles from "./styles.module.css";
+import { motion as m } from "framer-motion";
 
 const PageContainer = ({ children, color = "--dark-blue" }) => {
   return (
-    <div style={{ background: color }} className={styles.pageContainer}>
+    <m.div
+      initial={{ scale: 0.1 }}
+      animate={{ scale: 1 }}
+      style={{ background: color }}
+      className={styles.pageContainer}
+    >
       {children}
-    </div>
+    </m.div>
   );
 };
 
