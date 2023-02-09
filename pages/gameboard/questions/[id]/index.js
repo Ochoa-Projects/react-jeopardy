@@ -16,7 +16,7 @@ export default function Question() {
     setCorrect(true);
     setTimeout(() => {
       router.push("/gameboard");
-    }, 5000);
+    }, 4000);
   };
 
   return (
