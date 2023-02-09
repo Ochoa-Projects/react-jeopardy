@@ -1,7 +1,13 @@
 import knex from "knex";
-import config from "../knexfile.js";
+import knexfile from "../knexfile.js";
 
 let cached = global.pg;
+
+let config =
+  process.env.NODE_ENV !== "production"
+    ? knexfile.development
+    : knexfile.production;
+
 if (!cached) {
   cached = global.pg = {};
 }

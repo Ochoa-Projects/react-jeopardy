@@ -3,11 +3,9 @@ import Head from "next/head";
 import PageContainer from "../components/PageContainer";
 import GameStartForm from "../components/GameStartForm";
 import styles from "./styles.module.css";
-// import { usePapaParse } from "react-papaparse";
 
 export default function Home() {
   const [response, setResponse] = useState();
-  // const { readString } = usePapaParse();
 
   useEffect(() => {
     async function loadResponse() {
@@ -16,7 +14,7 @@ export default function Home() {
       setResponse(data);
     }
 
-    // loadResponse();
+    loadResponse();
   }, []);
 
   return (
