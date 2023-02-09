@@ -3,9 +3,11 @@ import Head from "next/head";
 import PageContainer from "../components/PageContainer";
 import GameStartForm from "../components/GameStartForm";
 import styles from "./styles.module.css";
+import { usePapaParse } from "react-papaparse";
 
 export default function Home() {
   const [response, setResponse] = useState();
+  const { readString } = usePapaParse();
 
   useEffect(() => {
     async function loadResponse() {
@@ -13,10 +15,23 @@ export default function Home() {
       const data = await res.json();
       setResponse(data);
     }
-    loadResponse();
+
+    // loadResponse();
+    async function loadCSV() {
+      const response = await fetch("react-questions.csv");
+      const data = await response.text();
+
+      readString(data, {
+        header: true,
+        complete: (result) => {
+          console.log(result);
+        },
+      });
+    }
+
+    loadCSV();
   }, []);
 
-  console.log(response);
   return (
     <>
       <Head>
