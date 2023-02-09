@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "gyparody";
+  src: local("gyparody"), url("../public/gyparody.ttf") format("truetype");
+}
+
 :root {
   --blue: #0016a2;
   --dark-blue: #00005d;

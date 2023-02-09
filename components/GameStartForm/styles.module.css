@@ -22,7 +22,7 @@
   padding: 8px;
   cursor: pointer;
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   text-shadow: 1px 1px 2px black;
 }
 
@@ -47,13 +47,13 @@
 }
 
 .startButton {
+  font-family: "gyparody";
   cursor: pointer;
   border: 1px solid var(--yellow);
   border-radius: 4px;
   color: var(--yellow);
   background: transparent;
-  font-size: x-large;
-  font-weight: 800;
+  font-size: 40px;
   padding: 12px 32px;
   margin: 20px 0;
   text-shadow: 1px 1px 2px black;
