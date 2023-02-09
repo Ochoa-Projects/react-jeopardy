@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.difficultyHeading {
+  font-size: 40px;
+  text-shadow: 2px 2px 4px black;
+}
+
 .difficultySelection {
   display: flex;
   width: 260px;

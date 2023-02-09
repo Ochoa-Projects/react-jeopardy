@@ -10,6 +10,7 @@ const GameStartForm = () => {
   };
   return (
     <form action="/gameboard" className={styles.homepageForm}>
+      <h2 className={styles.difficultyHeading}>Game Difficulty</h2>
       <div className={styles.difficultySelection}>
         {difficulties.map((difficulty) => (
           <div
