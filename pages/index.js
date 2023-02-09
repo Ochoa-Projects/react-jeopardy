@@ -15,6 +15,7 @@ export default function Home() {
           className={styles.homepageTitle}
           initial={{ x: "-100vh" }}
           animate={{ x: 0 }}
+          transition={{ ease: "backOut", duration: 0.6 }}
         >
           React.js Jeopardy!
         </m.h1>

@@ -7,9 +7,9 @@ export default function Question() {
     <PageContainer>
       <m.div
         className={styles.container}
-        initial={{ rotateY: 180, scale: 0.2 }}
+        initial={{ rotateY: 180, scale: 0.1 }}
         animate={{ rotateY: 0, scale: 1 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 1 }}
       >
         <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
         <div className={styles.questionContainer}>
