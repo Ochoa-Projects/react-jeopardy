@@ -15,5 +15,5 @@ body {
   padding: 0;
   height: 100vh;
   color: var(--white);
-  background-color: #000000;
+  background: url("../public/subtle-prism.svg");
 }
