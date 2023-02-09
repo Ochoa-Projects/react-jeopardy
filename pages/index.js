@@ -11,7 +11,13 @@ export default function Home() {
         <title>React Jeopardy</title>
       </Head>
       <PageContainer>
-        <h1 className={styles.homepageTitle}>React.js Jeopardy!</h1>
+        <m.h1
+          className={styles.homepageTitle}
+          initial={{ x: "-100vh" }}
+          animate={{ x: 0 }}
+        >
+          React.js Jeopardy!
+        </m.h1>
         <h3>Hone in on your React skills with React Jeopardy!</h3>
         <GameStartForm />
       </PageContainer>

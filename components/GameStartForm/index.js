@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion as m } from "framer-motion";
 import styles from "./styles.module.css";
 
 const GameStartForm = () => {
@@ -9,7 +10,13 @@ const GameStartForm = () => {
     selected !== difficulty ? setSelected(difficulty) : null;
   };
   return (
-    <form action="/gameboard" className={styles.homepageForm}>
+    <m.form
+      action="/gameboard"
+      className={styles.homepageForm}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+    >
       <h2 className={styles.difficultyHeading}>Game Difficulty</h2>
       <div className={styles.difficultySelection}>
         {difficulties.map((difficulty) => (
@@ -32,7 +39,7 @@ const GameStartForm = () => {
       <button type="submit" className={styles.startButton}>
         START
       </button>
-    </form>
+    </m.form>
   );
 };
 
