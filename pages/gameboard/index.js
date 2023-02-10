@@ -8,8 +8,8 @@ import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
-export default function Gameboard({ response }) {
-  console.log(response);
+export default function Gameboard({ categories }) {
+  console.log(categories);
   const mockCategories = [
     "Category1",
     "Category2",
@@ -47,6 +47,7 @@ export default function Gameboard({ response }) {
 
 export async function getServerSideProps() {
   const knex = getKnex();
-  const response = await knex("questions");
-  return { props: { response } };
+  const response = await knex("questions").distinct("category");
+  const categories = response.map((item) => item.category);
+  return { props: { categories } };
 }
