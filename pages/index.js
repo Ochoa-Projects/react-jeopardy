@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { motion as m } from "framer-motion";
 import PageContainer from "../components/PageContainer";
 import GameStartForm from "../components/GameStartForm";

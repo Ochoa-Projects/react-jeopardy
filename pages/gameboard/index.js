@@ -1,4 +1,6 @@
 import Link from "next/link";
+
+import { getKnex } from "../../knex/knexcache.js";
 import { motion as m } from "framer-motion";
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
@@ -6,7 +8,8 @@ import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
-export default function Gameboard() {
+export default function Gameboard({ response }) {
+  console.log(response);
   const mockCategories = [
     "Category1",
     "Category2",
@@ -40,4 +43,10 @@ export default function Gameboard() {
       </m.div>
     </PageContainer>
   );
+}
+
+export async function getServerSideProps() {
+  const knex = getKnex();
+  const response = await knex("questions");
+  return { props: { response } };
 }
