@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#SQLite3 local file
+*.sqlite3
