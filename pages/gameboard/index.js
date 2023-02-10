@@ -10,13 +10,6 @@ import styles from "./styles.module.css";
 
 export default function Gameboard({ singleCategories, doubleCategories }) {
   console.log(singleCategories, doubleCategories);
-  const mockCategories = [
-    "Category1",
-    "Category2",
-    "Category3",
-    "Category4",
-    "Category5",
-  ];
 
   return (
     <PageContainer>
@@ -38,7 +31,7 @@ export default function Gameboard({ singleCategories, doubleCategories }) {
         animate={{ x: 0 }}
         transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
       >
-        <CatergoriesRow categories={mockCategories} />
+        <CatergoriesRow categories={singleCategories} />
         <ValueBoard />
       </m.div>
     </PageContainer>
