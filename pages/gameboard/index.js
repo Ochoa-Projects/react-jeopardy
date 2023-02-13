@@ -8,10 +8,14 @@ import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import randomizeCategories from "../../utils/randomizeCategories.js";
 import styles from "./styles.module.css";
+import randomizeSlugs from "../../utils/randomizeSlugs.js";
 
-export default function Gameboard({ singleCategories, doubleCategories }) {
-  console.log(singleCategories, doubleCategories);
-
+export default function Gameboard({
+  singleCategories,
+  doubleCategories,
+  singleSlugs,
+  doubleSlugs,
+}) {
   return (
     <PageContainer>
       <m.div
@@ -40,8 +44,13 @@ export default function Gameboard({ singleCategories, doubleCategories }) {
 }
 
 export async function getServerSideProps() {
-  const knex = getKnex();
-  const response = await knex("questions").distinct("category");
-  const [singleCategories, doubleCategories] = randomizeCategories(response);
-  return { props: { singleCategories, doubleCategories } };
+  getKnex();
+
+  const [singleCategories, doubleCategories] = await randomizeCategories();
+  const singleSlugs = await randomizeSlugs(singleCategories);
+  const doubleSlugs = await randomizeSlugs(doubleCategories);
+
+  return {
+    props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
+  };
 }
