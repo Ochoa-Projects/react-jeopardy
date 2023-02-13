@@ -6,6 +6,7 @@ import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
+import randomizeCategories from "../../utils/randomizeCategories.js";
 import styles from "./styles.module.css";
 
 export default function Gameboard({ singleCategories, doubleCategories }) {
@@ -41,9 +42,6 @@ export default function Gameboard({ singleCategories, doubleCategories }) {
 export async function getServerSideProps() {
   const knex = getKnex();
   const response = await knex("questions").distinct("category");
-  const categories = response.map((item) => item.category);
-  const shuffledCategories = categories.sort(() => 0.5 - Math.random());
-  const singleCategories = shuffledCategories.slice(0, 5);
-  const doubleCategories = shuffledCategories.slice(6, 11);
+  const [singleCategories, doubleCategories] = randomizeCategories(response);
   return { props: { singleCategories, doubleCategories } };
 }
