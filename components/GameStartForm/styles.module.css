@@ -11,8 +11,8 @@
 
 .difficultySelection {
   display: flex;
-  width: 260px;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
   margin: 0 0 20px;
   padding: 4px;
@@ -33,7 +33,8 @@
 .selected {
   color: var(--yellow);
   background: transparent;
-  border: 1px solid var(--yellow);
+  border: 3px solid var(--yellow);
+  font-weight: 700;
   border-radius: 4px;
   cursor: default;
   text-shadow: 1px 1px 2px black;
@@ -49,7 +50,7 @@
 .startButton {
   font-family: "gyparody";
   cursor: pointer;
-  border: 1px solid var(--yellow);
+  border: 3px solid var(--yellow);
   border-radius: 4px;
   color: var(--yellow);
   background: transparent;
