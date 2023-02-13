@@ -1,6 +1,6 @@
 import ValueCard from "../ValueCard";
-import { useAttempts } from "../../context/AttemptsContext";
 import styles from "./styles.module.css";
+import { useAttempts } from "../../context/AttemptsContext";
 
 const mockQuestions = {
   cat1: ["col1row1", "col1row2", "col1row3", "col1row4", "col1row5"],
@@ -11,8 +11,8 @@ const mockQuestions = {
 };
 
 const ValueBoard = () => {
-  const { attempts, setAttempts } = useAttempts();
-  console.log("attempts", attempts);
+  const { attempts } = useAttempts();
+  console.log(attempts);
 
   return (
     <div className={styles.valueGrid}>

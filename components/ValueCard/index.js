@@ -1,13 +1,26 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { useAttempts } from "../../context/AttemptsContext";
 import styles from "./styles.module.css";
 
 const ValueCard = ({ i, j }) => {
+  const router = useRouter();
+  const { attempts, setAttempts } = useAttempts();
+
+  const handleValueCardClick = () => {
+    setAttempts((prev) => [...prev, `${i}${j}`]);
+    router.push("/gameboard/questions/123");
+  };
+
+  const isAttempted = attempts.includes(`${i}${j}`);
+
   return (
     <div
       className={styles.valueBoardItem}
       style={{ gridColumn: i + 1, gridRow: j + 1 }}
     >
-      <Link href="/gameboard/questions/1">${(j + 1) * 200}</Link>
+      <div onClick={handleValueCardClick}>
+        {!isAttempted && `$${(j + 1) * 200}`}
+      </div>
     </div>
   );
 };
