@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
-import { useAttempts } from "../../context/AttemptsContext";
+import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 const ValueCard = ({ i, j }) => {
   const router = useRouter();
-  const { attempts, setAttempts } = useAttempts();
+  const { attempts, setAttempts } = useGame();
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);

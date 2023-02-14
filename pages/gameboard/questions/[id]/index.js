@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
+import { useGame } from "../../../../context/GameContext";
 import PageContainer from "../../../../components/PageContainer";
 import styles from "./styles.module.css";
 
 export default function Question() {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
+  const { selectedDifficulty } = useGame();
   const router = useRouter();
+
+  console.log(selectedDifficulty);
 
   const handleSubmit = (e) => {
     e.preventDefault();

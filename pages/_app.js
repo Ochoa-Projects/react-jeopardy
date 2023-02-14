@@ -1,10 +1,10 @@
-import { AttemptsContextProvider } from "../context/AttemptsContext";
+import { GameContextProvider } from "../context/GameContext";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <AttemptsContextProvider>
+    <GameContextProvider>
       <Component {...pageProps} />
-    </AttemptsContextProvider>
+    </GameContextProvider>
   );
 }
