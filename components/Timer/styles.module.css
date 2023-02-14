@@ -4,11 +4,11 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .timer > span {
-  font-family: "gyparody";
-  font-size: 54px;
+  font-size: xx-large;
+  font-weight: 800;
   color: var(--yellow);
 }
