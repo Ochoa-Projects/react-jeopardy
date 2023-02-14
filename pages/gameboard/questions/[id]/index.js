@@ -56,7 +56,11 @@ export default function Question() {
                 information without the use of "prop drilling".
               </h2>
             </div>
-            <Timer seconds={seconds} />
+            <Timer
+              seconds={seconds}
+              setCorrect={setCorrect}
+              setIsVisible={setIsVisible}
+            />
             <form method="post" className={styles.answerForm}>
               <input id="answer" placeholder="Enter answer here..." />
               <button type="submit" onClick={handleSubmit}>
