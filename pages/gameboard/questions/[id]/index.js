@@ -15,11 +15,11 @@ export default function Question() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsVisible(false);
+    // setIsVisible(false);
     setCorrect(true);
-    setTimeout(() => {
-      router.push("/gameboard");
-    }, 4000);
+    // setTimeout(() => {
+    //   router.push("/gameboard");
+    // }, 4000);
   };
 
   const seconds = (() => {
@@ -63,7 +63,11 @@ export default function Question() {
             />
             <form method="post" className={styles.answerForm}>
               <input id="answer" placeholder="Enter answer here..." />
-              <button type="submit" onClick={handleSubmit}>
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                disabled={correct === true || correct === false}
+              >
                 Submit
               </button>
             </form>
