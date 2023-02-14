@@ -4,6 +4,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
 import { useGame } from "../../../../context/GameContext";
 import PageContainer from "../../../../components/PageContainer";
+import Timer from "../../../../components/Timer";
 import styles from "./styles.module.css";
 
 export default function Question() {
@@ -11,8 +12,6 @@ export default function Question() {
   const [isVisible, setIsVisible] = useState(true);
   const { selectedDifficulty } = useGame();
   const router = useRouter();
-
-  console.log(selectedDifficulty);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +21,16 @@ export default function Question() {
       router.push("/gameboard");
     }, 4000);
   };
+
+  const seconds = (() => {
+    if (selectedDifficulty === "Easy") {
+      return 20;
+    } else if (selectedDifficulty === "Normal") {
+      return 15;
+    } else {
+      return 10;
+    }
+  })();
 
   return (
     <PageContainer>
@@ -47,7 +56,7 @@ export default function Question() {
                 information without the use of "prop drilling".
               </h2>
             </div>
-            <p className={styles.timer}>X seconds remaining...</p>
+            <Timer seconds={seconds} />
             <form method="post" className={styles.answerForm}>
               <input id="answer" placeholder="Enter answer here..." />
               <button type="submit" onClick={handleSubmit}>

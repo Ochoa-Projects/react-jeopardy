@@ -9,7 +9,6 @@ import ValueBoard from "../../components/ValueBoard";
 import styles from "./styles.module.css";
 
 export default function Gameboard({ response }) {
-  console.log(response);
   const mockCategories = [
     "Category1",
     "Category2",
