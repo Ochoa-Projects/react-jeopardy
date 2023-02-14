@@ -11,11 +11,11 @@ const Timer = ({ seconds, setCorrect, setIsVisible }) => {
 
   useEffect(() => {
     if (secondsRemaining <= 0) {
-      // setIsVisible(false);
+      setIsVisible(false);
       setCorrect(false);
-      // setTimeout(() => {
-      //   router.push("/gameboard");
-      // }, 4000);
+      setTimeout(() => {
+        router.push("/gameboard");
+      }, 4000);
       return;
     }
 

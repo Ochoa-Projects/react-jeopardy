@@ -15,11 +15,11 @@ export default function Question() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setIsVisible(false);
+    setIsVisible(false);
     setCorrect(true);
-    // setTimeout(() => {
-    //   router.push("/gameboard");
-    // }, 4000);
+    setTimeout(() => {
+      router.push("/gameboard");
+    }, 4000);
   };
 
   const seconds = (() => {
