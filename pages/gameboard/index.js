@@ -1,23 +1,20 @@
 import Link from "next/link";
-
-import { getKnex } from "../../knex/knexcache.js";
 import { motion as m } from "framer-motion";
+
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
+import randomizeCategories from "../../utils/randomizeCategories.js";
+import randomizeSlugs from "../../utils/randomizeSlugs.js";
 import styles from "./styles.module.css";
 
-export default function Gameboard({ response }) {
-  console.log(response);
-  const mockCategories = [
-    "Category1",
-    "Category2",
-    "Category3",
-    "Category4",
-    "Category5",
-  ];
-
+export default function Gameboard({
+  singleCategories,
+  doubleCategories,
+  singleSlugs,
+  doubleSlugs,
+}) {
   return (
     <PageContainer>
       <m.div
@@ -38,7 +35,7 @@ export default function Gameboard({ response }) {
         animate={{ x: 0 }}
         transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
       >
-        <CatergoriesRow categories={mockCategories} />
+        <CatergoriesRow categories={singleCategories} />
         <ValueBoard />
       </m.div>
     </PageContainer>
@@ -46,7 +43,11 @@ export default function Gameboard({ response }) {
 }
 
 export async function getServerSideProps() {
-  const knex = getKnex();
-  const response = await knex("questions");
-  return { props: { response } };
+  const [singleCategories, doubleCategories] = await randomizeCategories();
+  const singleSlugs = await randomizeSlugs(singleCategories);
+  const doubleSlugs = await randomizeSlugs(doubleCategories);
+
+  return {
+    props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
+  };
 }
