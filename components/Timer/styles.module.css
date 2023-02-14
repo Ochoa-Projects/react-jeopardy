@@ -2,4 +2,13 @@
   margin: 24px 0;
   font-size: x-large;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.timer > span {
+  font-family: "gyparody";
+  font-size: 54px;
+  color: var(--yellow);
 }
