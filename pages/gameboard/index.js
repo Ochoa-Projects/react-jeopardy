@@ -1,14 +1,13 @@
 import Link from "next/link";
-
-import { getKnex } from "../../knex/knexcache.js";
 import { motion as m } from "framer-motion";
+
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import randomizeCategories from "../../utils/randomizeCategories.js";
-import styles from "./styles.module.css";
 import randomizeSlugs from "../../utils/randomizeSlugs.js";
+import styles from "./styles.module.css";
 
 export default function Gameboard({
   singleCategories,
@@ -44,8 +43,6 @@ export default function Gameboard({
 }
 
 export async function getServerSideProps() {
-  getKnex();
-
   const [singleCategories, doubleCategories] = await randomizeCategories();
   const singleSlugs = await randomizeSlugs(singleCategories);
   const doubleSlugs = await randomizeSlugs(doubleCategories);
