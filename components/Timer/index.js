@@ -3,20 +3,26 @@ import { useRouter } from "next/router";
 
 import styles from "./styles.module.css";
 
-const Timer = ({ seconds, setCorrect, setIsVisible }) => {
+const Timer = ({ seconds, correct, setCorrect, setIsVisible }) => {
   const [secondsRemaining, setSecondsRemaining] = useState(seconds);
   const router = useRouter();
 
-  const decrementTimer = () => setSecondsRemaining((prev) => prev - 1);
+  const decrementTimer = () => {
+    if (correct === null) {
+      setSecondsRemaining((prev) => prev - 1);
+    }
+  };
 
   useEffect(() => {
     if (secondsRemaining <= 0) {
-      setIsVisible(false);
       setCorrect(false);
       setTimeout(() => {
+        setIsVisible(false);
+      }, 1000);
+      const timeout = setTimeout(() => {
         router.push("/gameboard");
-      }, 4000);
-      return;
+      }, 5000);
+      return () => clearTimeout(timeout);
     }
 
     const interval = setInterval(decrementTimer, 1000);

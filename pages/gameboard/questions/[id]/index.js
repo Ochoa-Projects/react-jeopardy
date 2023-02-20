@@ -13,20 +13,21 @@ export default function Question() {
   const { selectedDifficulty } = useGame();
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsVisible(false);
+  const handleSubmit = () => {
     setCorrect(true);
     setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    setTimeout(() => {
       router.push("/gameboard");
-    }, 4000);
+    }, 5000);
   };
 
   const seconds = (() => {
     if (selectedDifficulty === "Easy") {
       return 20;
     } else if (selectedDifficulty === "Normal") {
-      return 15;
+      return 3;
     } else {
       return 10;
     }
@@ -35,6 +36,7 @@ export default function Question() {
   return (
     <PageContainer>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
+      {correct === false && <div className={styles.incorrectX}>&#9746;</div>}
       <AnimatePresence>
         {isVisible && (
           <m.div
@@ -58,19 +60,19 @@ export default function Question() {
             </div>
             <Timer
               seconds={seconds}
+              correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
             />
-            <form method="post" className={styles.answerForm}>
+            <div method="post" className={styles.answerForm}>
               <input id="answer" placeholder="Enter answer here..." />
               <button
-                type="submit"
                 onClick={handleSubmit}
-                disabled={correct === true || correct === false}
+                disabled={correct === (true || false)}
               >
                 Submit
               </button>
-            </form>
+            </div>
           </m.div>
         )}
       </AnimatePresence>
