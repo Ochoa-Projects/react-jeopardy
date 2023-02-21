@@ -1,0 +1,14 @@
+.timer {
+  margin: 24px 0;
+  font-size: x-large;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.timer > span {
+  font-size: xx-large;
+  font-weight: 800;
+  color: var(--yellow);
+}

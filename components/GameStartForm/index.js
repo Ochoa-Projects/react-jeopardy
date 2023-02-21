@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useRouter } from "next/router";
 import { motion as m } from "framer-motion";
+import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 const GameStartForm = () => {
-  const [selected, setSelected] = useState("Normal");
   const difficulties = ["Easy", "Normal", "Hard"];
 
+  const { selectedDifficulty, setSelectedDifficulty } = useGame();
+  const router = useRouter();
+
   const handleSelected = (difficulty) => {
-    selected !== difficulty ? setSelected(difficulty) : null;
+    selectedDifficulty !== difficulty
+      ? setSelectedDifficulty(difficulty)
+      : null;
   };
+
+  const handleStart = () => {
+    router.push("gameboard");
+  };
+
   return (
-    <m.form
-      action="/gameboard"
+    <m.div
       className={styles.homepageForm}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -22,9 +31,9 @@ const GameStartForm = () => {
         {difficulties.map((difficulty) => (
           <div
             key={difficulty}
-            className={`${selected === difficulty && styles.selected} ${
-              styles.difficultyButton
-            }`}
+            className={`${
+              selectedDifficulty === difficulty && styles.selected
+            } ${styles.difficultyButton}`}
             onClick={() => handleSelected(difficulty)}
           >
             {difficulty}
@@ -36,10 +45,10 @@ const GameStartForm = () => {
         placeholder="Enter Your Name"
         className={styles.nameInput}
       />
-      <button type="submit" className={styles.startButton}>
+      <button className={styles.startButton} onClick={handleStart}>
         START
       </button>
-    </m.form>
+    </m.div>
   );
 };
 

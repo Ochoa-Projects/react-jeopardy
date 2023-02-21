@@ -2,22 +2,33 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
+import { useGame } from "../../../../context/GameContext";
+import getTimerDuration from "../../../../utils/getTimerDuration";
 import PageContainer from "../../../../components/PageContainer";
+import Timer from "../../../../components/Timer";
+import QuestionText from "../../../../components/QuestionText";
+import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
+import IncorrectGraphic from "../../../../components/IncorrectGraphic";
+import QuestionHeading from "../../../../components/QuestionHeading";
 
 export default function Question() {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
+  const { selectedDifficulty } = useGame();
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsVisible(false);
+  const handleSubmit = () => {
     setCorrect(true);
     setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    setTimeout(() => {
       router.push("/gameboard");
-    }, 4000);
+    }, 5000);
   };
+
+  const seconds = getTimerDuration(selectedDifficulty);
 
   return (
     <PageContainer>
@@ -36,20 +47,16 @@ export default function Question() {
               transition: { duration: 1, delay: 3 },
             }}
           >
-            <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
-            <div className={styles.questionContainer}>
-              <h2>
-                This React tool is used to share state and other important
-                information without the use of "prop drilling".
-              </h2>
-            </div>
-            <p className={styles.timer}>X seconds remaining...</p>
-            <form method="post" className={styles.answerForm}>
-              <input id="answer" placeholder="Enter answer here..." />
-              <button type="submit" onClick={handleSubmit}>
-                Submit
-              </button>
-            </form>
+            {correct === false && <IncorrectGraphic />}
+            <QuestionHeading />
+            <QuestionText />
+            <Timer
+              seconds={seconds}
+              correct={correct}
+              setCorrect={setCorrect}
+              setIsVisible={setIsVisible}
+            />
+            <AnswerSubmission handleSubmit={handleSubmit} correct={correct} />
           </m.div>
         )}
       </AnimatePresence>

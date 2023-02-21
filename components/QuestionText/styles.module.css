@@ -1,0 +1,10 @@
+.questionContainer {
+  margin: 60px 0;
+  max-width: 800px;
+}
+
+.questionContainer > h2 {
+  font-size: 48px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
