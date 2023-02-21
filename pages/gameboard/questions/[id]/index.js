@@ -9,6 +9,7 @@ import Timer from "../../../../components/Timer";
 import QuestionText from "../../../../components/QuestionText";
 import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
+import IncorrectGraphic from "../../../../components/IncorrectGraphic";
 
 export default function Question() {
   const [correct, setCorrect] = useState(null);
@@ -31,7 +32,6 @@ export default function Question() {
   return (
     <PageContainer>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
-      {correct === false && <div className={styles.incorrectX}>&#9746;</div>}
       <AnimatePresence>
         {isVisible && (
           <m.div
@@ -46,6 +46,7 @@ export default function Question() {
               transition: { duration: 1, delay: 3 },
             }}
           >
+            {correct === false && <IncorrectGraphic />}
             <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
             <QuestionText />
             <Timer
