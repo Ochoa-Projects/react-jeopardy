@@ -7,9 +7,17 @@ import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
+import { useEffect } from "react";
 
 export default function Gameboard() {
-  const { singleCategories } = useGame();
+  const { singleCategories, setSingleCategories } = useGame();
+
+  useEffect(() => {
+    if (!singleCategories.length) {
+      let storage = JSON.parse(window.localStorage.getItem("STATE"));
+      setSingleCategories(storage.singleCategories);
+    }
+  }, []);
 
   return (
     <PageContainer>

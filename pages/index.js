@@ -27,6 +27,16 @@ export default function Home({
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
+
+    window.localStorage.setItem(
+      "STATE",
+      JSON.stringify({
+        singleCategories,
+        doubleCategories,
+        singleSlugs,
+        doubleSlugs,
+      })
+    );
   }, []);
 
   return (
