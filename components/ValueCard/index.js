@@ -2,13 +2,13 @@ import { useRouter } from "next/router";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
-const ValueCard = ({ i, j }) => {
+const ValueCard = ({ i, j, slug }) => {
   const router = useRouter();
   const { attempts, setAttempts } = useGame();
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);
-    router.push("/gameboard/questions/123");
+    router.push(`/gameboard/questions/${slug}`);
   };
 
   const isAttempted = attempts.includes(`${i}${j}`);
