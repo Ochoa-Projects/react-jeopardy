@@ -19,10 +19,10 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible }) => {
       setTimeout(() => {
         setIsVisible(false);
       });
-      const timeout = setTimeout(() => {
+      setTimeout(() => {
         router.replace("/gameboard");
       }, 4000);
-      return () => clearTimeout(timeout);
+      return;
     }
 
     const interval = setInterval(decrementTimer, 1000);
