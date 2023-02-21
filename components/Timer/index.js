@@ -18,10 +18,10 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible }) => {
       setCorrect(false);
       setTimeout(() => {
         setIsVisible(false);
-      }, 1000);
+      });
       const timeout = setTimeout(() => {
-        router.push("/gameboard");
-      }, 5000);
+        router.replace("/gameboard");
+      }, 4000);
       return () => clearTimeout(timeout);
     }
 
