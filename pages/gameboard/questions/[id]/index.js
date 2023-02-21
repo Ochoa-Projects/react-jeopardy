@@ -11,8 +11,9 @@ import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
 import IncorrectGraphic from "../../../../components/IncorrectGraphic";
 import QuestionHeading from "../../../../components/QuestionHeading";
+import getQuestion from "../../../../utils/getQuestion";
 
-export default function Question() {
+export default function Question({ question }) {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const { selectedDifficulty } = useGame();
@@ -62,4 +63,14 @@ export default function Question() {
       </AnimatePresence>
     </PageContainer>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const question = await getQuestion(id);
+  console.log(question);
+
+  return {
+    props: { question },
+  };
 }
