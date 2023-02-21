@@ -6,6 +6,8 @@ export const useGame = () => useContext(GameContext);
 
 export const GameContextProvider = ({ children }) => {
   const [singleCategories, setSingleCategories] = useState([]);
+  const [singleSlugs, setSingleSlugs] = useState([]);
+  const [doubleCategories, setDoubleCategories] = useState([]);
   const [attempts, setAttempts] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
 
@@ -14,6 +16,10 @@ export const GameContextProvider = ({ children }) => {
       value={{
         singleCategories,
         setSingleCategories,
+        doubleCategories,
+        setDoubleCategories,
+        singleSlugs,
+        setSingleSlugs,
         attempts,
         setAttempts,
         selectedDifficulty,

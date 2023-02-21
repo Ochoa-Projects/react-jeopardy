@@ -15,10 +15,18 @@ export default function Home({
   singleSlugs,
   doubleSlugs,
 }) {
-  const { setSingleCategories } = useGame();
+  const {
+    setSingleCategories,
+    setDoubleCategories,
+    setSingleSlugs,
+    setDoubleSlugs,
+  } = useGame();
 
   useEffect(() => {
     setSingleCategories(singleCategories);
+    setDoubleCategories(doubleCategories);
+    setSingleSlugs(singleSlugs);
+    setDoubleSlugs(doubleSlugs);
   }, []);
 
   return (
