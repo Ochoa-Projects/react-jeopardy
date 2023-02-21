@@ -13,11 +13,13 @@ import IncorrectGraphic from "../../../../components/IncorrectGraphic";
 import QuestionHeading from "../../../../components/QuestionHeading";
 import getQuestion from "../../../../utils/getQuestion";
 
-export default function Question({ question }) {
+export default function Question({ questionResponse }) {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const { selectedDifficulty } = useGame();
   const router = useRouter();
+
+  const { question, category } = questionResponse;
   const {
     query: { value },
   } = router;
@@ -52,8 +54,8 @@ export default function Question({ question }) {
             }}
           >
             {correct === false && <IncorrectGraphic />}
-            <QuestionHeading category={question.category} value={value} />
-            <QuestionText question={question.question} />
+            <QuestionHeading category={category} value={value} />
+            <QuestionText question={question} />
             <Timer
               seconds={seconds}
               correct={correct}
@@ -70,9 +72,9 @@ export default function Question({ question }) {
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const question = await getQuestion(id);
+  const questionResponse = await getQuestion(id);
 
   return {
-    props: { question },
+    props: { questionResponse },
   };
 }
