@@ -6,6 +6,8 @@ import { useGame } from "../../../../context/GameContext";
 import getTimerDuration from "../../../../utils/getTimerDuration";
 import PageContainer from "../../../../components/PageContainer";
 import Timer from "../../../../components/Timer";
+import QuestionText from "../../../../components/QuestionText";
+import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
 
 export default function Question() {
@@ -45,27 +47,14 @@ export default function Question() {
             }}
           >
             <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
-            <div className={styles.questionContainer}>
-              <h2>
-                This React tool is used to share state and other important
-                information without the use of "prop drilling".
-              </h2>
-            </div>
+            <QuestionText />
             <Timer
               seconds={seconds}
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
             />
-            <div method="post" className={styles.answerForm}>
-              <input id="answer" placeholder="Enter answer here..." />
-              <button
-                onClick={handleSubmit}
-                disabled={correct === true || correct === false}
-              >
-                Submit
-              </button>
-            </div>
+            <AnswerSubmission handleSubmit={handleSubmit} correct={correct} />
           </m.div>
         )}
       </AnimatePresence>
