@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
@@ -16,13 +16,19 @@ import getQuestion from "../../../../utils/getQuestion";
 export default function Question({ questionResponse }) {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
-  const { selectedDifficulty } = useGame();
+  const { selectedDifficulty, singleCategories } = useGame();
   const router = useRouter();
 
   const { question, category } = questionResponse;
   const {
     query: { value },
   } = router;
+
+  useEffect(() => {
+    if (!singleCategories.length) {
+      router.push("/");
+    }
+  }, []);
 
   const handleSubmit = () => {
     setCorrect(true);
