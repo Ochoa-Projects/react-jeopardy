@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { motion as m } from "framer-motion";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
@@ -9,13 +11,18 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
-  const { singleCategories, attempts, setAttempts } = useGame();
+  const { singleCategories, setAttempts } = useGame();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!singleCategories.length) {
+      router.push("/");
+    }
+  }, []);
 
   const handleClickHomepage = () => {
     setAttempts([]);
   };
-
-  console.log(attempts);
 
   return (
     <PageContainer>
