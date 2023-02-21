@@ -6,9 +6,11 @@ const ValueCard = ({ i, j, slug }) => {
   const router = useRouter();
   const { attempts, setAttempts } = useGame();
 
+  const value = (j + 1) * 200;
+
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);
-    router.push(`/gameboard/questions/${slug}`);
+    router.push({ pathname: `/gameboard/questions/${slug}`, query: { value } });
   };
 
   const isAttempted = attempts.includes(`${i}${j}`);
@@ -18,9 +20,7 @@ const ValueCard = ({ i, j, slug }) => {
       className={styles.valueBoardItem}
       style={{ gridColumn: i + 1, gridRow: j + 1 }}
     >
-      <div onClick={handleValueCardClick}>
-        {!isAttempted && `$${(j + 1) * 200}`}
-      </div>
+      <div onClick={handleValueCardClick}>{!isAttempted && `$${value}`}</div>
     </div>
   );
 };

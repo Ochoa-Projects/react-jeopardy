@@ -18,6 +18,9 @@ export default function Question({ question }) {
   const [isVisible, setIsVisible] = useState(true);
   const { selectedDifficulty } = useGame();
   const router = useRouter();
+  const {
+    query: { value },
+  } = router;
 
   const handleSubmit = () => {
     setCorrect(true);
@@ -49,8 +52,8 @@ export default function Question({ question }) {
             }}
           >
             {correct === false && <IncorrectGraphic />}
-            <QuestionHeading />
-            <QuestionText />
+            <QuestionHeading category={question.category} value={value} />
+            <QuestionText question={question.question} />
             <Timer
               seconds={seconds}
               correct={correct}
@@ -68,7 +71,6 @@ export default function Question({ question }) {
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const question = await getQuestion(id);
-  console.log(question);
 
   return {
     props: { question },
