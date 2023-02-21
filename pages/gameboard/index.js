@@ -5,16 +5,12 @@ import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
-import randomizeCategories from "../../utils/randomizeCategories.js";
-import randomizeSlugs from "../../utils/randomizeSlugs.js";
+import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
-export default function Gameboard({
-  singleCategories,
-  doubleCategories,
-  singleSlugs,
-  doubleSlugs,
-}) {
+export default function Gameboard() {
+  const { singleCategories } = useGame();
+
   return (
     <PageContainer>
       <m.div
@@ -40,14 +36,4 @@ export default function Gameboard({
       </m.div>
     </PageContainer>
   );
-}
-
-export async function getServerSideProps() {
-  const [singleCategories, doubleCategories] = await randomizeCategories();
-  const singleSlugs = await randomizeSlugs(singleCategories);
-  const doubleSlugs = await randomizeSlugs(doubleCategories);
-
-  return {
-    props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
-  };
 }
