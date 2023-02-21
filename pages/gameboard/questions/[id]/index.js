@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
 import { useGame } from "../../../../context/GameContext";
+import getTimerDuration from "../../../../utils/getTimerDuration";
 import PageContainer from "../../../../components/PageContainer";
 import Timer from "../../../../components/Timer";
 import styles from "./styles.module.css";
@@ -23,15 +24,7 @@ export default function Question() {
     }, 5000);
   };
 
-  const seconds = (() => {
-    if (selectedDifficulty === "Easy") {
-      return 20;
-    } else if (selectedDifficulty === "Normal") {
-      return 3;
-    } else {
-      return 10;
-    }
-  })();
+  const seconds = getTimerDuration(selectedDifficulty);
 
   return (
     <PageContainer>
