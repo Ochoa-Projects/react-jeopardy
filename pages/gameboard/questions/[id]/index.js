@@ -11,12 +11,18 @@ import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
 import IncorrectGraphic from "../../../../components/IncorrectGraphic";
 import QuestionHeading from "../../../../components/QuestionHeading";
+import getQuestion from "../../../../utils/getQuestion";
 
-export default function Question() {
+export default function Question({ questionResponse }) {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const { selectedDifficulty } = useGame();
   const router = useRouter();
+
+  const { question, category } = questionResponse;
+  const {
+    query: { value },
+  } = router;
 
   const handleSubmit = () => {
     setCorrect(true);
@@ -48,8 +54,8 @@ export default function Question() {
             }}
           >
             {correct === false && <IncorrectGraphic />}
-            <QuestionHeading />
-            <QuestionText />
+            <QuestionHeading category={category} value={value} />
+            <QuestionText question={question} />
             <Timer
               seconds={seconds}
               correct={correct}
@@ -62,4 +68,13 @@ export default function Question() {
       </AnimatePresence>
     </PageContainer>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const questionResponse = await getQuestion(id);
+
+  return {
+    props: { questionResponse },
+  };
 }
