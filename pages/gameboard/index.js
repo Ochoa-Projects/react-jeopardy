@@ -9,7 +9,13 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
-  const { singleCategories } = useGame();
+  const { singleCategories, attempts, setAttempts } = useGame();
+
+  const handleClickHomepage = () => {
+    setAttempts([]);
+  };
+
+  console.log(attempts);
 
   return (
     <PageContainer>
@@ -21,7 +27,11 @@ export default function Gameboard() {
       >
         <h1>SINGLE JEOPARDY</h1>
         <PlayerScores />
-        <Link href="/" className={styles.menuButton}>
+        <Link
+          href="/"
+          className={styles.menuButton}
+          onClick={handleClickHomepage}
+        >
           &#9776;
         </Link>
       </m.div>
