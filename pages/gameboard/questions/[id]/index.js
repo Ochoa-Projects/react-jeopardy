@@ -68,7 +68,7 @@ export default function Question() {
               <input id="answer" placeholder="Enter answer here..." />
               <button
                 onClick={handleSubmit}
-                disabled={correct === (true || false)}
+                disabled={correct === true || correct === false}
               >
                 Submit
               </button>
