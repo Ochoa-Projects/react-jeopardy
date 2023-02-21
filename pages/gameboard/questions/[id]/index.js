@@ -10,6 +10,7 @@ import QuestionText from "../../../../components/QuestionText";
 import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
 import IncorrectGraphic from "../../../../components/IncorrectGraphic";
+import QuestionHeading from "../../../../components/QuestionHeading";
 
 export default function Question() {
   const [correct, setCorrect] = useState(null);
@@ -47,7 +48,7 @@ export default function Question() {
             }}
           >
             {correct === false && <IncorrectGraphic />}
-            <h1 className={styles.questionHeading}>CATEGORY4 - $600</h1>
+            <QuestionHeading />
             <QuestionText />
             <Timer
               seconds={seconds}
