@@ -25,22 +25,13 @@ export default function Gameboard() {
       const leavePage = confirm(
         "This will end your progress. Are you sure you want to do this?"
       );
-
       if (leavePage) {
-        // window.onpopstate = null;
-        console.log("leaving page`");
         router.push("/");
       } else {
-        console.log("cancelling");
-
         history.pushState(null, null, window.location.href);
       }
     };
   }, []);
-
-  const handleClickHomepage = () => {
-    setAttempts([]);
-  };
 
   return (
     <PageContainer>
@@ -52,11 +43,7 @@ export default function Gameboard() {
       >
         <h1>SINGLE JEOPARDY</h1>
         <PlayerScores />
-        <Link
-          href="/"
-          className={styles.menuButton}
-          onClick={handleClickHomepage}
-        >
+        <Link href="/" className={styles.menuButton}>
           &#9776;
         </Link>
       </m.div>

@@ -20,6 +20,7 @@ export default function Home({
     setDoubleCategories,
     setSingleSlugs,
     setDoubleSlugs,
+    setAttempts,
   } = useGame();
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Home({
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
+    setAttempts([]);
   }, []);
 
   return (
