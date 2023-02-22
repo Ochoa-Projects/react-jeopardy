@@ -18,6 +18,8 @@ export default function Gameboard() {
     if (!singleCategories.length) {
       router.push("/");
     }
+
+    window.onbeforeunload = () => true;
   }, []);
 
   const handleClickHomepage = () => {

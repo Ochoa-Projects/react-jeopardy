@@ -28,6 +28,8 @@ export default function Question({ questionResponse }) {
     if (!singleCategories.length) {
       router.push("/");
     }
+
+    window.onbeforeunload = () => true;
   }, []);
 
   const handleSubmit = () => {
