@@ -1,4 +1,4 @@
-const json = require("../../public/react-questions.json");
+const json = require("../react-questions.json");
 
 /**
  * @param { import("knex").Knex } knex
