@@ -11,7 +11,7 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
-  const { singleCategories, setAttempts } = useGame();
+  const { singleCategories } = useGame();
   const router = useRouter();
 
   useEffect(() => {
