@@ -20,6 +20,22 @@ export default function Gameboard() {
     }
 
     window.onbeforeunload = () => true;
+    history.pushState(null, null, window.location.href);
+    window.onpopstate = () => {
+      const leavePage = confirm(
+        "This will end your progress. Are you sure you want to do this?"
+      );
+
+      if (leavePage) {
+        // window.onpopstate = null;
+        console.log("leaving page`");
+        router.push("/");
+      } else {
+        console.log("cancelling");
+
+        history.pushState(null, null, window.location.href);
+      }
+    };
   }, []);
 
   const handleClickHomepage = () => {

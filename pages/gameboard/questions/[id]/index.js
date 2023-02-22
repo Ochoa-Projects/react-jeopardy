@@ -30,6 +30,7 @@ export default function Question({ questionResponse }) {
     }
 
     window.onbeforeunload = () => true;
+    window.onpopstate = () => (window.onbeforeunload = () => true);
   }, []);
 
   const handleSubmit = () => {
