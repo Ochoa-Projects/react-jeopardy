@@ -30,7 +30,11 @@ export default function Question({ questionResponse }) {
     }
 
     window.onbeforeunload = () => true;
-    window.onpopstate = () => (window.onbeforeunload = () => true);
+    history.pushState(null, null, window.location.href);
+    window.onpopstate = () => {
+      alert("Cannot use back button on question pages. You lose!");
+      router.push("/gameboard");
+    };
   }, []);
 
   const handleSubmit = () => {
