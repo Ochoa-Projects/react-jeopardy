@@ -7,7 +7,6 @@ import { useGame } from "../context/GameContext";
 import randomizeCategories from "../utils/randomizeCategories.js";
 import randomizeSlugs from "../utils/randomizeSlugs.js";
 import styles from "./styles.module.css";
-import Loading from "../components/Loading";
 
 export default function Home({
   singleCategories,
@@ -21,23 +20,15 @@ export default function Home({
     setSingleSlugs,
     setDoubleSlugs,
     setAttempts,
-    loading,
-    setLoading,
   } = useGame();
 
   useEffect(() => {
-    setLoading(true);
     setSingleCategories(singleCategories);
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
     setAttempts([]);
-    setLoading(false);
   }, []);
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <>

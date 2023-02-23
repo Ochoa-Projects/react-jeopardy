@@ -11,7 +11,6 @@ export const GameContextProvider = ({ children }) => {
   const [doubleSlugs, setDoubleSlugs] = useState([]);
   const [attempts, setAttempts] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
-  const [loading, setLoading] = useState(true);
 
   return (
     <GameContext.Provider
@@ -28,8 +27,6 @@ export const GameContextProvider = ({ children }) => {
         setAttempts,
         selectedDifficulty,
         setSelectedDifficulty,
-        loading,
-        setLoading,
       }}
     >
       {children}
