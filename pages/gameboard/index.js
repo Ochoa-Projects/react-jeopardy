@@ -11,18 +11,27 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
-  const { singleCategories, setAttempts } = useGame();
+  const { singleCategories } = useGame();
   const router = useRouter();
 
   useEffect(() => {
     if (!singleCategories.length) {
       router.push("/");
     }
-  }, []);
 
-  const handleClickHomepage = () => {
-    setAttempts([]);
-  };
+    window.onbeforeunload = () => true;
+    history.pushState(null, null, window.location.href);
+    window.onpopstate = () => {
+      const leavePage = confirm(
+        "This will end your progress. Are you sure you want to do this?"
+      );
+      if (leavePage) {
+        router.push("/");
+      } else {
+        history.pushState(null, null, window.location.href);
+      }
+    };
+  }, []);
 
   return (
     <PageContainer>
@@ -34,11 +43,7 @@ export default function Gameboard() {
       >
         <h1>SINGLE JEOPARDY</h1>
         <PlayerScores />
-        <Link
-          href="/"
-          className={styles.menuButton}
-          onClick={handleClickHomepage}
-        >
+        <Link href="/" className={styles.menuButton}>
           &#9776;
         </Link>
       </m.div>
