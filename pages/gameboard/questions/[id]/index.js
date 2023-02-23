@@ -5,6 +5,7 @@ import Confetti from "react-confetti";
 import { useGame } from "../../../../context/GameContext";
 import getTimerDuration from "../../../../utils/getTimerDuration";
 import PageContainer from "../../../../components/PageContainer";
+import Loading from "../../../../components/Loading";
 import Timer from "../../../../components/Timer";
 import QuestionText from "../../../../components/QuestionText";
 import AnswerSubmission from "../../../../components/AnswerSubmission";
@@ -16,7 +17,8 @@ import getQuestion from "../../../../utils/getQuestion";
 export default function Question({ questionResponse }) {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
-  const { selectedDifficulty, singleCategories } = useGame();
+  const { selectedDifficulty, singleCategories, loading, setLoading } =
+    useGame();
   const router = useRouter();
 
   const { question, category } = questionResponse;
@@ -25,6 +27,7 @@ export default function Question({ questionResponse }) {
   } = router;
 
   useEffect(() => {
+    setLoading(true);
     if (!singleCategories.length) {
       router.push("/");
     }
@@ -35,6 +38,7 @@ export default function Question({ questionResponse }) {
       alert("Cannot use back button on question pages. You lose!");
       router.push("/gameboard");
     };
+    setLoading(false);
   }, []);
 
   const handleSubmit = () => {
@@ -48,6 +52,10 @@ export default function Question({ questionResponse }) {
   };
 
   const seconds = getTimerDuration(selectedDifficulty);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <PageContainer>

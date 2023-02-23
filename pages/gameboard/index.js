@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import PageContainer from "../../components/PageContainer";
+import Loading from "../../components/Loading";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
@@ -11,10 +12,11 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Gameboard() {
-  const { singleCategories } = useGame();
+  const { singleCategories, loading, setLoading } = useGame();
   const router = useRouter();
 
   useEffect(() => {
+    setLoading(true);
     if (!singleCategories.length) {
       router.push("/");
     }
@@ -31,7 +33,12 @@ export default function Gameboard() {
         history.pushState(null, null, window.location.href);
       }
     };
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <PageContainer>

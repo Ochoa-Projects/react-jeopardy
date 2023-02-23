@@ -1,11 +1,18 @@
-import styles from "./styles.module.css";
 import PageContainer from "../PageContainer";
 import ReactLoading from "react-loading";
+import styles from "./styles.module.css";
 
 const Loading = () => {
   return (
     <PageContainer>
-      <ReactLoading color={"#ffffff"} height={"20%"} width={"20%"} />
+      <div className={styles.loader}>
+        <ReactLoading
+          type={"bars"}
+          color={"#e2e200"}
+          height={"20%"}
+          width={"20%"}
+        />
+      </div>
     </PageContainer>
   );
 };
