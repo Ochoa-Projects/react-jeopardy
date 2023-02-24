@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import PageContainer from "../PageContainer";
 import ReactLoading from "react-loading";
 import styles from "./styles.module.css";
 
@@ -26,16 +25,16 @@ const Loading = () => {
 
   return (
     loading && (
-      <PageContainer>
+      <div className={styles.loaderContainer}>
         <div className={styles.loader}>
           <ReactLoading
             type={"bars"}
             color={"#e2e200"}
-            height={"20%"}
-            width={"20%"}
+            height={"50%"}
+            width={"50%"}
           />
         </div>
-      </PageContainer>
+      </div>
     )
   );
 };

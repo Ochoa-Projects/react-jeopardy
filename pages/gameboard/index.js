@@ -2,11 +2,11 @@ import Link from "next/link";
 import { motion as m } from "framer-motion";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-
 import PageContainer from "../../components/PageContainer";
 import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
+import Loading from "../../components/Loading";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
@@ -16,7 +16,7 @@ export default function Gameboard() {
 
   useEffect(() => {
     if (!singleCategories.length) {
-      router.push("/");
+      window.location.href = "/";
     }
 
     window.onbeforeunload = () => true;
@@ -32,6 +32,10 @@ export default function Gameboard() {
       }
     };
   }, []);
+
+  if (!singleCategories.length) {
+    return <Loading />;
+  }
 
   return (
     <PageContainer>
