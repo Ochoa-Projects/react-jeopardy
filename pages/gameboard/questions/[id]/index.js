@@ -54,7 +54,6 @@ export default function Question({ questionResponse }) {
     return <Loading />;
   }
 
->>>>>>> e64a581436ec81c3b12bbdb54afc26d925d663d9
   const seconds = getTimerDuration(selectedDifficulty);
 
   return (
