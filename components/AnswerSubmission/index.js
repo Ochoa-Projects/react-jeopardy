@@ -32,6 +32,7 @@ const AnswerSubmission = ({ correct, setCorrect, setIsVisible, answer }) => {
         placeholder="Enter answer here..."
         value={attemptedAnswer}
         onChange={(e) => setAttemptedAnswer(e.target.value)}
+        autoComplete="off"
       />
       <button
         onClick={handleSubmit}
