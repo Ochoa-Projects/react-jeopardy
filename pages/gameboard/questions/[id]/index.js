@@ -20,7 +20,7 @@ export default function Question({ questionResponse }) {
   const { selectedDifficulty, singleCategories } = useGame();
   const router = useRouter();
 
-  const { question, category } = questionResponse;
+  const { question, category, answer } = questionResponse;
   const {
     query: { value },
   } = router;
@@ -37,16 +37,6 @@ export default function Question({ questionResponse }) {
       router.push("/gameboard");
     };
   }, []);
-
-  const handleSubmit = () => {
-    setCorrect(true);
-    setTimeout(() => {
-      setIsVisible(false);
-    }, 1000);
-    setTimeout(() => {
-      router.push("/gameboard");
-    }, 5000);
-  };
 
   if (!singleCategories.length) {
     return <Loading />;
@@ -80,7 +70,12 @@ export default function Question({ questionResponse }) {
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
             />
-            <AnswerSubmission handleSubmit={handleSubmit} correct={correct} />
+            <AnswerSubmission
+              correct={correct}
+              setCorrect={setCorrect}
+              setIsVisible={setIsVisible}
+              answer={answer}
+            />
           </m.div>
         )}
       </AnimatePresence>
