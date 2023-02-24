@@ -38,18 +38,6 @@ export default function Question({ questionResponse }) {
     };
   }, []);
 
-<<<<<<< HEAD
-=======
-  const handleSubmit = () => {
-    setCorrect(true);
-    setTimeout(() => {
-      setIsVisible(false);
-    }, 1000);
-    setTimeout(() => {
-      router.push("/gameboard");
-    }, 5000);
-  };
-
   if (!singleCategories.length) {
     return <Loading />;
   }
