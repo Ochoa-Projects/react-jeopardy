@@ -6,6 +6,7 @@ import { useGame } from "../../../../context/GameContext";
 import getTimerDuration from "../../../../utils/getTimerDuration";
 import PageContainer from "../../../../components/PageContainer";
 import Timer from "../../../../components/Timer";
+import Loading from "../../../../components/Loading";
 import QuestionText from "../../../../components/QuestionText";
 import AnswerSubmission from "../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
@@ -26,7 +27,7 @@ export default function Question({ questionResponse }) {
 
   useEffect(() => {
     if (!singleCategories.length) {
-      router.push("/");
+      window.location.href = "/";
     }
 
     window.onbeforeunload = () => true;
@@ -37,6 +38,23 @@ export default function Question({ questionResponse }) {
     };
   }, []);
 
+<<<<<<< HEAD
+=======
+  const handleSubmit = () => {
+    setCorrect(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    setTimeout(() => {
+      router.push("/gameboard");
+    }, 5000);
+  };
+
+  if (!singleCategories.length) {
+    return <Loading />;
+  }
+
+>>>>>>> e64a581436ec81c3b12bbdb54afc26d925d663d9
   const seconds = getTimerDuration(selectedDifficulty);
 
   return (
