@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import { useEffect } from "react";
 import { motion as m } from "framer-motion";
 import PageContainer from "../components/PageContainer";
 import GameStartForm from "../components/GameStartForm";
@@ -7,7 +7,6 @@ import { useGame } from "../context/GameContext";
 import randomizeCategories from "../utils/randomizeCategories.js";
 import randomizeSlugs from "../utils/randomizeSlugs.js";
 import styles from "./styles.module.css";
-import { useEffect } from "react";
 
 export default function Home({
   singleCategories,
