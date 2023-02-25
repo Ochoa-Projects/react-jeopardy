@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useGame } from "../../context/GameContext";
+import addToComputerScore from "../../utils/addToComputerScore";
 import addToPlayerScore from "../../utils/addToPlayerScore";
 
 import convertAnswers from "../../utils/convertAnswers";
@@ -26,6 +27,7 @@ const AnswerSubmission = ({
       addToPlayerScore(value, setPlayerScores);
     } else {
       setCorrect(false);
+      addToComputerScore(value, setPlayerScores);
     }
     setTimeout(() => {
       setIsVisible(false);
