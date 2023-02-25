@@ -11,6 +11,20 @@ export const GameContextProvider = ({ children }) => {
   const [doubleSlugs, setDoubleSlugs] = useState([]);
   const [attempts, setAttempts] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
+  const [playerScores, setPlayerScores] = useState({
+    0: {
+      name: "",
+      score: 0,
+    },
+    1: {
+      name: "Jerry Javascript",
+      score: 0,
+    },
+    2: {
+      name: "Robin React",
+      score: 0,
+    },
+  });
 
   return (
     <GameContext.Provider
@@ -27,6 +41,8 @@ export const GameContextProvider = ({ children }) => {
         setAttempts,
         selectedDifficulty,
         setSelectedDifficulty,
+        playerScores,
+        setPlayerScores,
       }}
     >
       {children}
