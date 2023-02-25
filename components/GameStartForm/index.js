@@ -25,7 +25,7 @@ const GameStartForm = () => {
       ...prev,
       player1: {
         ...prev.player1,
-        name: inputName,
+        name: inputName || "Player Programmer",
       },
     }));
     router.push("gameboard");
