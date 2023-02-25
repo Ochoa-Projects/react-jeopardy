@@ -19,3 +19,8 @@
   font-weight: 700;
   background: var(--blue-radial-gradient);
 }
+
+.playerContainer {
+  display: flex;
+  justify-content: space-between;
+}
