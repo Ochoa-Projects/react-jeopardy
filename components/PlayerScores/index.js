@@ -5,7 +5,7 @@ const PlayerScores = () => {
   const {
     playerScores: { player1, player2, player3 },
   } = useGame();
-  console.log(player1);
+
   return (
     <div className={styles.playerScoresBorder}>
       <div className={styles.playerScores}>

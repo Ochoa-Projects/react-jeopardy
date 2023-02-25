@@ -1,12 +1,21 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useGame } from "../../context/GameContext";
+import addToPlayerScore from "../../utils/addToPlayerScore";
 
 import convertAnswers from "../../utils/convertAnswers";
 import styles from "./styles.module.css";
 
-const AnswerSubmission = ({ correct, setCorrect, setIsVisible, answer }) => {
+const AnswerSubmission = ({
+  correct,
+  setCorrect,
+  setIsVisible,
+  answer,
+  value,
+}) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
+  const { setPlayerScores } = useGame();
   const router = useRouter();
 
   const answers = convertAnswers(answer);
@@ -14,6 +23,7 @@ const AnswerSubmission = ({ correct, setCorrect, setIsVisible, answer }) => {
   const handleSubmit = () => {
     if (answers.includes(attemptedAnswer.toLowerCase())) {
       setCorrect(true);
+      addToPlayerScore(value, setPlayerScores);
     } else {
       setCorrect(false);
     }

@@ -75,6 +75,7 @@ export default function Question({ questionResponse }) {
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
               answer={answer}
+              value={value}
             />
           </m.div>
         )}
