@@ -11,7 +11,13 @@ import styles from "./styles.module.css";
 import PlayerScores from "../../components/PlayerScores";
 
 export default function Gameboard() {
-  const { singleCategories, doubleCategories, gameStage } = useGame();
+  const {
+    singleCategories,
+    doubleCategories,
+    gameStage,
+    setGameStage,
+    setAttempts,
+  } = useGame();
   const router = useRouter();
 
   const categories =
@@ -36,6 +42,11 @@ export default function Gameboard() {
     };
   }, []);
 
+  const handleHomeClick = () => {
+    setAttempts([]);
+    setGameStage("single");
+  };
+
   if (!categories.length) {
     return <Loading />;
   }
@@ -50,7 +61,7 @@ export default function Gameboard() {
       >
         <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
         <PlayerScores />
-        <Link href="/" className={styles.menuButton}>
+        <Link href="/" className={styles.menuButton} onClick={handleHomeClick}>
           &#9776;
         </Link>
       </m.div>
