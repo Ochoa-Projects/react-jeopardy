@@ -14,6 +14,9 @@ export default function Gameboard() {
   const { singleCategories, doubleCategories, gameStage } = useGame();
   const router = useRouter();
 
+  console.log("single", singleCategories);
+  console.log("double", doubleCategories);
+
   const categories = (() => {
     if (gameStage === "single") {
       return singleCategories;
