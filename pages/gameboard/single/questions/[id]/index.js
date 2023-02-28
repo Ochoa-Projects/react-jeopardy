@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
-import { useGame } from "../../../../context/GameContext";
-import getTimerDuration from "../../../../utils/getTimerDuration";
-import PageContainer from "../../../../components/PageContainer";
-import Timer from "../../../../components/Timer";
-import Loading from "../../../../components/Loading";
-import QuestionText from "../../../../components/QuestionText";
-import AnswerSubmission from "../../../../components/AnswerSubmission";
+import { useGame } from "../../../../../context/GameContext";
+import getTimerDuration from "../../../../../utils/getTimerDuration";
+import PageContainer from "../../../../../components/PageContainer";
+import Timer from "../../../../../components/Timer";
+import Loading from "../../../../../components/Loading";
+import QuestionText from "../../../../../components/QuestionText";
+import AnswerSubmission from "../../../../../components/AnswerSubmission";
 import styles from "./styles.module.css";
-import IncorrectGraphic from "../../../../components/IncorrectGraphic";
-import QuestionHeading from "../../../../components/QuestionHeading";
-import getQuestion from "../../../../utils/getQuestion";
+import IncorrectGraphic from "../../../../../components/IncorrectGraphic";
+import QuestionHeading from "../../../../../components/QuestionHeading";
+import getQuestion from "../../../../../utils/getQuestion";
 
 export default function Question({ questionResponse }) {
   const [correct, setCorrect] = useState(null);
