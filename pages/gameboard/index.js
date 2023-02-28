@@ -3,12 +3,12 @@ import { motion as m } from "framer-motion";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import PageContainer from "../../components/PageContainer";
-import PlayerScores from "../../components/PlayerScores";
 import CatergoriesRow from "../../components/CategoriesRow";
 import ValueBoard from "../../components/ValueBoard";
 import Loading from "../../components/Loading";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
+import PlayerScores from "../../components/PlayerScores";
 
 export default function Gameboard() {
   const { singleCategories } = useGame();

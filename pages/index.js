@@ -6,6 +6,7 @@ import GameStartForm from "../components/GameStartForm";
 import { useGame } from "../context/GameContext";
 import randomizeCategories from "../utils/randomizeCategories.js";
 import randomizeSlugs from "../utils/randomizeSlugs.js";
+import { initialPlayerState } from "../context/GameContext";
 import styles from "./styles.module.css";
 
 export default function Home({
@@ -20,6 +21,7 @@ export default function Home({
     setSingleSlugs,
     setDoubleSlugs,
     setAttempts,
+    setPlayerScores,
   } = useGame();
 
   useEffect(() => {
@@ -28,6 +30,7 @@ export default function Home({
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
     setAttempts([]);
+    setPlayerScores(initialPlayerState);
   }, []);
 
   return (
