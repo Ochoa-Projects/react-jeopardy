@@ -6,7 +6,7 @@ const ValueCard = ({ i, j, slug }) => {
   const router = useRouter();
   const { attempts, setAttempts, gameStage } = useGame();
 
-  const value = (j + 1) * 200;
+  const value = gameStage === "single" ? (j + 1) * 200 : (j + 1) * 400;
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);

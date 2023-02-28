@@ -35,8 +35,6 @@ export const GameContextProvider = ({ children }) => {
     }
   }, [attempts]);
 
-  console.log("attempts", attempts);
-
   return (
     <GameContext.Provider
       value={{
