@@ -14,13 +14,8 @@ export default function Gameboard() {
   const { singleCategories, doubleCategories, gameStage } = useGame();
   const router = useRouter();
 
-  const categories = (() => {
-    if (gameStage === "single") {
-      return singleCategories;
-    } else {
-      return doubleCategories;
-    }
-  })();
+  const categories =
+    gameStage === "single" ? singleCategories : doubleCategories;
 
   useEffect(() => {
     if (!categories.length) {

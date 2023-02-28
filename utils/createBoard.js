@@ -3,9 +3,7 @@ import { useGame } from "../context/GameContext";
 
 const createBoard = () => {
   const { singleSlugs, doubleSlugs, gameStage } = useGame();
-  const chosenSlugs = (() => {
-    return gameStage === "single" ? singleSlugs : doubleSlugs;
-  })();
+  const chosenSlugs = gameStage === "single" ? singleSlugs : doubleSlugs;
 
   let board = [];
   for (let [i, [key]] of Object.entries(chosenSlugs).entries()) {
