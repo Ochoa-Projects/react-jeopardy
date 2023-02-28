@@ -69,12 +69,14 @@ export default function Question({ questionResponse }) {
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
+              value={value}
             />
             <AnswerSubmission
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
               answer={answer}
+              value={value}
             />
           </m.div>
         )}
