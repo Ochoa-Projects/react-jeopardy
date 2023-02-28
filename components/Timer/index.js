@@ -17,7 +17,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
   };
 
   useEffect(() => {
-    if (secondsRemaining === 0) {
+    if (secondsRemaining === 0 && correct === null) {
       setCorrect(false);
       setTimeout(() => {
         setIsVisible(false);
@@ -32,7 +32,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
     const interval = setInterval(decrementTimer, 1000);
 
     return () => clearInterval(interval);
-  }, [secondsRemaining]);
+  }, [decrementTimer]);
 
   return (
     <div className={styles.timer}>
