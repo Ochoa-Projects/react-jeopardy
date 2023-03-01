@@ -13,7 +13,7 @@
   height: 92px;
   border: 2px solid black;
   color: var(--yellow);
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 0.5px 1px black;
   padding: 4px;
   border-radius: 4px;
   font-weight: 700;

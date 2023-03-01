@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
-import IncorrectGraphic from "../IncorrectGraphic";
 import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
@@ -39,9 +38,8 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
               transition: { duration: 1, delay: 3 },
             }}
           >
-            {correct === false && <IncorrectGraphic />}
             <QuestionHeading category={category} value={value} />
-            <QuestionText question={question} />
+            <QuestionText question={question} correct={correct} />
             <Timer
               seconds={seconds}
               correct={correct}

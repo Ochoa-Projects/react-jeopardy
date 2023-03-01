@@ -10,7 +10,10 @@
 .answerForm > input {
   padding: 12px;
   font-size: large;
-  width: 480px;
+  font-weight: 700;
+  width: 400px;
+  color: var(--blue);
+  border: none;
 }
 
 .answerForm > button {
@@ -31,4 +34,11 @@
   background: #797979;
   color: antiquewhite;
   cursor: not-allowed;
+}
+
+.answerForm > span {
+  color: var(--yellow);
+  font-family: "gyparody";
+  font-size: xx-large;
+  text-shadow: 1px 1px 2px black;
 }
