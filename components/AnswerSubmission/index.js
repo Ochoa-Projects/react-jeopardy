@@ -44,7 +44,7 @@ const AnswerSubmission = ({
         id="answer"
         placeholder="Enter answer here..."
         value={attemptedAnswer}
-        onChange={(e) => setAttemptedAnswer(e.target.value.toUpperCase())}
+        onChange={(e) => setAttemptedAnswer(e.target.value)}
         autoComplete="off"
       />
       <span>?</span>

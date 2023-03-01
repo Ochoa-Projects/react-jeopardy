@@ -10,6 +10,7 @@
 .answerForm > input {
   padding: 12px;
   font-size: large;
+  font-weight: 700;
   width: 400px;
   color: var(--blue);
   border: none;
@@ -39,4 +40,5 @@
   color: var(--yellow);
   font-family: "gyparody";
   font-size: xx-large;
+  text-shadow: 1px 1px 2px black;
 }
