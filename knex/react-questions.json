@@ -501,7 +501,7 @@
     "question_id": 85,
     "category": "ReactDOM",
     "answer": "{renderToString(),renderToString}",
-    "question": "This renders a React element to its inititial HTML. React will return an HTML string. Used for faster page loads and to alloew search engines to crawl your pages for SEO purposes."
+    "question": "This renders a React element to its inititial HTML. React will return an HTML string. Used for faster page loads and to allow search engines to crawl your pages for SEO purposes."
   },
   {
     "question_id": 86,

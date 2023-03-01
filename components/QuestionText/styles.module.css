@@ -1,6 +1,9 @@
 .questionContainer {
+  display: flex;
+  align-items: center;
   margin: 60px 0;
   max-width: 800px;
+  height: 45%;
 }
 
 .questionContainer > h2 {

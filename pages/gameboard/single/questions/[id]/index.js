@@ -64,13 +64,13 @@ export default function Question({ questionResponse }) {
             {correct === false && <IncorrectGraphic />}
             <QuestionHeading category={category} value={value} />
             <QuestionText question={question} />
-            <Timer
+            {/* <Timer
               seconds={seconds}
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
               value={value}
-            />
+            /> */}
             <AnswerSubmission
               correct={correct}
               setCorrect={setCorrect}

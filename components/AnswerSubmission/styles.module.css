@@ -10,7 +10,9 @@
 .answerForm > input {
   padding: 12px;
   font-size: large;
-  width: 480px;
+  width: 400px;
+  color: var(--blue);
+  border: none;
 }
 
 .answerForm > button {
@@ -31,4 +33,10 @@
   background: #797979;
   color: antiquewhite;
   cursor: not-allowed;
+}
+
+.answerForm > span {
+  color: var(--yellow);
+  font-family: "gyparody";
+  font-size: xx-large;
 }

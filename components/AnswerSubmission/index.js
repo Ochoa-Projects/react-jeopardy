@@ -39,13 +39,15 @@ const AnswerSubmission = ({
 
   return (
     <div method="post" className={styles.answerForm}>
+      <span>What is</span>
       <input
         id="answer"
         placeholder="Enter answer here..."
         value={attemptedAnswer}
-        onChange={(e) => setAttemptedAnswer(e.target.value)}
+        onChange={(e) => setAttemptedAnswer(e.target.value.toUpperCase())}
         autoComplete="off"
       />
+      <span>?</span>
       <button
         onClick={handleSubmit}
         disabled={correct === true || correct === false || !attemptedAnswer}
