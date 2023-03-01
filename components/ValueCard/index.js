@@ -1,22 +1,12 @@
-import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 const ValueCard = ({ i, j, slug }) => {
-  const [gameStage, setGameStage] = useState();
   const router = useRouter();
-  const { attempts, setAttempts } = useGame();
+  const { attempts, setAttempts, gameStage } = useGame();
 
-  const value = (j + 1) * 200;
-
-  useEffect(() => {
-    if (attempts.length < 25) {
-      setGameStage("single");
-    } else {
-      setGameStage("double");
-    }
-  }, []);
+  const value = gameStage === "single" ? (j + 1) * 200 : (j + 1) * 400;
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);

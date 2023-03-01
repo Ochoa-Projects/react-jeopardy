@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import Question from "../../../../../components/Question";
 import { useGame } from "../../../../../context/GameContext";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
+import Question from "../../../../../components/Question";
 
-export default function SingleQuestion({ questionResponse }) {
-  const { selectedDifficulty, singleCategories } = useGame();
+export default function DoubleQuestion({ questionResponse }) {
+  const { selectedDifficulty, doubleCategories } = useGame();
 
   useEffect(() => {
-    if (!singleCategories.length) {
+    if (!doubleCategories.length) {
       window.location.href = "/";
     }
 
@@ -21,7 +21,7 @@ export default function SingleQuestion({ questionResponse }) {
     };
   }, []);
 
-  if (!singleCategories.length) {
+  if (!doubleCategories.length) {
     return <Loading />;
   }
 
