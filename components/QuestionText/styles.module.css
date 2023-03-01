@@ -1,6 +1,7 @@
 .questionContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   max-width: 800px;
   height: 45%;
 }
