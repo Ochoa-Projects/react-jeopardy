@@ -29,10 +29,10 @@ export const GameContextProvider = ({ children }) => {
   const [gameStage, setGameStage] = useState("single");
 
   useEffect(() => {
-    if (attempts.length === 25) {
+    if (attempts.length === 3 && gameStage === "single") {
       setGameStage("double");
       setAttempts([]);
-    }
+    } else return;
   }, [attempts]);
 
   return (
