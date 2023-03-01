@@ -5,6 +5,7 @@ import addToComputerScore from "../../utils/addToComputerScore";
 import addToPlayerScore from "../../utils/addToPlayerScore";
 
 import convertAnswers from "../../utils/convertAnswers";
+import subtractFromPlayerScore from "../../utils/subtractFromPlayerScore";
 import styles from "./styles.module.css";
 
 const AnswerSubmission = ({
@@ -27,6 +28,7 @@ const AnswerSubmission = ({
       addToPlayerScore(value, setPlayerScores);
     } else {
       setCorrect(false);
+      subtractFromPlayerScore(value, setPlayerScores);
       addToComputerScore(value, setPlayerScores);
     }
     setTimeout(() => {

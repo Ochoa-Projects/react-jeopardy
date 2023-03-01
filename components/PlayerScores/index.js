@@ -10,7 +10,12 @@ const PlayerScores = () => {
     <div className={styles.playerScoresBorder}>
       <div className={styles.playerScores}>
         <div className={styles.playerContainer}>
-          {player1.name}:<span>${player1.score}</span>
+          {player1.name}:{" "}
+          {player1.score < 0 ? (
+            <span>-${Math.abs(player1.score)}</span>
+          ) : (
+            <span>${player1.score}</span>
+          )}
         </div>
         <div className={styles.playerContainer}>
           {player2.name}: <span>${player2.score}</span>
