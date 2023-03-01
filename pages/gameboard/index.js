@@ -11,11 +11,20 @@ import styles from "./styles.module.css";
 import PlayerScores from "../../components/PlayerScores";
 
 export default function Gameboard() {
-  const { singleCategories } = useGame();
+  const {
+    singleCategories,
+    doubleCategories,
+    gameStage,
+    setGameStage,
+    setAttempts,
+  } = useGame();
   const router = useRouter();
 
+  const categories =
+    gameStage === "single" ? singleCategories : doubleCategories;
+
   useEffect(() => {
-    if (!singleCategories.length) {
+    if (!categories.length) {
       window.location.href = "/";
     }
 
@@ -33,7 +42,12 @@ export default function Gameboard() {
     };
   }, []);
 
-  if (!singleCategories.length) {
+  const handleHomeClick = () => {
+    setAttempts([]);
+    setGameStage("single");
+  };
+
+  if (!categories.length) {
     return <Loading />;
   }
 
@@ -45,9 +59,9 @@ export default function Gameboard() {
         animate={{ y: 0 }}
         transition={{ ease: "backOut", duration: 0.4 }}
       >
-        <h1>SINGLE JEOPARDY</h1>
+        <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
         <PlayerScores />
-        <Link href="/" className={styles.menuButton}>
+        <Link href="/" className={styles.menuButton} onClick={handleHomeClick}>
           &#9776;
         </Link>
       </m.div>
@@ -57,7 +71,7 @@ export default function Gameboard() {
         animate={{ x: 0 }}
         transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
       >
-        <CatergoriesRow categories={singleCategories} />
+        <CatergoriesRow categories={categories} />
         <ValueBoard />
       </m.div>
     </PageContainer>
