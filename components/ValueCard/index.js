@@ -12,10 +12,17 @@ const ValueCard = ({ i, j, question }) => {
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);
-    router.push({
-      pathname: `/gameboard/${gameStage}/questions/${question.slug}`,
-      query: { value },
-    });
+    if (!question.isDailyDouble) {
+      router.push({
+        pathname: `/gameboard/${gameStage}/questions/${question.slug}`,
+        query: { value },
+      });
+    } else {
+      router.push({
+        pathname: `/gameboard/${gameStage}/questions/${question.slug}`,
+        query: { value: "daily-double" },
+      });
+    }
   };
 
   const isAttempted = attempts.includes(`${i}${j}`);

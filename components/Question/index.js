@@ -21,7 +21,45 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
 
   const seconds = getTimerDuration(selectedDifficulty);
 
-  return (
+  return value === "daily-double" ? (
+    <>
+      {correct && <Confetti recycle={false} numberOfPieces={1000} />}
+      <AnimatePresence>
+        {isVisible && (
+          <m.div
+            key="question"
+            className={styles.container}
+            initial={{ rotateY: 180, scale: 0.05 }}
+            animate={{ rotateY: 0, scale: 1 }}
+            transition={{ duration: 1 }}
+            exit={{
+              rotateY: 180,
+              scale: 0,
+              transition: { duration: 1, delay: 3 },
+            }}
+          >
+            <QuestionHeading category={category} value={"DAILY DOUBLE"} />
+            <QuestionText question={question} correct={correct} />
+            <Timer
+              seconds={60}
+              correct={correct}
+              setCorrect={setCorrect}
+              setIsVisible={setIsVisible}
+              value={value}
+            />
+            {/* TODO: BidSubmission */}
+            <AnswerSubmission
+              correct={correct}
+              setCorrect={setCorrect}
+              setIsVisible={setIsVisible}
+              answer={answer}
+              value={value}
+            />
+          </m.div>
+        )}
+      </AnimatePresence>
+    </>
+  ) : (
     <>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
       <AnimatePresence>
