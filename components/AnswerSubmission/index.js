@@ -18,7 +18,7 @@ const AnswerSubmission = ({
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
-  const { setPlayerScores } = useGame();
+  const { setPlayerScores, gameStage } = useGame();
   const router = useRouter();
 
   const answers = convertAnswers(answer);
@@ -37,7 +37,7 @@ const AnswerSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      router.push("/gameboard");
+      router.push(`/gameboard/${gameStage}`);
     }, 5000);
   };
 

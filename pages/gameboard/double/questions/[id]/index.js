@@ -1,12 +1,14 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { useGame } from "../../../../../context/GameContext";
+import Question from "../../../../../components/Question";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
-import Question from "../../../../../components/Question";
 
 export default function DoubleQuestion({ questionResponse }) {
   const { selectedDifficulty, doubleCategories } = useGame();
+  const router = useRouter();
 
   useEffect(() => {
     if (!doubleCategories.length) {
@@ -17,7 +19,7 @@ export default function DoubleQuestion({ questionResponse }) {
     history.pushState(null, null, window.location.href);
     window.onpopstate = () => {
       alert("Cannot use back button on question pages. You lose!");
-      router.push("/gameboard");
+      router.push("/gameboard/double");
     };
   }, []);
 

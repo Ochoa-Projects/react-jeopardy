@@ -1,19 +1,16 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import PageContainer from "../../components/PageContainer";
-import Loading from "../../components/Loading";
-import { useGame } from "../../context/GameContext";
-import Gameboard from "../../components/Gameboard";
+import PageContainer from "../../../components/PageContainer";
+import Loading from "../../../components/Loading";
+import { useGame } from "../../../context/GameContext";
+import Gameboard from "../../../components/Gameboard";
 
 export default function GameboardPage() {
-  const { singleCategories, doubleCategories, gameStage } = useGame();
+  const { doubleCategories } = useGame();
   const router = useRouter();
 
-  const categories =
-    gameStage === "single" ? singleCategories : doubleCategories;
-
   useEffect(() => {
-    if (!categories.length) {
+    if (!doubleCategories.length) {
       window.location.href = "/";
     }
 
@@ -31,7 +28,7 @@ export default function GameboardPage() {
     };
   }, []);
 
-  if (!categories.length) {
+  if (!doubleCategories.length) {
     return <Loading />;
   }
 
