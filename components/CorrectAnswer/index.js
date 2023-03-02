@@ -1,9 +1,11 @@
 import styles from "./styles.module.css";
 
-const CorrectAnswer = () => {
+const CorrectAnswer = ({ answer }) => {
+  console.log(answer);
   return (
-    <div>
-      <span>Correct Answer: {answer}</span>
+    <div className={styles.answerContainer}>
+      <span className={styles.text}>Correct Answer:</span>
+      <span className={styles.answer}>{answer}</span>
     </div>
   );
 };

@@ -1,17 +1,24 @@
 .answerForm {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   min-width: 800px;
-  margin: 60px 0;
+  padding: 60px 0;
   font-size: x-large;
 }
 
-.answerForm > input {
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.answerInput {
   padding: 12px;
   font-size: large;
   font-weight: 700;
-  width: 400px;
+  width: 320px;
   color: var(--blue);
   border: none;
 }
@@ -36,9 +43,9 @@
   cursor: not-allowed;
 }
 
-.answerForm > span {
+.answerText {
   color: var(--yellow);
   font-family: "gyparody";
-  font-size: xx-large;
+  font-size: 40px;
   text-shadow: 1px 1px 2px black;
 }
