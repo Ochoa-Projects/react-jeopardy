@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useGame } from "../../context/GameContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import addToPlayerScore from "../../utils/addToPlayerScore";
-
 import convertAnswers from "../../utils/convertAnswers";
+import convertFirstAnswer from "../../utils/convertFirstAnswer";
 import subtractFromPlayerScore from "../../utils/subtractFromPlayerScore";
 import CorrectAnswer from "../CorrectAnswer";
 import styles from "./styles.module.css";
@@ -22,7 +22,7 @@ const AnswerSubmission = ({
   const router = useRouter();
 
   const answers = convertAnswers(answer);
-  console.log(answers);
+  const correctAnswer = convertFirstAnswer(answer);
 
   const handleSubmit = () => {
     if (answers.includes(attemptedAnswer.toLowerCase())) {
@@ -33,17 +33,17 @@ const AnswerSubmission = ({
       subtractFromPlayerScore(value, setPlayerScores);
       addToComputerScore(value, setPlayerScores);
     }
-    // setTimeout(() => {
-    //   setIsVisible(false);
-    // }, 1000);
-    // setTimeout(() => {
-    //   router.push("/gameboard");
-    // }, 5000);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    setTimeout(() => {
+      router.push("/gameboard");
+    }, 5000);
   };
 
   return (
     <div method="post" className={styles.answerForm}>
-      {correct === false && <CorrectAnswer answer={answers[0]} />}
+      {correct === false && <CorrectAnswer answer={correctAnswer} />}
       <div className={styles.inputContainer}>
         <span className={styles.answerText}>What is</span>
         <input
