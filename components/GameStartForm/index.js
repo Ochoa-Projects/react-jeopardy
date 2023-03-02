@@ -28,7 +28,7 @@ const GameStartForm = () => {
         name: inputName || "Player Programmer",
       },
     }));
-    router.push("gameboard");
+    router.push("gameboard/single");
   };
 
   return (

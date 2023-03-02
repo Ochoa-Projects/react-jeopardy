@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
 import { useGame } from "../../context/GameContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import styles from "./styles.module.css";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
   const [secondsRemaining, setSecondsRemaining] = useState(seconds);
-  const { setPlayerScores } = useGame();
+  const { setPlayerScores, gameStage } = useGame();
   const router = useRouter();
 
   const decrementTimer = () => {
@@ -24,7 +23,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
       });
       setTimeout(() => {
         addToComputerScore(value, setPlayerScores);
-        router.replace("/gameboard");
+        router.replace(`/gameboard/${gameStage}`);
       }, 4000);
       return;
     }

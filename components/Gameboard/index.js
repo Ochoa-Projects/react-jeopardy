@@ -1,16 +1,12 @@
-import Link from "next/link";
 import { motion as m } from "framer-motion";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import PageContainer from "../../components/PageContainer";
-import CatergoriesRow from "../../components/CategoriesRow";
-import ValueBoard from "../../components/ValueBoard";
-import Loading from "../../components/Loading";
+import Link from "next/link";
 import { useGame } from "../../context/GameContext";
+import PlayerScores from "../PlayerScores";
+import CatergoriesRow from "../CategoriesRow";
+import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
-import PlayerScores from "../../components/PlayerScores";
 
-export default function Gameboard() {
+const Gameboard = () => {
   const {
     singleCategories,
     doubleCategories,
@@ -18,41 +14,17 @@ export default function Gameboard() {
     setGameStage,
     setAttempts,
   } = useGame();
-  const router = useRouter();
 
   const categories =
     gameStage === "single" ? singleCategories : doubleCategories;
-
-  useEffect(() => {
-    if (!categories.length) {
-      window.location.href = "/";
-    }
-
-    window.onbeforeunload = () => true;
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = () => {
-      const leavePage = confirm(
-        "This will end your progress. Are you sure you want to do this?"
-      );
-      if (leavePage) {
-        router.push("/");
-      } else {
-        history.pushState(null, null, window.location.href);
-      }
-    };
-  }, []);
 
   const handleHomeClick = () => {
     setAttempts([]);
     setGameStage("single");
   };
 
-  if (!categories.length) {
-    return <Loading />;
-  }
-
   return (
-    <PageContainer>
+    <>
       <m.div
         className={styles.topRow}
         initial={{ y: -250 }}
@@ -74,6 +46,8 @@ export default function Gameboard() {
         <CatergoriesRow categories={categories} />
         <ValueBoard />
       </m.div>
-    </PageContainer>
+    </>
   );
-}
+};
+
+export default Gameboard;
