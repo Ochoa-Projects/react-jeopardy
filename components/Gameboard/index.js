@@ -7,7 +7,13 @@ import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
 
 const Gameboard = () => {
-  const { gameStage, setGameStage, setAttempts } = useGame();
+  const {
+    singleCategories,
+    doubleCategories,
+    gameStage,
+    setGameStage,
+    setAttempts,
+  } = useGame();
 
   const categories =
     gameStage === "single" ? singleCategories : doubleCategories;

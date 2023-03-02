@@ -1,23 +1,12 @@
-import Link from "next/link";
-import { motion as m } from "framer-motion";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import PageContainer from "../../components/PageContainer";
-import CatergoriesRow from "../../components/CategoriesRow";
-import ValueBoard from "../../components/ValueBoard";
 import Loading from "../../components/Loading";
 import { useGame } from "../../context/GameContext";
-import styles from "./styles.module.css";
-import PlayerScores from "../../components/PlayerScores";
+import Gameboard from "../../components/Gameboard";
 
-export default function Gameboard() {
-  const {
-    singleCategories,
-    doubleCategories,
-    gameStage,
-    setGameStage,
-    setAttempts,
-  } = useGame();
+export default function GameboardPage() {
+  const { singleCategories, doubleCategories, gameStage } = useGame();
   const router = useRouter();
 
   const categories =
@@ -42,38 +31,13 @@ export default function Gameboard() {
     };
   }, []);
 
-  const handleHomeClick = () => {
-    setAttempts([]);
-    setGameStage("single");
-  };
-
   if (!categories.length) {
     return <Loading />;
   }
 
   return (
     <PageContainer>
-      <m.div
-        className={styles.topRow}
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ ease: "backOut", duration: 0.4 }}
-      >
-        <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
-        <PlayerScores />
-        <Link href="/" className={styles.menuButton} onClick={handleHomeClick}>
-          &#9776;
-        </Link>
-      </m.div>
-      <m.div
-        className={styles.gameboardBorder}
-        initial={{ x: "-100vw" }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
-      >
-        <CatergoriesRow categories={categories} />
-        <ValueBoard />
-      </m.div>
+      <Gameboard />
     </PageContainer>
   );
 }
