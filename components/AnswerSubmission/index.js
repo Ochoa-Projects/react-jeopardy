@@ -3,9 +3,10 @@ import { useState } from "react";
 import { useGame } from "../../context/GameContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import addToPlayerScore from "../../utils/addToPlayerScore";
-
 import convertAnswers from "../../utils/convertAnswers";
+import convertFirstAnswer from "../../utils/convertFirstAnswer";
 import subtractFromPlayerScore from "../../utils/subtractFromPlayerScore";
+import CorrectAnswer from "../CorrectAnswer";
 import styles from "./styles.module.css";
 
 const AnswerSubmission = ({
@@ -21,6 +22,7 @@ const AnswerSubmission = ({
   const router = useRouter();
 
   const answers = convertAnswers(answer);
+  const correctAnswer = convertFirstAnswer(answer);
 
   const handleSubmit = () => {
     if (answers.includes(attemptedAnswer.toLowerCase())) {
@@ -41,15 +43,19 @@ const AnswerSubmission = ({
 
   return (
     <div method="post" className={styles.answerForm}>
-      <span>What is</span>
-      <input
-        id="answer"
-        placeholder="Enter answer here..."
-        value={attemptedAnswer}
-        onChange={(e) => setAttemptedAnswer(e.target.value)}
-        autoComplete="off"
-      />
-      <span>?</span>
+      {correct === false && <CorrectAnswer answer={correctAnswer} />}
+      <div className={styles.inputContainer}>
+        <span className={styles.answerText}>What is</span>
+        <input
+          id="answer"
+          placeholder="Enter answer here..."
+          value={attemptedAnswer}
+          onChange={(e) => setAttemptedAnswer(e.target.value)}
+          autoComplete="off"
+          className={styles.answerInput}
+        />
+        <span className={styles.answerText}>?</span>
+      </div>
       <button
         onClick={handleSubmit}
         disabled={correct === true || correct === false || !attemptedAnswer}

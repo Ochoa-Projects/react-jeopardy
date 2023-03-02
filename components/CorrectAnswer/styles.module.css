@@ -1,0 +1,23 @@
+.answerContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+}
+
+.text {
+  font-weight: 600;
+  font-family: "gyparody";
+  color: rgb(252, 59, 59);
+  text-shadow: #3c3c3c 0.6px 1px 1px;
+  opacity: 0.9;
+}
+
+.answer {
+  color: var(--yellow);
+  font-weight: 800;
+  font-size: x-large;
+  text-shadow: black 1px 1px 2px;
+}
