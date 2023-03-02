@@ -40,20 +40,38 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           >
             <QuestionHeading category={category} value={"DAILY DOUBLE"} />
             <QuestionText question={question} correct={correct} />
+            {/* TODO: Timer */}
+            {/* This will be tricky, but possible. Value needs to be taken from BidSubmission. In order to do this, create a mini "DailyDoubleContext" to wrap
+                Timer, AnswerSubmission, and BidSubmission. DailyDouble Context will store the DailyDouble value variable. In here, you can create a check...
+
+                    if(!value) {
+                      value = useDailyDouble();
+                    }
+                
+                Set default value of Timer component to "null" in order to pass this check.    
+                */}
+            {/* NOTE: DailyDouble questions will have double the amount of time to be completed, as noted below in the seconds variable. */}
             <Timer
-              seconds={60}
+              seconds={seconds * 2}
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
-              value={value}
+              // value={value}
             />
             {/* TODO: BidSubmission */}
+            {/* BidSubmission will be an input field that takes a number between the range of 1 and the player's current maximum score.
+                The number input here will in essence be the new "value" variable. Make the default value 1.*/}
+
+            {/* TODO: AnswerSubmission */}
+            {/* AnswerSubmission will no longer take in a value variable, instead the value inputted to BidSubmission will be the value added/deducted
+                from the player's score. No computer deductions/additions will be necessary for this submission so adjust handleSubmit accordingly.  */}
+            {/* NOTE: It may be easier to combine both BidSubmission and AnswerSubmission into one component. "DailyDoubleSubmission" */}
             <AnswerSubmission
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
               answer={answer}
-              value={value}
+              // value={value}
             />
           </m.div>
         )}
