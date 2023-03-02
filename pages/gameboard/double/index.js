@@ -5,7 +5,7 @@ import Loading from "../../../components/Loading";
 import { useGame } from "../../../context/GameContext";
 import Gameboard from "../../../components/Gameboard";
 
-export default function GameboardPage() {
+export default function DoubleGameboard() {
   const { doubleCategories } = useGame();
   const router = useRouter();
 
