@@ -11,8 +11,6 @@ export default function SingleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, singleCategories } = useGame();
   const router = useRouter();
 
-  console.log(value);
-
   useEffect(() => {
     if (!singleCategories.length) {
       window.location.href = "/";
