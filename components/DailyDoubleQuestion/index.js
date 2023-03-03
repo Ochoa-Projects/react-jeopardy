@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
@@ -13,6 +13,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
+  const audio = new Audio("/sounds/daily-double.mp3");
 
   const { question, category, answer } = questionResponse;
   const {
@@ -20,6 +21,10 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   } = router;
 
   const seconds = getTimerDuration(selectedDifficulty) * 2;
+
+  useEffect(() => {
+    audio.play();
+  }, []);
 
   return (
     <>
