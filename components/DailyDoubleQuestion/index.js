@@ -38,7 +38,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
               transition: { duration: 1, delay: 3 },
             }}
           >
-            <QuestionHeading category={category} value={value} />
+            <QuestionHeading category={category} value={"Daily Double"} />
             <QuestionText question={question} correct={correct} />
             <Timer
               seconds={seconds}

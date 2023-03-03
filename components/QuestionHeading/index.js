@@ -3,7 +3,9 @@ import styles from "./styles.module.css";
 const QuestionHeading = ({ category, value }) => {
   return (
     <h1 className={styles.questionHeading}>
-      {category} - ${value}
+      {value === "Daily Double"
+        ? `${category} - ${value}`
+        : `${category} - $${value}`}
     </h1>
   );
 };
