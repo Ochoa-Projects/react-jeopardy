@@ -31,24 +31,28 @@ const DailyDoubleSubmission = ({
       setCorrect(false);
       subtractFromPlayerScore(bid, setPlayerScores);
     }
-    // setTimeout(() => {
-    //   setIsVisible(false);
-    // }, 1000);
-    // setTimeout(() => {
-    //   router.push(`/gameboard/${gameStage}`);
-    // }, 5000);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    setTimeout(() => {
+      router.push(`/gameboard/${gameStage}`);
+    }, 5000);
   };
 
   return (
     <div method="post" className={styles.answerForm}>
       {correct === false && <CorrectAnswer answer={correctAnswer} />}
-      <input
-        id="bid"
-        placeholder="Place bid here..."
-        value={bid}
-        onChange={(e) => setBid(e.target.value)}
-        autoComplete="off"
-      />
+      <div className={styles.bidContainer}>
+        <span className={styles.answerText}>Enter Bid: $</span>
+        <input
+          id="bid"
+          placeholder="Place bid here..."
+          value={bid}
+          onChange={(e) => setBid(e.target.value)}
+          autoComplete="off"
+          className={styles.bidInput}
+        />
+      </div>
       <div className={styles.inputContainer}>
         <span className={styles.answerText}>What is</span>
         <input
@@ -60,13 +64,13 @@ const DailyDoubleSubmission = ({
           className={styles.answerInput}
         />
         <span className={styles.answerText}>?</span>
+        <button
+          onClick={handleSubmit}
+          disabled={correct === true || correct === false || !attemptedAnswer}
+        >
+          Submit
+        </button>
       </div>
-      <button
-        onClick={handleSubmit}
-        disabled={correct === true || correct === false || !attemptedAnswer}
-      >
-        Submit
-      </button>
     </div>
   );
 };

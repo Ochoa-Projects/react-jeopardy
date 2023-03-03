@@ -1,11 +1,28 @@
 .answerForm {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
   min-width: 800px;
-  padding: 60px 0;
+  padding: 44px 0;
   font-size: x-large;
+  gap: 16px;
+}
+
+.bidContainer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bidInput {
+  padding: 12px;
+  font-size: large;
+  font-weight: 700;
+  width: 80px;
+  color: var(--blue);
+  border: none;
 }
 
 .inputContainer {
@@ -23,7 +40,7 @@
   border: none;
 }
 
-.answerForm > button {
+.inputContainer > button {
   font-family: "gyparody";
   cursor: pointer;
   border: 1px solid var(--yellow);
@@ -33,11 +50,10 @@
   font-size: x-large;
   font-weight: 800;
   padding: 12px 32px;
-  margin: 20px 0;
   text-shadow: 1px 1px 1px black;
 }
 
-.answerForm > button:disabled {
+.inputContainer > button:disabled {
   background: #797979;
   color: antiquewhite;
   cursor: not-allowed;
