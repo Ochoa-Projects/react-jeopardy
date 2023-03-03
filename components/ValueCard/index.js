@@ -8,8 +8,6 @@ const ValueCard = ({ i, j, question }) => {
 
   const value = gameStage === "single" ? (j + 1) * 200 : (j + 1) * 400;
 
-  console.log(question);
-
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);
     if (!question.isDailyDouble) {

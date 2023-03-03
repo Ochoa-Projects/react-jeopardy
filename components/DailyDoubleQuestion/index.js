@@ -6,10 +6,10 @@ import getTimerDuration from "../../utils/getTimerDuration";
 import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
-import AnswerSubmission from "../AnswerSubmission";
+import DailyDoubleSubmission from "../DailyDoubleSubmission";
 import styles from "./styles.module.css";
 
-const Question = ({ questionResponse, selectedDifficulty }) => {
+const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
@@ -47,7 +47,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
               setIsVisible={setIsVisible}
               value={value}
             />
-            <AnswerSubmission
+            <DailyDoubleSubmission
               correct={correct}
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
@@ -61,4 +61,4 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   );
 };
 
-export default Question;
+export default DailyDoubleQuestion;

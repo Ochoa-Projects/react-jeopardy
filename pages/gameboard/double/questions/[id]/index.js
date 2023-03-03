@@ -6,7 +6,7 @@ import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
 
-export default function DoubleQuestion({ questionResponse }) {
+export default function DoubleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, doubleCategories } = useGame();
   const router = useRouter();
 
@@ -38,10 +38,9 @@ export default function DoubleQuestion({ questionResponse }) {
 }
 
 export async function getServerSideProps(context) {
-  const { id } = context.query;
+  const { id, value } = context.query;
   const questionResponse = await getQuestion(id);
-
   return {
-    props: { questionResponse },
+    props: { questionResponse, value },
   };
 }

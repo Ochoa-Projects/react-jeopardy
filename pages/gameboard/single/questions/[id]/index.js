@@ -6,9 +6,11 @@ import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
 
-export default function SingleQuestion({ questionResponse }) {
+export default function SingleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, singleCategories } = useGame();
   const router = useRouter();
+
+  console.log(value);
 
   useEffect(() => {
     if (!singleCategories.length) {
@@ -38,10 +40,10 @@ export default function SingleQuestion({ questionResponse }) {
 }
 
 export async function getServerSideProps(context) {
-  const { id } = context.query;
+  const { id, value } = context.query;
   const questionResponse = await getQuestion(id);
 
   return {
-    props: { questionResponse },
+    props: { questionResponse, value },
   };
 }

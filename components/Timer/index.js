@@ -22,7 +22,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
         setIsVisible(false);
       });
       setTimeout(() => {
-        addToComputerScore(value, setPlayerScores);
+        value !== "daily-double" && addToComputerScore(value, setPlayerScores);
         router.replace(`/gameboard/${gameStage}`);
       }, 4000);
       return;
