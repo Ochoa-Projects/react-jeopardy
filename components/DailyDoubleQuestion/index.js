@@ -19,7 +19,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
     query: { value },
   } = router;
 
-  const seconds = getTimerDuration(selectedDifficulty);
+  const seconds = getTimerDuration(selectedDifficulty) * 2;
 
   return (
     <>
@@ -52,7 +52,6 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
               setCorrect={setCorrect}
               setIsVisible={setIsVisible}
               answer={answer}
-              value={value}
             />
           </m.div>
         )}
