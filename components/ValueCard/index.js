@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
-const ValueCard = ({ i, j, slug }) => {
+const ValueCard = ({ i, j, question }) => {
   const router = useRouter();
   const { attempts, setAttempts, gameStage } = useGame();
 
@@ -10,10 +10,17 @@ const ValueCard = ({ i, j, slug }) => {
 
   const handleValueCardClick = () => {
     setAttempts((prev) => [...prev, `${i}${j}`]);
-    router.push({
-      pathname: `/gameboard/${gameStage}/questions/${slug}`,
-      query: { value },
-    });
+    if (!question.isDailyDouble) {
+      router.push({
+        pathname: `/gameboard/${gameStage}/questions/${question.slug}`,
+        query: { value },
+      });
+    } else {
+      router.push({
+        pathname: `/gameboard/${gameStage}/questions/${question.slug}`,
+        query: { value: "daily-double" },
+      });
+    }
   };
 
   const isAttempted = attempts.includes(`${i}${j}`);

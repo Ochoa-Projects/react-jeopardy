@@ -1,0 +1,67 @@
+.answerForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 800px;
+  padding: 44px 0;
+  font-size: x-large;
+  gap: 16px;
+}
+
+.bidContainer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bidInput {
+  padding: 12px;
+  font-size: large;
+  font-weight: 700;
+  width: 80px;
+  color: var(--blue);
+  border: none;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.answerInput {
+  padding: 12px;
+  font-size: large;
+  font-weight: 700;
+  width: 320px;
+  color: var(--blue);
+  border: none;
+}
+
+.inputContainer > button {
+  font-family: "gyparody";
+  cursor: pointer;
+  border: 1px solid var(--yellow);
+  border-radius: 4px;
+  color: var(--yellow);
+  background: var(--blue-radial-gradient);
+  font-size: x-large;
+  font-weight: 800;
+  padding: 12px 32px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.inputContainer > button:disabled {
+  background: #797979;
+  color: antiquewhite;
+  cursor: not-allowed;
+}
+
+.answerText {
+  color: var(--yellow);
+  font-family: "gyparody";
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}

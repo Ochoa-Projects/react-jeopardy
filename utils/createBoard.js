@@ -10,7 +10,9 @@ const createBoard = () => {
     let category = [];
     const slugs = chosenSlugs[key];
     for (let j = 0; j < 5; j++) {
-      category.push(<ValueCard key={`${i}${j}`} i={i} j={j} slug={slugs[j]} />);
+      category.push(
+        <ValueCard key={`${i}${j}`} i={i} j={j} question={slugs[j]} />
+      );
     }
     board.push(category);
   }
