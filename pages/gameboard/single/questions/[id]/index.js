@@ -30,17 +30,17 @@ export default function SingleQuestion({ questionResponse, value }) {
 
   return (
     <PageContainer>
-      {value === "daily-double" ? (
-        <DailyDoubleQuestion
-          questionResponse={questionResponse}
-          selectedDifficulty={selectedDifficulty}
-        />
-      ) : (
+      {/* {value === "daily-double" ? ( */}
+      <DailyDoubleQuestion
+        questionResponse={questionResponse}
+        selectedDifficulty={selectedDifficulty}
+      />
+      {/* ) : (
         <Question
           questionResponse={questionResponse}
           selectedDifficulty={selectedDifficulty}
         />
-      )}
+      )} */}
     </PageContainer>
   );
 }

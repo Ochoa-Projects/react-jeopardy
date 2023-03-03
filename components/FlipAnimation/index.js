@@ -12,6 +12,7 @@ const FlipAnimation = ({ children, isVisible, background }) => {
             flexDirection: "column",
             alignItems: "center",
             background: background,
+            backgroundSize: "cover",
             width: "100%",
             height: "100vh",
           }}
