@@ -4,7 +4,6 @@ const randomizeSlugs = async (categories) => {
   const knex = getKnex();
   const randomCategory = Math.ceil(Math.random() * 5) - 1;
   const randomQuestion = Math.ceil(Math.random() * 5) - 1;
-  console.log(randomCategory, randomQuestion);
 
   const slugs = {};
   for (let i = 0; i < categories.length; i++) {
