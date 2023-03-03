@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useGame } from "../../../../../context/GameContext";
 import Question from "../../../../../components/Question";
+import DailyDoubleQuestion from "../../../../../components/DailyDoubleQuestion";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
@@ -29,10 +30,17 @@ export default function DoubleQuestion({ questionResponse, value }) {
 
   return (
     <PageContainer>
-      <Question
-        questionResponse={questionResponse}
-        selectedDifficulty={selectedDifficulty}
-      />
+      {value === "daily-double" ? (
+        <DailyDoubleQuestion
+          questionResponse={questionResponse}
+          selectedDifficulty={selectedDifficulty}
+        />
+      ) : (
+        <Question
+          questionResponse={questionResponse}
+          selectedDifficulty={selectedDifficulty}
+        />
+      )}
     </PageContainer>
   );
 }
