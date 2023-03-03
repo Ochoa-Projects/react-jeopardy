@@ -33,6 +33,8 @@ export default function Home({
     setPlayerScores(initialPlayerState);
   }, []);
 
+  console.log(singleSlugs);
+
   return (
     <>
       <Head>
@@ -58,7 +60,7 @@ export async function getServerSideProps() {
   const [singleCategories, doubleCategories] = await randomizeCategories();
   const singleSlugs = await randomizeSlugs(singleCategories);
   const doubleSlugs = await randomizeSlugs(doubleCategories);
-
+  console.log(singleSlugs);
   return {
     props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
   };
