@@ -12,7 +12,9 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
-  const audio = new Audio("/sounds/daily-double.mp3");
+  const doubleAudio = new Audio("/sounds/daily-double.mp3");
+  const thinkingAudio = new Audio("/sounds/thinking.mp3");
+  const timesUpAudio = new Audio("/sounds/times-up.mp3");
 
   const { question, category, answer } = questionResponse;
   const {
@@ -22,7 +24,12 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const seconds = getTimerDuration(selectedDifficulty) * 2;
 
   useEffect(() => {
-    audio.play();
+    doubleAudio.volume = 0.2;
+    doubleAudio.play();
+    setTimeout(() => {
+      thinkingAudio.volume = 0.2;
+      thinkingAudio.play();
+    }, 2000);
   }, []);
 
   return (
@@ -37,12 +44,16 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           value={value}
+          thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
         <DailyDoubleSubmission
           correct={correct}
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           answer={answer}
+          thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>
