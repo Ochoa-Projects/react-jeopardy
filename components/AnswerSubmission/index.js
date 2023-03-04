@@ -26,9 +26,13 @@ const AnswerSubmission = ({
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
 
+  const winAudio = new Audio("/sounds/small-win.wav");
+  winAudio.volume = 0.4;
+
   const handleSubmit = () => {
     thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
+      winAudio.play();
       setCorrect(true);
       addToPlayerScore(value, setPlayerScores);
     } else {

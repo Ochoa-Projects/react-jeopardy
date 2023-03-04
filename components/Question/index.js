@@ -22,7 +22,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   } = router;
 
   useEffect(() => {
-    thinkingAudio.volume = 0.2;
+    thinkingAudio.volume = 0.5;
     thinkingAudio.play();
   }, []);
 

@@ -27,9 +27,9 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
     doubleAudio.volume = 0.2;
     doubleAudio.play();
     setTimeout(() => {
-      thinkingAudio.volume = 0.2;
+      thinkingAudio.volume = 0.5;
       thinkingAudio.play();
-    }, 2000);
+    }, 2500);
   }, []);
 
   return (
