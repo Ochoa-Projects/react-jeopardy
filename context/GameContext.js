@@ -32,6 +32,9 @@ export const GameContextProvider = ({ children }) => {
     if (attempts.length === 25 && gameStage === "single") {
       setGameStage("double");
       setAttempts([]);
+    } else if (attempts.length === 25 && gameStage === "double") {
+      setGameStage("final");
+      setAttempts([]);
     } else return;
   }, [attempts]);
 
