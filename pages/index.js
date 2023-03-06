@@ -15,6 +15,7 @@ export default function Home({
   doubleCategories,
   singleSlugs,
   doubleSlugs,
+  finalSlug,
 }) {
   const {
     setSingleCategories,
@@ -23,6 +24,7 @@ export default function Home({
     setDoubleSlugs,
     setAttempts,
     setPlayerScores,
+    setFinalSlug,
   } = useGame();
 
   useEffect(() => {
@@ -30,6 +32,7 @@ export default function Home({
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
+    setFinalSlug(finalSlug);
     setAttempts([]);
     setPlayerScores(initialPlayerState);
   }, []);
