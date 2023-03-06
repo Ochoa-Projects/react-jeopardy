@@ -646,5 +646,65 @@
     "category": "Misc",
     "answer": "{NextJS}",
     "question": "This web development framework created by Vercel enables React-based wen applications with server-side rednering and generating static websites."
+  },
+  {
+    "question_id": 110,
+    "category": "NextJS",
+    "answer": "{getServerSideProps(), getServerSideProps}",
+    "question": "This Next data fetching tool only runs server-side and Next.js will pre-render this page on each request using the data returned by this."
+  },
+  {
+    "question_id": 111,
+    "category": "NextJS",
+    "answer": "{getStaticProps(), getStaticProps}",
+    "question": "Used primarily with static site generation, Next.js will pre-render this page at build time using the props returned by this."
+  },
+  {
+    "question_id": 112,
+    "category": "NextJS",
+    "answer": "{getStaticPaths(), getStaticPaths}",
+    "question": "If a page has dynamic routes and uses Next.js's getStaticProps, it needs to define a list of paths to be statically generated. Next.js will statically pre-render all the paths specified by this."
+  },
+  {
+    "question_id": 113,
+    "category": "NextJS",
+    "answer": "{Fast Refresh}",
+    "question": "This is a Next.js feature that gives you instantaneous feedback on edits made to your React components. When this is enabled, most edits should be visible within a second, without losing component state."
+  },
+  {
+    "question_id": 114,
+    "category": "NextJS",
+    "answer": "{Link}",
+    "question": "Next.js provides a React component called this to do client-side route transition."
+  },
+  {
+    "question_id": 115,
+    "category": "NextJS",
+    "answer": "{brackets,[]}",
+    "question": "In Next.js, you can add these to a page in the file structure to create a dynamic route. "
+  },
+  {
+    "question_id": 116,
+    "category": "NextJS",
+    "answer": "{Image}",
+    "question": "This Next.js component is an extension of the HTML <imb> element and inclusdes a variety of built-in performance optimizations."
+  },
+  {
+    "question_id": 117,
+    "category": "NextJS",
+    "answer": "{public}",
+    "question": "Next.js can serve static files in this folder and files inside this folder can then be referenced by your code starting from the base URL '/'."
+  },
+  {
+    "question_id": 118,
+    "category": "NextJS",
+    "answer": "{useRouter(), useRouter}",
+    "question": "In Next.js, if you want to access the router object inside any function component in your app, you can use this hook."
+  },
+  {
+    "question_id": 119,
+    "category": "NextJS",
+    "answer": "{push(), push}",
+    "question": "This router object method handles client-side transitions, and is useful for cases where 'next/link' is not enough."
   }
 ]
