@@ -8,6 +8,7 @@ import randomizeCategories from "../utils/randomizeCategories.js";
 import randomizeSlugs from "../utils/randomizeSlugs.js";
 import { initialPlayerState } from "../context/GameContext";
 import styles from "./styles.module.css";
+import getFinalSlug from "../utils/getFinalSlug";
 
 export default function Home({
   singleCategories,
@@ -55,11 +56,21 @@ export default function Home({
 }
 
 export async function getServerSideProps() {
-  const [singleCategories, doubleCategories] = await randomizeCategories();
+  const [singleCategories, doubleCategories, finalCategory] =
+    await randomizeCategories();
   const singleSlugs = await randomizeSlugs(singleCategories);
   const doubleSlugs = await randomizeSlugs(doubleCategories);
+  const finalSlug = await getFinalSlug(finalCategory);
+
+  console.log(finalSlug);
 
   return {
-    props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
+    props: {
+      singleCategories,
+      doubleCategories,
+      singleSlugs,
+      doubleSlugs,
+      finalSlug,
+    },
   };
 }
