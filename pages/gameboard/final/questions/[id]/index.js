@@ -30,7 +30,15 @@ export default function FinalQuestion() {
 
   return (
     <PageContainer>
-      <></>
+      <p>Final Jeopardy</p>
     </PageContainer>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { id, value } = context.query;
+  const questionResponse = await getQuestion(id);
+  return {
+    props: { questionResponse, value },
+  };
 }
