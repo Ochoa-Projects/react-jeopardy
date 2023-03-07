@@ -49,13 +49,16 @@ const FinalGameboard = () => {
     <PageContainer>
       <p>Final Gameboard</p>
       {/* TODO:  CSS*/}
-      <h1 className={styles.header}>WELCOME TO FINAL JEOPARDY!</h1>
+      <h1 className={styles.header}>
+        WELCOME TO FINAL <br /> JEOPARDY!
+      </h1>
       <h1>
         TODAY'S CATEGORY IS
         <span className={styles.finalCategory}> {finalCategory}!</span>
       </h1>
       <h2 className={styles.bidMessage}>
-        PLEASE ENTER YOUR BID BEFORE <br /> PROCEEDING TO THE FINAL QUESTION!!!
+        Please Enter Your Bid Before Proceeding <br />
+        to the Final Question:
       </h2>
       <div className={styles.submitContainer}>
         <span>$</span>
@@ -72,8 +75,8 @@ const FinalGameboard = () => {
         <button onClick={handleSubmit}>Submit</button>
       </div>
       {!isBidValid && (
-        <span>
-          Bid must be greater than 0 and no more than your current score!
+        <span className={styles.validation}>
+          {` Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
         </span>
       )}
     </PageContainer>
