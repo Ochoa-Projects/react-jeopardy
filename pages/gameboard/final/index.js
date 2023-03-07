@@ -43,14 +43,16 @@ const FinalGameboard = () => {
       <h1 className={styles.header}>WELCOME TO FINAL JEOPARDY!!</h1>
       <h1>TODAY'S CATEGORY IS {finalCategory}!</h1>
       <h1>PLEASE ENTER YOUR BID BEFORE PROCEEDING TO THE FINAL QUESTION!!!</h1>
-      <input
-        id="bid"
-        placeholder="Place bid here..."
-        value={bid}
-        onChange={(e) => setBid(e.target.value)}
-        autoComplete="off"
-      />
-      <button onClick={handleSubmit}>Submit</button>
+      <div className={styles.submitContainer}>
+        <input
+          id="bid"
+          placeholder="Place bid here..."
+          value={bid}
+          onChange={(e) => setBid(e.target.value)}
+          autoComplete="off"
+        />
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
     </PageContainer>
   );
 };
