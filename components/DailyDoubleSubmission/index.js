@@ -13,8 +13,6 @@ const DailyDoubleSubmission = ({
   setCorrect,
   setIsVisible,
   answer,
-  thinkingAudio,
-  timesUpAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
   const [bid, setBid] = useState(1);
@@ -25,17 +23,11 @@ const DailyDoubleSubmission = ({
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
 
-  const winAudio = new Audio("/sounds/small-win.wav");
-  winAudio.volume = 0.4;
-
   const handleSubmit = () => {
-    thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
-      winAudio.play();
       setCorrect(true);
       addToPlayerScore(bid, setPlayerScores);
     } else {
-      timesUpAudio.play();
       setCorrect(false);
       subtractFromPlayerScore(bid, setPlayerScores);
     }

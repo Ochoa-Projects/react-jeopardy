@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
@@ -13,18 +13,11 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
   const seconds = getTimerDuration(selectedDifficulty);
-  const thinkingAudio = new Audio("/sounds/thinking.mp3");
-  const timesUpAudio = new Audio("/sounds/times-up.mp3");
 
   const { question, category, answer } = questionResponse;
   const {
     query: { value },
   } = router;
-
-  useEffect(() => {
-    thinkingAudio.volume = 0.5;
-    thinkingAudio.play();
-  }, []);
 
   return (
     <>
@@ -41,8 +34,6 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           value={value}
-          thinkingAudio={thinkingAudio}
-          timesUpAudio={timesUpAudio}
         />
         <AnswerSubmission
           correct={correct}
@@ -50,8 +41,6 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           answer={answer}
           value={value}
-          thinkingAudio={thinkingAudio}
-          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>
