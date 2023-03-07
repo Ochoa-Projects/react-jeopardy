@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useGame } from "../../../../../context/GameContext";
-import Question from "../../../../../components/Question";
-import DailyDoubleQuestion from "../../../../../components/DailyDoubleQuestion";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
+import FinalQuestion from "../../../../../components/FinalQuestion";
 
-export default function FinalQuestion() {
+export default function FinalQuestionPage({ questionResponse, value }) {
   const { selectedDifficulty, doubleCategories } = useGame();
   const router = useRouter();
 
   useEffect(() => {
+    console.log(doubleCategories);
     if (!doubleCategories.length) {
       window.location.href = "/";
     }
@@ -22,6 +22,8 @@ export default function FinalQuestion() {
       alert("Cannot use back button on question pages. You lose!");
       router.push("/gameboard/double");
     };
+
+    console.log(questionResponse);
   }, []);
 
   if (!doubleCategories.length) {
@@ -30,7 +32,11 @@ export default function FinalQuestion() {
 
   return (
     <PageContainer>
-      <p>Final Jeopardy</p>
+      <FinalQuestion
+        questionResponse={questionResponse}
+        value={value}
+        selectedDifficulty={selectedDifficulty}
+      />
     </PageContainer>
   );
 }

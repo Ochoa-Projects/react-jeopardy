@@ -23,6 +23,7 @@ export const GameContextProvider = ({ children }) => {
   const [singleSlugs, setSingleSlugs] = useState([]);
   const [doubleCategories, setDoubleCategories] = useState([]);
   const [doubleSlugs, setDoubleSlugs] = useState([]);
+  const [finalCategory, setFinalCategory] = useState("");
   const [finalSlug, setFinalSlug] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
@@ -46,6 +47,8 @@ export const GameContextProvider = ({ children }) => {
         setSingleCategories,
         doubleCategories,
         setDoubleCategories,
+        finalCategory,
+        setFinalCategory,
         singleSlugs,
         setSingleSlugs,
         doubleSlugs,

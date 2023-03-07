@@ -13,6 +13,7 @@ import getFinalSlug from "../utils/getFinalSlug";
 export default function Home({
   singleCategories,
   doubleCategories,
+  finalCategory,
   singleSlugs,
   doubleSlugs,
   finalSlug,
@@ -24,6 +25,7 @@ export default function Home({
     setDoubleSlugs,
     setAttempts,
     setPlayerScores,
+    setFinalCategory,
     setFinalSlug,
   } = useGame();
 
@@ -32,6 +34,7 @@ export default function Home({
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
+    setFinalCategory(finalCategory);
     setFinalSlug(finalSlug);
     setAttempts([]);
     setPlayerScores(initialPlayerState);
@@ -71,6 +74,7 @@ export async function getServerSideProps() {
     props: {
       singleCategories,
       doubleCategories,
+      finalCategory,
       singleSlugs,
       doubleSlugs,
       finalSlug,
