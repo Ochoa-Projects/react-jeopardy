@@ -12,8 +12,8 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
-  const seconds = getTimerDuration(selectedDifficulty);
 
+  const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
   const {
     query: { value },

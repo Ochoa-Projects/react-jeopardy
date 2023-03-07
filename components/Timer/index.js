@@ -5,7 +5,7 @@ import addToComputerScore from "../../utils/addToComputerScore";
 import styles from "./styles.module.css";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState(1);
+  const [secondsRemaining, setSecondsRemaining] = useState(seconds);
   const { setPlayerScores, gameStage } = useGame();
   const router = useRouter();
 
