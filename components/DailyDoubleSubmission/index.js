@@ -61,6 +61,11 @@ const DailyDoubleSubmission = ({
           min="1"
           max={playerScoreString}
         />
+        {!isBidValid && (
+          <span className={styles.validation}>
+            {`Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
+          </span>
+        )}
       </div>
       <div className={styles.inputContainer}>
         <span className={styles.answerText}>What is</span>
@@ -80,11 +85,6 @@ const DailyDoubleSubmission = ({
           Submit
         </button>
       </div>
-      {!isBidValid && (
-        <span>
-          {`Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
-        </span>
-      )}
     </div>
   );
 };
