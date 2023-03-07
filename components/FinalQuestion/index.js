@@ -33,9 +33,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
               transition: { duration: 1, delay: 3 },
             }}
           >
-            <h1 className={styles.finalHeading}>
-              FINAL JEOPARDY - {category} - ${value}
-            </h1>
+            <QuestionHeading category={category} value={value} />
             <QuestionText question={question} correct={correct} />
             <Timer
               seconds={seconds}
