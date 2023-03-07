@@ -68,8 +68,6 @@ export async function getServerSideProps() {
   const doubleSlugs = await randomizeSlugs(doubleCategories);
   const finalSlug = await getFinalSlug(finalCategory);
 
-  console.log(finalSlug);
-
   return {
     props: {
       singleCategories,
