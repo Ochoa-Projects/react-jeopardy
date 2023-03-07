@@ -22,11 +22,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   return (
     <>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
-      <FlipAnimation
-        isVisible={isVisible}
-        background={'url("/bermuda-square.svg")'}
-        backgroundSize="contain"
-      >
+      <FlipAnimation isVisible={isVisible} background={'url("/stars.jpg")'}>
         <QuestionHeading category={category} value={"Daily Double"} />
         <QuestionText question={question} correct={correct} />
         <Timer

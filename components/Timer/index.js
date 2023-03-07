@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useGame } from "../../context/GameContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import styles from "./styles.module.css";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState(10000000000000);
+  const [secondsRemaining, setSecondsRemaining] = useState(seconds);
   const { setPlayerScores, gameStage } = useGame();
   const router = useRouter();
 
