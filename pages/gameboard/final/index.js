@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useGame } from "../../../context/GameContext";
 import PageContainer from "../../../components/PageContainer";
 import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
 
 const FinalGameboard = () => {
   const [bid, setBid] = useState(1);
@@ -39,7 +40,7 @@ const FinalGameboard = () => {
     <PageContainer>
       <p>Final Gameboard</p>
       {/* TODO:  CSS*/}
-      <h1>WELCOME TO FINAL JEOPARDY!!</h1>
+      <h1 className={styles.header}>WELCOME TO FINAL JEOPARDY!!</h1>
       <h1>TODAY'S CATEGORY IS {finalCategory}!</h1>
       <h1>PLEASE ENTER YOUR BID BEFORE PROCEEDING TO THE FINAL QUESTION!!!</h1>
       <input
