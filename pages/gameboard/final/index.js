@@ -47,8 +47,6 @@ const FinalGameboard = () => {
 
   return (
     <PageContainer>
-      <p>Final Gameboard</p>
-      {/* TODO:  CSS*/}
       <h1 className={styles.header}>
         WELCOME TO FINAL <br /> JEOPARDY!
       </h1>
