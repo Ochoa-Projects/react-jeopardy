@@ -6,12 +6,13 @@ import styles from "./styles.module.css";
 
 const FinalGameboard = () => {
   const [bid, setBid] = useState(1);
+  const [isBidValid, setIsBidValid] = useState(true);
 
   const { finalSlug, finalCategory, gameStage, playerScores } = useGame();
   const router = useRouter();
 
-  const playerScore = playerScores.player1.score.toString();
-  console.log(playerScore);
+  const playerScore = playerScores.player1.score;
+  const playerScoreString = playerScore.toString();
 
   useEffect(() => {
     if (!finalSlug) {
@@ -32,12 +33,17 @@ const FinalGameboard = () => {
   }, []);
 
   const handleSubmit = () => {
-    console.log(finalSlug);
-    router.push({
-      pathname: `/gameboard/final/questions/${finalSlug}`,
-      query: { value: bid },
-    });
+    if (bid > playerScore || bid < 1) {
+      setIsBidValid(false);
+    } else {
+      router.push({
+        pathname: `/gameboard/final/questions/${finalSlug}`,
+        query: { value: bid },
+      });
+    }
   };
+
+  console.log();
 
   return (
     <PageContainer>
@@ -61,10 +67,15 @@ const FinalGameboard = () => {
           onChange={(e) => setBid(e.target.value)}
           autoComplete="off"
           min="1"
-          max={playerScore}
+          max={playerScoreString}
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>
+      {!isBidValid && (
+        <span>
+          Bid must be greater than 0 and no more than your current score!
+        </span>
+      )}
     </PageContainer>
   );
 };
