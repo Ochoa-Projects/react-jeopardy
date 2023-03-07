@@ -16,14 +16,21 @@ const DailyDoubleSubmission = ({
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
   const [bid, setBid] = useState(1);
+  const [isBidValid, setIsBidValid] = useState(true);
 
-  const { setPlayerScores, gameStage } = useGame();
+  const { playerScores, setPlayerScores, gameStage } = useGame();
   const router = useRouter();
 
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
+  const playerScore = playerScores.player1.score;
+  const playerScoreString = playerScore.toString();
 
   const handleSubmit = () => {
+    if (bid > playerScore || bid < 1) {
+      setIsBidValid(false);
+      return;
+    }
     if (answers.includes(attemptedAnswer.toLowerCase())) {
       setCorrect(true);
       addToPlayerScore(bid, setPlayerScores);
@@ -46,11 +53,13 @@ const DailyDoubleSubmission = ({
         <span className={styles.answerText}>Enter Bid: $</span>
         <input
           id="bid"
+          type="number"
           placeholder="Place bid here..."
           value={bid}
           onChange={(e) => setBid(e.target.value)}
-          autoComplete="off"
           className={styles.bidInput}
+          min="1"
+          max={playerScoreString}
         />
       </div>
       <div className={styles.inputContainer}>
@@ -71,6 +80,11 @@ const DailyDoubleSubmission = ({
           Submit
         </button>
       </div>
+      {!isBidValid && (
+        <span>
+          {`Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
+        </span>
+      )}
     </div>
   );
 };
