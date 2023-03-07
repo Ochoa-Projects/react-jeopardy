@@ -58,6 +58,7 @@
 }
 
 .validation {
+  font-size: small;
   color: red;
   font-weight: 800;
 }
