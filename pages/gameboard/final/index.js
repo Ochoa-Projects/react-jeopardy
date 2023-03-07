@@ -7,8 +7,11 @@ import styles from "./styles.module.css";
 const FinalGameboard = () => {
   const [bid, setBid] = useState(1);
 
-  const { finalSlug, finalCategory, gameStage } = useGame();
+  const { finalSlug, finalCategory, gameStage, playerScores } = useGame();
   const router = useRouter();
+
+  const playerScore = playerScores.player1.score.toString();
+  console.log(playerScore);
 
   useEffect(() => {
     if (!finalSlug) {
@@ -40,16 +43,25 @@ const FinalGameboard = () => {
     <PageContainer>
       <p>Final Gameboard</p>
       {/* TODO:  CSS*/}
-      <h1 className={styles.header}>WELCOME TO FINAL JEOPARDY!!</h1>
-      <h1>TODAY'S CATEGORY IS {finalCategory}!</h1>
-      <h1>PLEASE ENTER YOUR BID BEFORE PROCEEDING TO THE FINAL QUESTION!!!</h1>
+      <h1 className={styles.header}>WELCOME TO FINAL JEOPARDY!</h1>
+      <h1>
+        TODAY'S CATEGORY IS
+        <span className={styles.finalCategory}> {finalCategory}!</span>
+      </h1>
+      <h2 className={styles.bidMessage}>
+        PLEASE ENTER YOUR BID BEFORE <br /> PROCEEDING TO THE FINAL QUESTION!!!
+      </h2>
       <div className={styles.submitContainer}>
+        <span>$</span>
         <input
           id="bid"
+          type="number"
           placeholder="Place bid here..."
           value={bid}
           onChange={(e) => setBid(e.target.value)}
           autoComplete="off"
+          min="1"
+          max={playerScore}
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>
