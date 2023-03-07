@@ -38,7 +38,7 @@ const FinalGameboard = () => {
   return (
     <PageContainer>
       <p>Final Gameboard</p>
-      {/* TODO: */}
+      {/* TODO:  CSS*/}
       <h1>WELCOME TO FINAL JEOPARDY!!</h1>
       <h1>TODAY'S CATEGORY IS {finalCategory}!</h1>
       <h1>PLEASE ENTER YOUR BID BEFORE PROCEEDING TO THE FINAL QUESTION!!!</h1>
