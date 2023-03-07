@@ -1,9 +1,0 @@
-.container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--light-blue-gradient);
-  width: 100%;
-  height: 100vh;
-}
