@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
 import QuestionHeading from "../QuestionHeading";
@@ -6,6 +6,8 @@ import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
 import FlipAnimation from "../FlipAnimation";
+import { useAudio } from "../../context/AudioContext";
+import MuteButton from "../MuteButton";
 
 const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
@@ -14,6 +16,13 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
 
+  const { thinkingAudio } = useAudio();
+
+  useEffect(() => {
+    thinkingAudio.currentTime = 0;
+    thinkingAudio.play();
+  }, []);
+
   return (
     <>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
@@ -21,6 +30,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
         isVisible={isVisible}
         background={"var(--light-blue-gradient)"}
       >
+        <MuteButton />
         <QuestionHeading category={category} value={value} />
         <QuestionText question={question} correct={correct} />
         <Timer
@@ -29,6 +39,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           value={value}
+          thinkingAudio={thinkingAudio}
         />
         <AnswerSubmission
           correct={correct}
@@ -36,6 +47,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           answer={answer}
           value={value}
+          thinkingAudio={thinkingAudio}
         />
       </FlipAnimation>
     </>
