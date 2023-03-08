@@ -11,7 +11,6 @@ export default function FinalQuestionPage({ questionResponse, value }) {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(doubleCategories);
     if (!doubleCategories.length) {
       window.location.href = "/";
     }
@@ -22,8 +21,6 @@ export default function FinalQuestionPage({ questionResponse, value }) {
       alert("Cannot use back button on question pages. You lose!");
       router.push("/gameboard/double");
     };
-
-    console.log(questionResponse);
   }, []);
 
   if (!doubleCategories.length) {
