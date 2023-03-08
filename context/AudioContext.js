@@ -18,6 +18,9 @@ export const AudioContextProvider = ({ children }) => {
   const [smallWinAudio] = useState(
     typeof Audio !== "undefined" && new Audio("/sounds/small-win.wav")
   );
+  const [dailyDoubleAudio] = useState(
+    typeof Audio !== "undefined" && new Audio("/sounds/daily-double.mp3")
+  );
 
   useEffect(() => {
     if (isMuted) {
@@ -25,11 +28,13 @@ export const AudioContextProvider = ({ children }) => {
       thinkingAudio.volume = 0;
       timesUpAudio.volume = 0;
       smallWinAudio.volume = 0;
+      dailyDoubleAudio.volume = 0;
     } else {
       introAudio.volume = 0.1;
       thinkingAudio.volume = 0.1;
       timesUpAudio.volume = 0.1;
       smallWinAudio.volume = 0.1;
+      dailyDoubleAudio.volume = 0.1;
     }
   }, [isMuted]);
 
@@ -42,6 +47,7 @@ export const AudioContextProvider = ({ children }) => {
         thinkingAudio,
         timesUpAudio,
         smallWinAudio,
+        dailyDoubleAudio,
       }}
     >
       {children}
