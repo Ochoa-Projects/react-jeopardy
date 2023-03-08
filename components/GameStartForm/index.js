@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { motion as m } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGame } from "../../context/GameContext";
+import { useAudio } from "../../context/AudioContext";
 import styles from "./styles.module.css";
 
 const GameStartForm = () => {
@@ -11,8 +12,16 @@ const GameStartForm = () => {
 
   const { selectedDifficulty, setSelectedDifficulty, setPlayerScores } =
     useGame();
+  const { isMuted, introAudio } = useAudio();
 
   const router = useRouter();
+
+  useEffect(() => {
+    if (!isMuted) {
+      introAudio.play();
+      introAudio.volume = 0.1;
+    }
+  }, [isMuted]);
 
   const handleSelected = (difficulty) => {
     selectedDifficulty !== difficulty
@@ -21,6 +30,7 @@ const GameStartForm = () => {
   };
 
   const handleStart = () => {
+    introAudio.pause();
     setPlayerScores((prev) => ({
       ...prev,
       player1: {

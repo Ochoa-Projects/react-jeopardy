@@ -14,7 +14,6 @@ const Gameboard = () => {
     gameStage,
     setGameStage,
     setAttempts,
-    singleSlugs,
   } = useGame();
 
   const categories =
@@ -24,8 +23,6 @@ const Gameboard = () => {
     setAttempts([]);
     setGameStage("single");
   };
-
-  console.log(singleSlugs);
 
   return (
     <>
