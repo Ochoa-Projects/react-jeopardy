@@ -23,6 +23,8 @@ export const GameContextProvider = ({ children }) => {
   const [singleSlugs, setSingleSlugs] = useState([]);
   const [doubleCategories, setDoubleCategories] = useState([]);
   const [doubleSlugs, setDoubleSlugs] = useState([]);
+  const [finalCategory, setFinalCategory] = useState("");
+  const [finalSlug, setFinalSlug] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
   const [playerScores, setPlayerScores] = useState(initialPlayerState);
@@ -31,6 +33,9 @@ export const GameContextProvider = ({ children }) => {
   useEffect(() => {
     if (attempts.length === 25 && gameStage === "single") {
       setGameStage("double");
+      setAttempts([]);
+    } else if (attempts.length === 25 && gameStage === "double") {
+      setGameStage("final");
       setAttempts([]);
     } else return;
   }, [attempts]);
@@ -42,10 +47,14 @@ export const GameContextProvider = ({ children }) => {
         setSingleCategories,
         doubleCategories,
         setDoubleCategories,
+        finalCategory,
+        setFinalCategory,
         singleSlugs,
         setSingleSlugs,
         doubleSlugs,
         setDoubleSlugs,
+        finalSlug,
+        setFinalSlug,
         attempts,
         setAttempts,
         selectedDifficulty,

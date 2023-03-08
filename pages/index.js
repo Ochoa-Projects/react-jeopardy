@@ -8,12 +8,15 @@ import randomizeCategories from "../utils/randomizeCategories.js";
 import randomizeSlugs from "../utils/randomizeSlugs.js";
 import { initialPlayerState } from "../context/GameContext";
 import styles from "./styles.module.css";
+import getFinalSlug from "../utils/getFinalSlug";
 
 export default function Home({
   singleCategories,
   doubleCategories,
+  finalCategory,
   singleSlugs,
   doubleSlugs,
+  finalSlug,
 }) {
   const {
     setSingleCategories,
@@ -22,6 +25,8 @@ export default function Home({
     setDoubleSlugs,
     setAttempts,
     setPlayerScores,
+    setFinalCategory,
+    setFinalSlug,
   } = useGame();
 
   useEffect(() => {
@@ -29,6 +34,8 @@ export default function Home({
     setDoubleCategories(doubleCategories);
     setSingleSlugs(singleSlugs);
     setDoubleSlugs(doubleSlugs);
+    setFinalCategory(finalCategory);
+    setFinalSlug(finalSlug);
     setAttempts([]);
     setPlayerScores(initialPlayerState);
   }, []);
@@ -55,10 +62,20 @@ export default function Home({
 }
 
 export async function getServerSideProps() {
-  const [singleCategories, doubleCategories] = await randomizeCategories();
+  const [singleCategories, doubleCategories, finalCategory] =
+    await randomizeCategories();
   const singleSlugs = await randomizeSlugs(singleCategories);
   const doubleSlugs = await randomizeSlugs(doubleCategories);
+  const finalSlug = await getFinalSlug(finalCategory);
+
   return {
-    props: { singleCategories, doubleCategories, singleSlugs, doubleSlugs },
+    props: {
+      singleCategories,
+      doubleCategories,
+      finalCategory,
+      singleSlugs,
+      doubleSlugs,
+      finalSlug,
+    },
   };
 }

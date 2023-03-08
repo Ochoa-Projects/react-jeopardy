@@ -1,23 +1,18 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
-import FlipAnimation from "../FlipAnimation";
 import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
+import FlipAnimation from "../FlipAnimation";
 
-const Question = ({ questionResponse, selectedDifficulty }) => {
+const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
-  const router = useRouter();
 
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
-  const {
-    query: { value },
-  } = router;
 
   return (
     <>
@@ -47,4 +42,4 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   );
 };
 
-export default Question;
+export default FinalQuestion;
