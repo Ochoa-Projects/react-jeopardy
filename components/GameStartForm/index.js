@@ -18,9 +18,10 @@ const GameStartForm = () => {
 
   useEffect(() => {
     if (!isMuted) {
+      introAudio.currentTime = 0.5;
       introAudio.play();
     }
-  }, [isMuted]);
+  }, []);
 
   const handleSelected = (difficulty) => {
     selectedDifficulty !== difficulty
