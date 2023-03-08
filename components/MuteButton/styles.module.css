@@ -5,7 +5,7 @@
   padding: 16px;
 }
 
-.muteOff {
+.notMuted {
   background: url("/volume-on.svg");
   background-size: cover;
   width: 36px;
@@ -13,10 +13,10 @@
   border-radius: 4px;
 }
 
-.muteOn {
+.muted {
   background: url("/volume-muted.svg");
   background-size: cover;
-  width: 36px;
+  width: 34px;
   height: 28px;
   border-radius: 4px;
 }
