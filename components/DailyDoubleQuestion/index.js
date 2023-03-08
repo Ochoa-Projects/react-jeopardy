@@ -7,6 +7,7 @@ import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import FlipAnimation from "../FlipAnimation";
 import DailyDoubleSubmission from "../DailyDoubleSubmission";
+import MuteButton from "../MuteButton";
 
 const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
@@ -23,6 +24,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
     <>
       {correct && <Confetti recycle={false} numberOfPieces={1000} />}
       <FlipAnimation isVisible={isVisible} background={'url("/stars.jpg")'}>
+        <MuteButton />
         <QuestionHeading category={category} value={"Daily Double"} />
         <QuestionText question={question} correct={correct} />
         <Timer

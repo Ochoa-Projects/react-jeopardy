@@ -5,6 +5,7 @@ import PlayerScores from "../PlayerScores";
 import CatergoriesRow from "../CategoriesRow";
 import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
+import MuteButton from "../MuteButton";
 
 const Gameboard = () => {
   const {
@@ -13,6 +14,7 @@ const Gameboard = () => {
     gameStage,
     setGameStage,
     setAttempts,
+    singleSlugs,
   } = useGame();
 
   const categories =
@@ -23,8 +25,11 @@ const Gameboard = () => {
     setGameStage("single");
   };
 
+  console.log(singleSlugs);
+
   return (
     <>
+      <MuteButton />
       <m.div
         className={styles.topRow}
         initial={{ y: -250 }}

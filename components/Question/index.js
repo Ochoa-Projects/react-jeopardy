@@ -7,6 +7,7 @@ import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
+import MuteButton from "../MuteButton";
 
 const Question = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
@@ -26,6 +27,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
         isVisible={isVisible}
         background={"var(--light-blue-gradient)"}
       >
+        <MuteButton />
         <QuestionHeading category={category} value={value} />
         <QuestionText question={question} correct={correct} />
         <Timer

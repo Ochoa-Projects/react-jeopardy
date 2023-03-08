@@ -3,20 +3,12 @@
   top: 0;
   right: 0;
   padding: 16px;
+  text-shadow: gray 8px 8px 16px;
 }
 
-.notMuted {
-  background: url("/volume-on.svg");
-  background-size: cover;
+.menuButtonContainer > svg {
   width: 36px;
-  height: 28px;
-  border-radius: 4px;
-}
-
-.muted {
-  background: url("/volume-muted.svg");
-  background-size: cover;
-  width: 34px;
-  height: 28px;
-  border-radius: 4px;
+  cursor: pointer;
+  fill: var(--yellow);
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
