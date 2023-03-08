@@ -24,6 +24,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   } = router;
 
   useEffect(() => {
+    thinkingAudio.currentTime = 0;
     thinkingAudio.play();
   }, []);
 
@@ -43,6 +44,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           value={value}
+          thinkingAudio={thinkingAudio}
         />
         <AnswerSubmission
           correct={correct}
