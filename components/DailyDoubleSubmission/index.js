@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useAudio } from "../../context/AudioContext";
 import { useGame } from "../../context/GameContext";
 import addToPlayerScore from "../../utils/addToPlayerScore";
 import convertAnswers from "../../utils/convertAnswers";
@@ -21,6 +22,7 @@ const DailyDoubleSubmission = ({
   const [isBidValid, setIsBidValid] = useState(true);
 
   const { playerScores, setPlayerScores, gameStage } = useGame();
+  const { smallWinAudio } = useAudio();
   const router = useRouter();
 
   const answers = convertAnswers(answer);
@@ -35,6 +37,7 @@ const DailyDoubleSubmission = ({
     }
     thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
+      smallWinAudio.play();
       setCorrect(true);
       addToPlayerScore(bid, setPlayerScores);
     } else {

@@ -16,7 +16,7 @@ export const AudioContextProvider = ({ children }) => {
     typeof Audio !== "undefined" && new Audio("/sounds/times-up.mp3")
   );
   const [smallWinAudio] = useState(
-    typeof Audio !== "undefined" && new Audio("/sounds/small-win.mp3")
+    typeof Audio !== "undefined" && new Audio("/sounds/small-win.wav")
   );
 
   useEffect(() => {

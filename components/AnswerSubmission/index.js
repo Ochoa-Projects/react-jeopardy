@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useAudio } from "../../context/AudioContext";
 import { useGame } from "../../context/GameContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import addToPlayerScore from "../../utils/addToPlayerScore";
@@ -26,9 +27,12 @@ const AnswerSubmission = ({
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
 
+  const { smallWinAudio } = useAudio();
+
   const handleSubmit = () => {
     thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
+      smallWinAudio.play();
       setCorrect(true);
       addToPlayerScore(value, setPlayerScores);
     } else {
