@@ -1,0 +1,22 @@
+.menuButtonContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+}
+
+.muteOff {
+  background: url("/volume-on.svg");
+  background-size: cover;
+  width: 36px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.muteOn {
+  background: url("/volume-muted.svg");
+  background-size: cover;
+  width: 36px;
+  height: 28px;
+  border-radius: 4px;
+}
