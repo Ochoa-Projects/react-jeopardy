@@ -43,8 +43,6 @@ const FinalGameboard = () => {
     }
   };
 
-  console.log();
-
   return (
     <PageContainer>
       <h1 className={styles.header}>
