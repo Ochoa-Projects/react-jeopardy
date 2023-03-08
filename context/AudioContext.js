@@ -12,20 +12,25 @@ export const AudioContextProvider = ({ children }) => {
   const [thinkingAudio] = useState(
     typeof Audio !== "undefined" && new Audio("/sounds/thinking.mp3")
   );
+  const [timesUpAudio] = useState(
+    typeof Audio !== "undefined" && new Audio("/sounds/times-up.mp3")
+  );
 
   useEffect(() => {
     if (isMuted) {
       introAudio.volume = 0;
       thinkingAudio.volume = 0;
+      timesUpAudio.volume = 0;
     } else {
       introAudio.volume = 0.1;
       thinkingAudio.volume = 0.1;
+      timesUpAudio.volume = 0.1;
     }
   }, [isMuted]);
 
   return (
     <AudioContext.Provider
-      value={{ isMuted, setIsMuted, introAudio, thinkingAudio }}
+      value={{ isMuted, setIsMuted, introAudio, thinkingAudio, timesUpAudio }}
     >
       {children}
     </AudioContext.Provider>
