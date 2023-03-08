@@ -15,6 +15,7 @@ const AnswerSubmission = ({
   setIsVisible,
   answer,
   value,
+  thinkingAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
@@ -25,6 +26,7 @@ const AnswerSubmission = ({
   const correctAnswer = convertFirstAnswer(answer);
 
   const handleSubmit = () => {
+    thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
       setCorrect(true);
       addToPlayerScore(value, setPlayerScores);

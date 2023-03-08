@@ -19,7 +19,6 @@ const GameStartForm = () => {
   useEffect(() => {
     if (!isMuted) {
       introAudio.play();
-      introAudio.volume = 0.1;
     }
   }, [isMuted]);
 
