@@ -19,7 +19,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
     query: { value },
   } = router;
 
-  const { thinkingAudio } = useAudio();
+  const { thinkingAudio, timesUpAudio } = useAudio();
 
   const seconds = getTimerDuration(selectedDifficulty) * 2;
 
@@ -42,6 +42,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           value={value}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
         <DailyDoubleSubmission
           correct={correct}
@@ -49,6 +50,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           answer={answer}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>

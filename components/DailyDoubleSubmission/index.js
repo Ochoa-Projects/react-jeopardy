@@ -14,6 +14,7 @@ const DailyDoubleSubmission = ({
   setIsVisible,
   answer,
   thinkingAudio,
+  timesUpAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
   const [bid, setBid] = useState(1);
@@ -37,6 +38,7 @@ const DailyDoubleSubmission = ({
       setCorrect(true);
       addToPlayerScore(bid, setPlayerScores);
     } else {
+      timesUpAudio.play();
       setCorrect(false);
       subtractFromPlayerScore(bid, setPlayerScores);
     }

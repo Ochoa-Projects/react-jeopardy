@@ -16,6 +16,7 @@ const AnswerSubmission = ({
   answer,
   value,
   thinkingAudio,
+  timesUpAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
@@ -31,6 +32,7 @@ const AnswerSubmission = ({
       setCorrect(true);
       addToPlayerScore(value, setPlayerScores);
     } else {
+      timesUpAudio.play();
       setCorrect(false);
       subtractFromPlayerScore(value, setPlayerScores);
       addToComputerScore(value, setPlayerScores);

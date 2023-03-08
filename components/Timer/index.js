@@ -11,6 +11,7 @@ const Timer = ({
   setIsVisible,
   value,
   thinkingAudio,
+  timesUpAudio,
 }) => {
   const [secondsRemaining, setSecondsRemaining] = useState(seconds);
   const { setPlayerScores, gameStage } = useGame();
@@ -25,6 +26,7 @@ const Timer = ({
   useEffect(() => {
     if (secondsRemaining === 0 && correct === null) {
       thinkingAudio.pause();
+      timesUpAudio.play();
       setCorrect(false);
       setTimeout(() => {
         setIsVisible(false);

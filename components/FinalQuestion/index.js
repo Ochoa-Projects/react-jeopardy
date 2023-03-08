@@ -16,7 +16,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
 
-  const { thinkingAudio } = useAudio();
+  const { thinkingAudio, timesUpAudio } = useAudio();
 
   useEffect(() => {
     thinkingAudio.currentTime = 0;
@@ -40,6 +40,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           value={value}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
         <AnswerSubmission
           correct={correct}
@@ -48,6 +49,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           answer={answer}
           value={value}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>

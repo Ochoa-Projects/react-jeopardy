@@ -15,7 +15,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
 
-  const { thinkingAudio } = useAudio();
+  const { thinkingAudio, timesUpAudio } = useAudio();
 
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
@@ -45,6 +45,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           value={value}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
         <AnswerSubmission
           correct={correct}
@@ -53,6 +54,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
           answer={answer}
           value={value}
           thinkingAudio={thinkingAudio}
+          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>
