@@ -38,13 +38,13 @@ export const AudioContextProvider = ({ children }) => {
       boardFillAudio.volume = 0;
       endAudio.volume = 0;
     } else {
-      introAudio.volume = 0.3;
-      thinkingAudio.volume = 0.1;
-      timesUpAudio.volume = 0.1;
-      smallWinAudio.volume = 0.1;
-      dailyDoubleAudio.volume = 0.1;
-      boardFillAudio.volume = 0.1;
-      endAudio.volume = 0.1;
+      introAudio.volume = 0.5;
+      thinkingAudio.volume = 0.2;
+      timesUpAudio.volume = 0.2;
+      smallWinAudio.volume = 0.2;
+      dailyDoubleAudio.volume = 0.2;
+      boardFillAudio.volume = 0.2;
+      endAudio.volume = 0.2;
     }
   }, [isMuted]);
 
