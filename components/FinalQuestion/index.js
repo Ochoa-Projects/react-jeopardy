@@ -19,8 +19,13 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const { thinkingAudio, timesUpAudio } = useAudio();
 
   useEffect(() => {
-    thinkingAudio.currentTime = 0;
-    thinkingAudio.play();
+    setTimeout(() => {
+      thinkingAudio.currentTime = 0;
+      thinkingAudio.play();
+    });
+    return () => {
+      thinkingAudio.pause();
+    };
   }, []);
 
   return (

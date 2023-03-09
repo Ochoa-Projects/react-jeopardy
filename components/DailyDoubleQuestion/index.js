@@ -19,13 +19,19 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
     query: { value },
   } = router;
 
-  const { thinkingAudio, timesUpAudio } = useAudio();
+  const { thinkingAudio, timesUpAudio, dailyDoubleAudio } = useAudio();
 
   const seconds = getTimerDuration(selectedDifficulty) * 2;
 
   useEffect(() => {
-    thinkingAudio.currentTime = 0;
-    thinkingAudio.play();
+    dailyDoubleAudio.play();
+    setTimeout(() => {
+      thinkingAudio.currentTime = 0;
+      thinkingAudio.play();
+    }, 2500);
+    return () => {
+      thinkingAudio.pause();
+    };
   }, []);
 
   return (

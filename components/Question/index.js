@@ -24,8 +24,13 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   } = router;
 
   useEffect(() => {
-    thinkingAudio.currentTime = 0;
-    thinkingAudio.play();
+    setTimeout(() => {
+      thinkingAudio.currentTime = 0;
+      thinkingAudio.play();
+    });
+    return () => {
+      thinkingAudio.pause();
+    };
   }, []);
 
   return (
