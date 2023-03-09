@@ -53,7 +53,6 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           answer={answer}
-          s
         />
       </FlipAnimation>
     </>
