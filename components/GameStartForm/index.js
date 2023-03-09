@@ -7,6 +7,7 @@ import styles from "./styles.module.css";
 
 const GameStartForm = () => {
   const [inputName, setInputName] = useState("");
+  const [wasPlayed, setWasPlayed] = useState(false);
 
   const difficulties = ["Easy", "Normal", "Hard"];
 
@@ -17,11 +18,12 @@ const GameStartForm = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!isMuted) {
+    if (!wasPlayed && !isMuted) {
+      setWasPlayed(true);
       introAudio.currentTime = 0.5;
       introAudio.play();
     }
-  }, []);
+  }, [isMuted]);
 
   const handleSelected = (difficulty) => {
     selectedDifficulty !== difficulty

@@ -7,7 +7,7 @@ export const useAudio = () => useContext(AudioContext);
 export const AudioContextProvider = ({ children }) => {
   const [isMuted, setIsMuted] = useState(true);
   const [introAudio] = useState(
-    typeof Audio !== "undefined" && new Audio("/sounds/intro.mp3")
+    typeof Audio !== "undefined" && new Audio("/sounds/intro-theme.mp3")
   );
   const [thinkingAudio] = useState(
     typeof Audio !== "undefined" && new Audio("/sounds/thinking.mp3")
@@ -30,7 +30,7 @@ export const AudioContextProvider = ({ children }) => {
       smallWinAudio.volume = 0;
       dailyDoubleAudio.volume = 0;
     } else {
-      introAudio.volume = 0.1;
+      introAudio.volume = 0.3;
       thinkingAudio.volume = 0.1;
       timesUpAudio.volume = 0.1;
       smallWinAudio.volume = 0.1;
