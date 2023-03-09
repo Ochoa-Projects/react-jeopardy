@@ -24,6 +24,9 @@ export const AudioContextProvider = ({ children }) => {
   const [boardFillAudio] = useState(
     typeof Audio !== "undefined" && new Audio("/sounds/board-fill.mp3")
   );
+  const [endAudio] = useState(
+    typeof Audio !== "undefined" && new Audio("/sounds/end-theme.mp3")
+  );
 
   useEffect(() => {
     if (isMuted) {
@@ -33,6 +36,7 @@ export const AudioContextProvider = ({ children }) => {
       smallWinAudio.volume = 0;
       dailyDoubleAudio.volume = 0;
       boardFillAudio.volume = 0;
+      endAudio.volume = 0;
     } else {
       introAudio.volume = 0.3;
       thinkingAudio.volume = 0.1;
@@ -40,6 +44,7 @@ export const AudioContextProvider = ({ children }) => {
       smallWinAudio.volume = 0.1;
       dailyDoubleAudio.volume = 0.1;
       boardFillAudio.volume = 0.1;
+      endAudio.volume = 0.1;
     }
   }, [isMuted]);
 
@@ -54,6 +59,7 @@ export const AudioContextProvider = ({ children }) => {
         smallWinAudio,
         dailyDoubleAudio,
         boardFillAudio,
+        endAudio,
       }}
     >
       {children}
