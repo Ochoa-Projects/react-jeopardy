@@ -1,10 +1,13 @@
 import { motion as m } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 import { useGame } from "../../context/GameContext";
+import { useAudio } from "../../context/AudioContext";
 import PlayerScores from "../PlayerScores";
 import CatergoriesRow from "../CategoriesRow";
 import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
+import MuteButton from "../MuteButton";
 
 const Gameboard = () => {
   const {
@@ -15,8 +18,14 @@ const Gameboard = () => {
     setAttempts,
   } = useGame();
 
+  const { boardFillAudio } = useAudio();
+
   const categories =
     gameStage === "single" ? singleCategories : doubleCategories;
+
+  useEffect(() => {
+    boardFillAudio.play();
+  }, []);
 
   const handleHomeClick = () => {
     setAttempts([]);
@@ -25,6 +34,7 @@ const Gameboard = () => {
 
   return (
     <>
+      <MuteButton />
       <m.div
         className={styles.topRow}
         initial={{ y: -250 }}

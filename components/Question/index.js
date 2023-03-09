@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
@@ -7,17 +7,31 @@ import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
+import MuteButton from "../MuteButton";
+import { useAudio } from "../../context/AudioContext";
 
 const Question = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
 
+  const { thinkingAudio } = useAudio();
+
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
   const {
     query: { value },
   } = router;
+
+  useEffect(() => {
+    setTimeout(() => {
+      thinkingAudio.currentTime = 0;
+      thinkingAudio.play();
+    });
+    return () => {
+      thinkingAudio.pause();
+    };
+  }, []);
 
   return (
     <>
@@ -26,6 +40,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
         isVisible={isVisible}
         background={"var(--light-blue-gradient)"}
       >
+        <MuteButton />
         <QuestionHeading category={category} value={value} />
         <QuestionText question={question} correct={correct} />
         <Timer

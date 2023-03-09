@@ -9,6 +9,7 @@ import randomizeSlugs from "../utils/randomizeSlugs.js";
 import { initialPlayerState } from "../context/GameContext";
 import styles from "./styles.module.css";
 import getFinalSlug from "../utils/getFinalSlug";
+import MuteButton from "../components/MuteButton";
 
 export default function Home({
   singleCategories,
@@ -42,6 +43,7 @@ export default function Home({
 
   return (
     <>
+      <MuteButton />
       <Head>
         <title>React Jeopardy</title>
       </Head>
