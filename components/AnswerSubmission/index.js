@@ -16,8 +16,6 @@ const AnswerSubmission = ({
   setIsVisible,
   answer,
   value,
-  thinkingAudio,
-  timesUpAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
@@ -27,7 +25,7 @@ const AnswerSubmission = ({
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
 
-  const { smallWinAudio } = useAudio();
+  const { smallWinAudio, thinkingAudio, timesUpAudio } = useAudio();
 
   const handleSubmit = () => {
     thinkingAudio.pause();

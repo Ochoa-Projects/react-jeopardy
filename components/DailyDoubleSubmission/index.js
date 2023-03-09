@@ -14,15 +14,13 @@ const DailyDoubleSubmission = ({
   setCorrect,
   setIsVisible,
   answer,
-  thinkingAudio,
-  timesUpAudio,
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
 
   const { playerScores, setPlayerScores, gameStage } = useGame();
-  const { smallWinAudio } = useAudio();
+  const { smallWinAudio, thinkingAudio, timesUpAudio } = useAudio();
   const router = useRouter();
 
   const answers = convertAnswers(answer);

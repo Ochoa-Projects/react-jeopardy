@@ -44,8 +44,6 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           setCorrect={setCorrect}
           setIsVisible={setIsVisible}
           value={value}
-          thinkingAudio={thinkingAudio}
-          timesUpAudio={timesUpAudio}
         />
         <AnswerSubmission
           correct={correct}
@@ -53,8 +51,6 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
           setIsVisible={setIsVisible}
           answer={answer}
           value={value}
-          thinkingAudio={thinkingAudio}
-          timesUpAudio={timesUpAudio}
         />
       </FlipAnimation>
     </>
