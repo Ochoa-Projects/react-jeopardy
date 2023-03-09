@@ -20,7 +20,7 @@ const GameStartForm = () => {
   useEffect(() => {
     if (!wasPlayed && !isMuted) {
       setWasPlayed(true);
-      introAudio.currentTime = 0.5;
+      introAudio.currentTime = 1;
       introAudio.play();
     }
   }, [isMuted]);

@@ -1,6 +1,8 @@
 import { motion as m } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 import { useGame } from "../../context/GameContext";
+import { useAudio } from "../../context/AudioContext";
 import PlayerScores from "../PlayerScores";
 import CatergoriesRow from "../CategoriesRow";
 import ValueBoard from "../ValueBoard";
@@ -16,8 +18,14 @@ const Gameboard = () => {
     setAttempts,
   } = useGame();
 
+  const { boardFillAudio } = useAudio();
+
   const categories =
     gameStage === "single" ? singleCategories : doubleCategories;
+
+  useEffect(() => {
+    boardFillAudio.play();
+  }, []);
 
   const handleHomeClick = () => {
     setAttempts([]);
