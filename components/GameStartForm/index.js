@@ -31,6 +31,10 @@ const GameStartForm = () => {
       : null;
   };
 
+  const handleClear = () => {
+    setInputName("");
+  };
+
   const handleStart = () => {
     introAudio.pause();
     setPlayerScores((prev) => ({
@@ -71,9 +75,14 @@ const GameStartForm = () => {
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
       />
-      <button className={styles.startButton} onClick={handleStart}>
-        START
-      </button>
+      <div className={styles.buttonsContainer}>
+        <button className={styles.startButton} onClick={handleClear}>
+          CLEAR
+        </button>
+        <button className={styles.startButton} onClick={handleStart}>
+          START
+        </button>
+      </div>
     </m.div>
   );
 };
