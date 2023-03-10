@@ -8,7 +8,7 @@ const FinalGameboard = () => {
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
 
-  const { finalSlug, finalCategory, gameStage, playerScores } = useGame();
+  const { finalSlug, finalCategory, playerScores } = useGame();
   const router = useRouter();
 
   const playerScore = playerScores.player1.score;
