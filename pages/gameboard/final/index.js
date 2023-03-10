@@ -8,7 +8,7 @@ const FinalGameboard = () => {
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
 
-  const { finalSlug, finalCategory, playerScores } = useGame();
+  const { finalSlug, finalCategory, playerScores, setAttempts } = useGame();
   const router = useRouter();
 
   const playerScore = playerScores.player1.score;
@@ -33,9 +33,10 @@ const FinalGameboard = () => {
   }, []);
 
   const handleSubmit = () => {
-    if (bid > playerScore || bid < 1) {
+    if (bid > playerScore || bid < 0) {
       setIsBidValid(false);
     } else {
+      setAttempts(["FINAL"]);
       router.push({
         pathname: `/gameboard/final/questions/${finalSlug}`,
         query: { value: bid },

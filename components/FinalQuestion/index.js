@@ -16,7 +16,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
 
-  const { thinkingAudio, timesUpAudio } = useAudio();
+  const { thinkingAudio } = useAudio();
 
   useEffect(() => {
     setTimeout(() => {

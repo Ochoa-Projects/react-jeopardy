@@ -40,6 +40,9 @@ export const GameContextProvider = ({ children }) => {
       setPrevGameStage("double");
       setGameStage("final");
       setAttempts([]);
+    } else if (attempts.length === 1 && gameStage === "final") {
+      setPrevGameStage("final");
+      setGameStage("finished");
     } else return;
   }, [attempts]);
 

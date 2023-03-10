@@ -27,7 +27,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
       });
       setTimeout(() => {
         value !== "daily-double" && addToComputerScore(value, setPlayerScores);
-        if (!attempts.length) {
+        if (!attempts.length || attempts[0] === "FINAL") {
           router.replace(`/gameboard/${prevGameStage}/results`);
         } else {
           router.replace(`/gameboard/${gameStage}`);
