@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageContainer from "../../../../components/PageContainer";
+import Results from "../../../../components/Results";
 import { useGame } from "../../../../context/GameContext";
 
 const FinalResults = () => {
@@ -10,13 +11,7 @@ const FinalResults = () => {
   return (
     <PageContainer>
       <p>Final Results</p>
-      <ol>
-        {sortedPlayerValues.map((player, index) => (
-          <li key={index + player.name}>
-            <span>{player.name}</span>:<span>{player.score}</span>
-          </li>
-        ))}
-      </ol>
+      <Results players={sortedPlayerValues} />
       <Link href="/">Go Home</Link>
     </PageContainer>
   );
