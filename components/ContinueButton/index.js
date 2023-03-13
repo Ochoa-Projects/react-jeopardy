@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 
-const ResultsButton = ({ href, text }) => {
+const ContinueButton = ({ href }) => {
   return (
     <Link href={href} className={styles.button}>
-      {text}
+      Continue
     </Link>
   );
 };
 
-export default ResultsButton;
+export default ContinueButton;
