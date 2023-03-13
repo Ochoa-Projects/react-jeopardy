@@ -3,6 +3,7 @@ import Results from "../../../../components/Results";
 import ResultsButton from "../../../../components/ResultsButton";
 import ResultsHeading from "../../../../components/ResultsHeading";
 import { useGame } from "../../../../context/GameContext";
+import styles from "./styles.module.css";
 
 const DoubleResults = () => {
   const { playerScores } = useGame();
@@ -13,7 +14,10 @@ const DoubleResults = () => {
     <PageContainer>
       <ResultsHeading gameStage={"Double"} />
       <Results players={sortedPlayerValues} />
-      <ResultsButton href="/gameboard/final" text="Next Stage" />
+      <div className={styles.buttonsContainer}>
+        <ResultsButton href="/" text="Restart" />
+        <ResultsButton href="/gameboard/final" text="Continue" />
+      </div>
     </PageContainer>
   );
 };
