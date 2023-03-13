@@ -5,8 +5,13 @@
 }
 
 .difficultyHeading {
-  font-size: 40px;
-  text-shadow: 2px 2px 4px black;
+  margin-top: 0.5em;
+  font-family: "gyparody";
+  font-size: 80px;
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
+    0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  color: var(--yellow);
 }
 
 .difficultySelection {
@@ -28,6 +33,13 @@
 
 .nameInput {
   margin: 20px 0;
+  padding: 12px;
+  font-size: large;
+  font-weight: 700;
+  width: 320px;
+  color: var(--blue);
+  border: none;
+  border-radius: 4px;
 }
 
 .selected {
@@ -45,6 +57,11 @@
   font-size: large;
   width: 440px;
   text-align: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 24px;
 }
 
 .startButton {
