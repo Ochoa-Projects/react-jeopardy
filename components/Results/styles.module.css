@@ -1,24 +1,39 @@
 .playerListBorder {
-  padding: 12px;
-  background: linear-gradient(#e9d200, #fdf27b, #e9d200);
-  border-radius: 6px;
+  border: solid 12px var(--yellow);
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px black;
 }
 
 .playerList {
-  background: url("../../public/bermuda-circle.svg");
-  background-size: cover;
+  position: relative;
   margin: 0;
   padding: 28px 56px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  z-index: 1;
+}
+
+.playerList::before {
+  background: url("../../public/bermuda-circle.svg");
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  z-index: -1;
 }
 
 .playerList > li {
+  opacity: 2;
   font-family: "gyparody";
   font-size: 44px;
   font-weight: 700;
   color: var(--yellow);
+  text-shadow: 3px 2px 2px rgb(0 0 0 / 0.4);
 }
 
 .playerList > li::marker {
