@@ -1,6 +1,6 @@
-import Link from "next/link";
 import PageContainer from "../../../../components/PageContainer";
 import Results from "../../../../components/Results";
+import ResultsButton from "../../../../components/ResultsButton";
 import ResultsHeading from "../../../../components/ResultsHeading";
 import { useGame } from "../../../../context/GameContext";
 
@@ -13,7 +13,7 @@ const SingleResults = () => {
     <PageContainer>
       <ResultsHeading gameStage={"Single"} />
       <Results players={sortedPlayerValues} />
-      <Link href="/gameboard/double">Next Stage</Link>
+      <ResultsButton href="/gameboard/double" text="Next Stage" />
     </PageContainer>
   );
 };
