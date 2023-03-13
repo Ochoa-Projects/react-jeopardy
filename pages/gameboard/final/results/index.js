@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Confetti from "react-confetti";
 import PageContainer from "../../../../components/PageContainer";
 import Results from "../../../../components/Results";
 import RestartButton from "../../../../components/RestartButton";
@@ -24,6 +25,7 @@ const FinalResults = () => {
 
   return (
     <PageContainer>
+      <Confetti recycle={false} numberOfPieces={1000} />
       <ResultsHeading gameStage={"Final"} />
       <Results players={sortedPlayerValues} />
       <RestartButton />
