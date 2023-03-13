@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 
 const ResultsHeading = ({ gameStage }) => {
-  return <p>{gameStage} Results</p>;
+  return <h1 className={styles.heading}>{gameStage} Results</h1>;
 };
 
 export default ResultsHeading;

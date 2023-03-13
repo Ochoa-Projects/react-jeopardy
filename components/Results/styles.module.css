@@ -1,0 +1,32 @@
+.playerListBorder {
+  padding: 12px;
+  background: linear-gradient(#e9d200, #fdf27b, #e9d200);
+  border-radius: 6px;
+}
+
+.playerList {
+  background: url("../../public/bermuda-circle.svg");
+  background-size: cover;
+  margin: 0;
+  padding: 28px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.playerList > li {
+  font-family: "gyparody";
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+.playerList > li::marker {
+  font-family: "gyparody";
+  padding-left: 16px;
+}
+
+.playerName {
+  color: #d04eff;
+  font-size: 36px;
+}
