@@ -25,7 +25,7 @@ const FinalResults = () => {
 
   return (
     <PageContainer>
-      <Confetti recycle={false} numberOfPieces={1000} />
+      <Confetti recycle={false} numberOfPieces={3000} />
       <ResultsHeading gameStage={"Final"} />
       <Results players={sortedPlayerValues} />
       <RestartButton />

@@ -7,11 +7,12 @@
 .playerList {
   position: relative;
   margin: 0;
-  padding: 28px 56px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 44px;
   z-index: 1;
+  width: 600px;
 }
 
 .playerList::before {
@@ -28,17 +29,18 @@
 }
 
 .playerList > li {
-  opacity: 2;
   font-family: "gyparody";
   font-size: 44px;
   font-weight: 700;
   color: var(--yellow);
   text-shadow: 3px 2px 2px rgb(0 0 0 / 0.4);
+  display: flex;
+  justify-content: space-between;
 }
 
-.playerList > li::marker {
-  font-family: "gyparody";
-  padding-left: 16px;
+.numerator {
+  color: var(--yellow);
+  font-size: 44px;
 }
 
 .playerName {
