@@ -10,7 +10,7 @@ const Results = ({ players }) => {
               <span className={styles.numerator}>{index + 1}. </span>
               {player.name}:
             </span>
-            <span> ${player.score}</span>
+            <span>$ {player.score}</span>
           </li>
         ))}
       </ol>

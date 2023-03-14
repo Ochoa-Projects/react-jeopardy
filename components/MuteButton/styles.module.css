@@ -1,16 +1,16 @@
-.menuButtonContainer {
+.muteButtonContainer {
   position: absolute;
   top: 0;
   right: 0;
   display: flex;
   align-items: center;
-  padding: 32px;
+  margin: 32px 32px 0 0;
   text-shadow: gray 8px 8px 16px;
   width: 48px;
   height: 48px;
 }
 
-.menuButtonContainer > svg {
+.muteButtonContainer > svg {
   cursor: pointer;
   fill: var(--yellow);
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));

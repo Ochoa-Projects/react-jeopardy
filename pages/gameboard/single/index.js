@@ -34,9 +34,6 @@ export default function SingleGameboard() {
 
   return (
     <PageContainer>
-      <button onClick={() => router.push("/gameboard/final")}>
-        GO TO FINAL
-      </button>
       <Gameboard />
     </PageContainer>
   );
