@@ -53,8 +53,6 @@ export const GameContextProvider = ({ children }) => {
         setPlayerScores,
         gameStage,
         setGameStage,
-        prevGameStage,
-        setPrevGameStage,
       }}
     >
       {children}
