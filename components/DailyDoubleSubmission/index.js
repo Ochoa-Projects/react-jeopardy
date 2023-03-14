@@ -70,6 +70,7 @@ const DailyDoubleSubmission = ({
           className={styles.bidInput}
           min="1"
           max={playerScoreString}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         {!isBidValid && (
           <span className={styles.validation}>
