@@ -74,6 +74,7 @@ const GameStartForm = () => {
         className={styles.nameInput}
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleStart()}
       />
       <div className={styles.buttonsContainer}>
         <button className={styles.startButton} onClick={handleClear}>

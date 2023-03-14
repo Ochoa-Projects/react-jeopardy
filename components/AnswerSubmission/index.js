@@ -63,6 +63,7 @@ const AnswerSubmission = ({
           onChange={(e) => setAttemptedAnswer(e.target.value)}
           autoComplete="off"
           className={styles.answerInput}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <span className={styles.answerText}>?</span>
       </div>
