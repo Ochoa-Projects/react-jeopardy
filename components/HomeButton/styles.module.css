@@ -1,0 +1,10 @@
+.homeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 32px 0 0 32px;
+}
+
+.homeButton > svg {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}

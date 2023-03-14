@@ -10,7 +10,7 @@ const MuteButton = () => {
   };
 
   return (
-    <div className={styles.menuButtonContainer} onClick={handleClick}>
+    <div className={styles.muteButtonContainer} onClick={handleClick}>
       {isMuted ? (
         <svg
           width="39px"

@@ -23,6 +23,7 @@ const Gameboard = () => {
 
   return (
     <>
+      <HomeButton />
       <MuteButton />
       <m.div
         className={styles.topRow}
@@ -32,7 +33,6 @@ const Gameboard = () => {
       >
         <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
         <PlayerScores />
-        <HomeButton />
       </m.div>
       <m.div
         className={styles.gameboardBorder}
