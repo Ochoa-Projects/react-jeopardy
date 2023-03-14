@@ -19,8 +19,7 @@ const DailyDoubleSubmission = ({
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
 
-  const { playerScores, setPlayerScores, gameStage, prevGameStage, attempts } =
-    useGame();
+  const { playerScores, setPlayerScores, gameStage, attempts } = useGame();
   const { smallWinAudio, thinkingAudio, timesUpAudio } = useAudio();
   const router = useRouter();
 
@@ -48,8 +47,8 @@ const DailyDoubleSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      if (!attempts.length) {
-        router.push(`/gameboard/${prevGameStage}/results`);
+      if (attempts.length === 25 || attempts[0] === "FINAL") {
+        router.push(`/gameboard/${gameStage}/results`);
       } else {
         router.push(`/gameboard/${gameStage}`);
       }
