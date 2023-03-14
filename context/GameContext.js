@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 const GameContext = createContext();
 
@@ -29,22 +29,6 @@ export const GameContextProvider = ({ children }) => {
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
   const [playerScores, setPlayerScores] = useState(initialPlayerState);
   const [gameStage, setGameStage] = useState("single");
-  const [prevGameStage, setPrevGameStage] = useState(null);
-
-  useEffect(() => {
-    if (attempts.length === 1 && gameStage === "single") {
-      setPrevGameStage("single");
-      setGameStage("double");
-      setAttempts([]);
-    } else if (attempts.length === 1 && gameStage === "double") {
-      setPrevGameStage("double");
-      setGameStage("final");
-      setAttempts([]);
-    } else if (attempts.length === 1 && gameStage === "final") {
-      setPrevGameStage("final");
-      setGameStage("finished");
-    } else return;
-  }, [attempts]);
 
   return (
     <GameContext.Provider
