@@ -29,25 +29,6 @@ export const GameContextProvider = ({ children }) => {
   const [selectedDifficulty, setSelectedDifficulty] = useState("Normal");
   const [playerScores, setPlayerScores] = useState(initialPlayerState);
   const [gameStage, setGameStage] = useState("single");
-<<<<<<< HEAD
-  const [prevGameStage, setPrevGameStage] = useState(null);
-
-  useEffect(() => {
-    if (attempts.length === 25 && gameStage === "single") {
-      setPrevGameStage("single");
-      setGameStage("double");
-      setAttempts([]);
-    } else if (attempts.length === 25 && gameStage === "double") {
-      setPrevGameStage("double");
-      setGameStage("final");
-      setAttempts([]);
-    } else if (attempts.length === 1 && gameStage === "final") {
-      setPrevGameStage("final");
-      setGameStage("finished");
-    } else return;
-  }, [attempts]);
-=======
->>>>>>> 85b093acd9b64e1d0f620874ea7672536f4f6b61
 
   return (
     <GameContext.Provider
