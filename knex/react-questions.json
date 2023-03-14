@@ -3,7 +3,7 @@
     "question_id": 1,
     "category": "Array Methods",
     "answer": "{filter(),filter}",
-    "question": "This array method will iterate through an array and return an array containing only the items that pass a provided boolean condition."
+    "question": "This array method will iterate through an array and return a new array containing only the items that pass a provided boolean condition."
   },
   {
     "question_id": 2,
@@ -27,7 +27,7 @@
     "question_id": 5,
     "category": "Array Methods",
     "answer": "{reduce(),reduce}",
-    "question": "This array method will iterate through each item in an array, and through an inital value and an accumulator returns one value."
+    "question": "This array method will iterate through each item in an array, and, through an inital value and an accumulator, return one value."
   },
   {
     "question_id": 6,
@@ -80,7 +80,7 @@
   {
     "question_id": 15,
     "category": "Components",
-    "answer": "{Higher-Order Component,Higher-Order,Higher Order}",
+    "answer": "{Higher-Order Component,Higher-Order,Higher Order, Higher Order Component}",
     "question": "This is a function that takes a component and returns a new component, typically used to extract and reuse component logic."
   },
   {
@@ -99,7 +99,7 @@
     "question_id": 18,
     "category": "Components",
     "answer": "{forceUpdate(),forceUpdate}",
-    "question": " If your render() method depends on data other than state and props, you can tell React that the component needs re-rendering by calling this component method."
+    "question": "If your render() method depends on data other than state and props, you can tell React that the component needs re-rendering by calling this component method."
   },
   {
     "question_id": 19,
@@ -117,7 +117,7 @@
     "question_id": 21,
     "category": "Components",
     "answer": "{render(),render}",
-    "question": "This is the only required method in a class component."
+    "question": "This is the only required method in a class component and is responsible for displaying HTML."
   },
   {
     "question_id": 22,
@@ -165,7 +165,7 @@
     "question_id": 29,
     "category": "Core",
     "answer": "{inheritance}",
-    "question": "An example of this concept involves every array having to the properties that include array methods through the prototype object."
+    "question": "This uses the keyword 'extends' to allow any component to use the properties and methods of another component connected with the parent."
   },
   {
     "question_id": 30,
@@ -201,7 +201,7 @@
     "question_id": 35,
     "category": "General JS",
     "answer": "{key}",
-    "question": "When making lists of elements in React we need each element to have this unique atrribute provided to it."
+    "question": "When making lists of elements in React, we need each element to have this unique atrribute provided to it."
   },
   {
     "question_id": 36,
@@ -219,7 +219,7 @@
     "question_id": 38,
     "category": "General JS",
     "answer": "{break}",
-    "question": "This javascript keyword allows users to exit a loop, as a way to prevent the loop from having to run each iteration."
+    "question": "This javascript keyword allows users to exit a loop as a way to prevent the loop from having to run each iteration."
   },
   {
     "question_id": 39,
@@ -243,7 +243,7 @@
     "question_id": 42,
     "category": "General JS",
     "answer": "{falsy value,falsy}",
-    "question": "Undefined , null , NaN , 0 , , and false are all examples of this."
+    "question": "Undefined, null, NaN, 0, and false are all examples of this."
   },
   {
     "question_id": 43,
@@ -399,13 +399,13 @@
     "question_id": 68,
     "category": "React Hooks",
     "answer": "{useEffect(),useEffect}",
-    "question": "This react Hook is ideal when React developers need to fetch data in a functional component."
+    "question": "This React Hook is ideal when React developers need to fetch data in a functional component."
   },
   {
     "question_id": 69,
     "category": "React Hooks",
     "answer": "{useEffect(),useEffect}",
-    "question": "This react Hook by default will run after the first render and also after each time the component is updated."
+    "question": "This React Hook by default will run after the first render and also after each time the component is updated."
   },
   {
     "question_id": 70,
@@ -530,14 +530,14 @@
   {
     "question_id": 90,
     "category": "CSS",
-    "answer": "{box model,box}",
+    "answer": "{box model,box,box-model}",
     "question": "This is the concept that a rectangular container is wrapped around every HTML element."
   },
   {
     "question_id": 91,
     "category": "CSS",
-    "answer": "{universal selector,universal}",
-    "question": "This works like a wildcard character, selecting all elements on the page "
+    "answer": "{universal selector,universal,*}",
+    "question": "This works like a wildcard character, selecting all elements on the page."
   },
   {
     "question_id": 92,
@@ -609,13 +609,13 @@
     "question_id": 103,
     "category": "Misc",
     "answer": "{ESLint,lint}",
-    "question": "This staticlalt analyzes your code to quickly find problem. It is built into most text editors and can be ran as part of a continuous integration pipeline."
+    "question": "This staic code analysis tool combs your code to quickly find problems. It is built into most text editors and can be ran as part of a continuous integration pipeline."
   },
   {
     "question_id": 104,
     "category": "Misc",
     "answer": "{componentDidMount(),componentDidMount}",
-    "question": "This Lifecycle method runs after the inital component output has been rendered to the DOM"
+    "question": "This Lifecycle method runs after the inital component output has been rendered to the DOM."
   },
   {
     "question_id": 105,
@@ -645,7 +645,7 @@
     "question_id": 109,
     "category": "Misc",
     "answer": "{NextJS}",
-    "question": "This web development framework created by Vercel enables React-based wen applications with server-side rednering and generating static websites."
+    "question": "This web development framework created by Vercel enables React-based web applications with server-side rendering and generating static websites."
   },
   {
     "question_id": 110,
@@ -681,7 +681,7 @@
     "question_id": 115,
     "category": "NextJS",
     "answer": "{brackets,[]}",
-    "question": "In Next.js, you can add these to a page in the file structure to create a dynamic route. "
+    "question": "In Next.js, you can add these to a page in the file structure to create a dynamic route."
   },
   {
     "question_id": 116,
