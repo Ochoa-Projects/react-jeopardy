@@ -1,5 +1,4 @@
 import { motion as m } from "framer-motion";
-import Link from "next/link";
 import { useEffect } from "react";
 import { useGame } from "../../context/GameContext";
 import { useAudio } from "../../context/AudioContext";
@@ -8,15 +7,10 @@ import CatergoriesRow from "../CategoriesRow";
 import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
 import MuteButton from "../MuteButton";
+import HomeButton from "../HomeButton";
 
 const Gameboard = () => {
-  const {
-    singleCategories,
-    doubleCategories,
-    gameStage,
-    setGameStage,
-    setAttempts,
-  } = useGame();
+  const { singleCategories, doubleCategories, gameStage } = useGame();
 
   const { boardFillAudio } = useAudio();
 
@@ -26,11 +20,6 @@ const Gameboard = () => {
   useEffect(() => {
     boardFillAudio.play();
   }, []);
-
-  const handleHomeClick = () => {
-    setAttempts([]);
-    setGameStage("single");
-  };
 
   return (
     <>
@@ -43,9 +32,7 @@ const Gameboard = () => {
       >
         <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
         <PlayerScores />
-        <Link href="/" className={styles.menuButton} onClick={handleHomeClick}>
-          &#9776;
-        </Link>
+        <HomeButton />
       </m.div>
       <m.div
         className={styles.gameboardBorder}
