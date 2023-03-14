@@ -2,61 +2,61 @@
   {
     "question_id": 1,
     "category": "Array Methods",
-    "answer": "{filter(),filter}",
+    "answer": "{filter(),filter,.filter(),.filter}",
     "question": "This array method will iterate through an array and return a new array containing only the items that pass a provided boolean condition."
   },
   {
     "question_id": 2,
     "category": "Array Methods",
-    "answer": "{includes(),includes}",
+    "answer": "{includes(),includes,.filter(),.filter}",
     "question": "This string method is used to check if a substring exists within another string."
   },
   {
     "question_id": 3,
     "category": "Array Methods",
-    "answer": "{map(),map}",
+    "answer": "{map(),map,.map(),.map}",
     "question": "This array method will iterate through each item in an array, perform an action on each item, and return a new array with each transformed item."
   },
   {
     "question_id": 4,
     "category": "Array Methods",
-    "answer": "{forEach(),forEach}",
+    "answer": "{forEach(),forEach,.forEach(),.forEach}",
     "question": "This array method will loop through each item in an array, perform an action on each item, and mutate the original array."
   },
   {
     "question_id": 5,
     "category": "Array Methods",
-    "answer": "{reduce(),reduce}",
+    "answer": "{reduce(),reduce,.reduce(),.reduce}",
     "question": "This array method will iterate through each item in an array, and, through an inital value and an accumulator, return one value."
   },
   {
     "question_id": 6,
     "category": "Array Methods",
-    "answer": "{sort(),sort}",
+    "answer": "{sort(),sort,.sort(),.sort}",
     "question": "This array method can be used to organize and mutate an array, for example ascending numerically or alphabetically."
   },
   {
     "question_id": 7,
     "category": "Array Methods",
-    "answer": "{includes(),includes}",
+    "answer": "{includes(),includes,.includes(),.includes}",
     "question": "This array method checks if a specified item exists in an array and returns a boolean value."
   },
   {
     "question_id": 8,
     "category": "Array Methods",
-    "answer": "{find(),find}",
+    "answer": "{find(),find,.find(),.find}",
     "question": "This array method takes a testing function as an argument and returns only the first item that passes the check."
   },
   {
     "question_id": 9,
     "category": "Array Methods",
-    "answer": "{indexOf(),indexOf}",
+    "answer": "{indexOf(),indexOf,.indexOf(),.indexOf}",
     "question": "This array method returns the number index of a specific item in an array, and -1 if it is not found."
   },
   {
     "question_id": 10,
     "category": "Array Methods",
-    "answer": "{concat(),concat}",
+    "answer": "{concat(),concat,.concat(),.concat}",
     "question": "This array method takes two or more arrays and returns a new merged array."
   },
   {
@@ -74,25 +74,25 @@
   {
     "question_id": 13,
     "category": "Components",
-    "answer": "{Props}",
+    "answer": "{Props,Properties}",
     "question": "Users can pass and access data using this component attribute."
   },
   {
     "question_id": 15,
     "category": "Components",
-    "answer": "{Higher-Order Component,Higher-Order,Higher Order, Higher Order Component}",
+    "answer": "{Higher-Order Component,Higher-Order,Higher Order,Higher Order Component,HOC}",
     "question": "This is a function that takes a component and returns a new component, typically used to extract and reuse component logic."
   },
   {
     "question_id": 16,
     "category": "Components",
-    "answer": "{pure}",
+    "answer": "{pure,pure component}",
     "question": "A React component is considrered this if it renders the same output for the same state and props."
   },
   {
     "question_id": 17,
     "category": "Components",
-    "answer": "{reusability}",
+    "answer": "{reusability,reusable component,reusable components}",
     "question": "This prevents the nuisance of repeating code and is one of the main attractions of using React and React components."
   },
   {
@@ -122,25 +122,25 @@
   {
     "question_id": 22,
     "category": "Core",
-    "answer": "{JSX}",
+    "answer": "{JSX,javascript XML}",
     "question": "This is a HTML-like syntax that represents what the UI should look like in a React component."
   },
   {
     "question_id": 23,
     "category": "Core",
-    "answer": "{React}",
+    "answer": "{React,React.js}",
     "question": "This is a front-end JavaScript library that mainly follows the component-based approach for building user interface (UI) components for a single page application."
   },
   {
     "question_id": 24,
     "category": "Core",
-    "answer": "{ReactDOM}",
+    "answer": "{ReactDOM,React DOM,react-dom}",
     "question": "This library of a React app compares the element to the previous render and ONLY applies necessary DOM updates."
   },
   {
     "question_id": 25,
     "category": "Core",
-    "answer": "{Component}",
+    "answer": "{Component,Components}",
     "question": "This feature of React allows users to split the UI into independent, reusable pieces."
   },
   {
@@ -153,7 +153,7 @@
     "question_id": 27,
     "category": "Core",
     "answer": "{react-router,react router}",
-    "question": "This is a library that allows us build and navigate through a single-page application in React."
+    "question": "This is a library that allows us to build and navigate through a single-page application in React."
   },
   {
     "question_id": 28,
@@ -194,7 +194,7 @@
   {
     "question_id": 34,
     "category": "Core",
-    "answer": "{state}",
+    "answer": "{state,component state}",
     "question": "Whenever there is a change to the property values of this object, a re-rendering of the component is triggered."
   },
   {
@@ -236,7 +236,7 @@
   {
     "question_id": 41,
     "category": "General JS",
-    "answer": "{%,percentage}",
+    "answer": "{%,percentage,percent}",
     "question": "This symbol allows javascript to perform modulus calculations, which returns only the remainder of one number being divided by another."
   },
   {
@@ -248,25 +248,25 @@
   {
     "question_id": 43,
     "category": "General JS",
-    "answer": "{callback}",
-    "question": "This is function that is passed into another function as an argument."
+    "answer": "{callback,callback function}",
+    "question": "This is a function that is passed into another function as an argument."
   },
   {
     "question_id": 44,
     "category": "General JS",
-    "answer": "{scope}",
+    "answer": "{scope,block scope}",
     "question": "This is a Javascript concept that decribes the exclusivity of items defined within a function which are not accessible to code outside a function's block."
   },
   {
     "question_id": 45,
     "category": "General JS",
     "answer": "{const}",
-    "question": "Use this keyword to create a constant variable in Javascript."
+    "question": "Use this keyword to create a variable in Javascript that cannot be re-assigned."
   },
   {
     "question_id": 46,
     "category": "JSX",
-    "answer": "{Camel Case,Camel-Case}",
+    "answer": "{Camel Case,Camel-Case,camelCase}",
     "question": "Just like Javascript, JSX uses this type of naming convention for the properties of a JSX element."
   },
   {
@@ -279,13 +279,13 @@
     "question_id": 48,
     "category": "JSX",
     "answer": "{expression}",
-    "question": "This can be a React variable, or property, or any other valid JavaScript expression. JSX will execute this and return the result. Denoted by ```{}```"
+    "question": "This can be a React variable, property, or any other valid JavaScript expression. JSX will execute this and return the result. Denoted by ```{}```"
   },
   {
     "question_id": 49,
     "category": "JSX",
-    "answer": "{fragment}",
-    "question": "This wraps multiple line and prevents unnecesarily adding extra nodes to the DOM. This looks like an empty HTML tag: ```<></>```"
+    "answer": "{fragment,React.fragment}",
+    "question": "This can be used to prevent unnecesarily adding extra nodes to the DOM. The shorthand looks like: ```<></>```"
   },
   {
     "question_id": 50,
@@ -314,13 +314,13 @@
   {
     "question_id": 54,
     "category": "JSX",
-    "answer": "{return statement,return}",
+    "answer": "{return statement,return,return()}",
     "question": "In order for JSX elements to be rendered in react, they must be put in this type of statement."
   },
   {
     "question_id": 55,
     "category": "JSX",
-    "answer": "{quotes}",
+    "answer": "{quotes,quotations,quotation marks,'','}",
     "question": "In addition to curly braces, you can use these to specify string literals as attributes."
   },
   {
@@ -332,50 +332,50 @@
   {
     "question_id": 57,
     "category": "Props",
-    "answer": "{destructuring}",
-    "question": "You can access the entire props object as a function paramater, but you can also isolate individual properties within props using this method."
+    "answer": "{destructuring,object destructuring}",
+    "question": "You can isolate individual properties within the props object using this concept."
   },
   {
     "question_id": 58,
     "category": "Props",
-    "answer": "{render props}",
+    "answer": "{render props,render prop,render}",
     "question": "This term refers to a technique for sharing code between React components using a prop whose value is a function."
   },
   {
     "question_id": 59,
     "category": "Props",
-    "answer": "{propTypes}",
+    "answer": "{propTypes,prop-types}",
     "question": "You can run typechecking on the props of a component using this."
   },
   {
     "question_id": 60,
     "category": "Props",
-    "answer": "{defaultProps}",
+    "answer": "{defaultProps,default props,default properties}",
     "question": "This allows you to set default values for the props argument."
   },
   {
     "question_id": 61,
     "category": "Props",
     "answer": "{this.props}",
-    "question": "If you are using class components, you can access the props from this property of the component instance."
+    "question": "If you are using class components, you can access the props like this."
   },
   {
     "question_id": 62,
     "category": "Props",
-    "answer": "{pure functions,pure}",
+    "answer": "{pure functions,pure,pure function}",
     "question": "All React components must act like these types of functions with respect to their props."
   },
   {
     "question_id": 63,
     "category": "Props",
     "answer": "{this.props.name}",
-    "question": "You would access a prop called name in a class component using this."
+    "question": "You would access a prop called name in a class component like this."
   },
   {
     "question_id": 64,
     "category": "Props",
     "answer": "{object}",
-    "question": "Props is this kind of data type."
+    "question": "A component's props is this kind of data type."
   },
   {
     "question_id": 65,
@@ -387,7 +387,7 @@
     "question_id": 66,
     "category": "React Hooks",
     "answer": "{useState(),useState}",
-    "question": "This React Hook allows for funcional components to manage state."
+    "question": "This React Hook allows for functional components to manage state."
   },
   {
     "question_id": 67,
@@ -452,7 +452,7 @@
   {
     "question_id": 77,
     "category": "ReactDOM",
-    "answer": "{Virtual DOM}",
+    "answer": "{Virtual DOM,VDOM}",
     "question": "This is a concept where a representation of the real DOM is kept inside the memory and is synced with the real DOM by a library such as ReactDOM"
   },
   {
@@ -471,7 +471,7 @@
     "question_id": 80,
     "category": "ReactDOM",
     "answer": "{createRoot(),createRoot}",
-    "question": "This creates a react root for the supplied container and returns the root. "
+    "question": "This creates a React root for the supplied container and returns the root. "
   },
   {
     "question_id": 81,
@@ -495,13 +495,13 @@
     "question_id": 84,
     "category": "ReactDOM",
     "answer": "{renderToStaticMarkup(),renderToStaticMarkup}",
-    "question": "Similar to renderToString, escept this doesn't create extra DOM attributes that React uses internally. Useful if you want to use React as a simple static page generator."
+    "question": "Similar to renderToString, except this doesn't create extra DOM attributes that React uses internally. Useful if you want to use React as a simple static page generator."
   },
   {
     "question_id": 85,
     "category": "ReactDOM",
     "answer": "{renderToString(),renderToString}",
-    "question": "This renders a React element to its inititial HTML. React will return an HTML string. Used for faster page loads and to allow search engines to crawl your pages for SEO purposes."
+    "question": "This renders a React element to its initial HTML. React will return an HTML string. Used for faster page loads and to allow search engines to crawl your pages for SEO purposes."
   },
   {
     "question_id": 86,
@@ -518,14 +518,14 @@
   {
     "question_id": 88,
     "category": "CSS",
-    "answer": "{flexbox}",
+    "answer": "{flexbox,flex}",
     "question": "This allows responsive elements within a container to be automatically arranged depending on viewport size."
   },
   {
     "question_id": 89,
     "category": "CSS",
     "answer": "{CSS grid,grid}",
-    "question": "This offers a layout system based on rows and columns making it easier to design web pages with having to use floats and positioning. "
+    "question": "This offers a layout system based on rows and columns making it easier to design web pages with having to use floats and positioning."
   },
   {
     "question_id": 90,
@@ -609,7 +609,7 @@
     "question_id": 103,
     "category": "Misc",
     "answer": "{ESLint,lint}",
-    "question": "This staic code analysis tool combs your code to quickly find problems. It is built into most text editors and can be ran as part of a continuous integration pipeline."
+    "question": "This static code analysis tool combs your code to quickly find problems. It is built into most text editors and can be ran as part of a continuous integration pipeline."
   },
   {
     "question_id": 104,
@@ -639,7 +639,7 @@
     "question_id": 108,
     "category": "Misc",
     "answer": "{client side rendering,client side,client-side rendering,client-side}",
-    "question": "When developers talk about this type of rendering, they're talking about rendering content in th ebrowser using JavaScript."
+    "question": "When developers talk about this type of rendering, they're talking about rendering content in the browser using JavaScript."
   },
   {
     "question_id": 109,
@@ -650,19 +650,19 @@
   {
     "question_id": 110,
     "category": "NextJS",
-    "answer": "{getServerSideProps(), getServerSideProps}",
+    "answer": "{getServerSideProps(),getServerSideProps}",
     "question": "This Next data fetching tool only runs server-side and Next.js will pre-render this page on each request using the data returned by this."
   },
   {
     "question_id": 111,
     "category": "NextJS",
-    "answer": "{getStaticProps(), getStaticProps}",
+    "answer": "{getStaticProps(),getStaticProps}",
     "question": "Used primarily with static site generation, Next.js will pre-render this page at build time using the props returned by this."
   },
   {
     "question_id": 112,
     "category": "NextJS",
-    "answer": "{getStaticPaths(), getStaticPaths}",
+    "answer": "{getStaticPaths(),getStaticPaths}",
     "question": "If a page has dynamic routes and uses Next.js's getStaticProps, it needs to define a list of paths to be statically generated. Next.js will statically pre-render all the paths specified by this."
   },
   {
@@ -687,7 +687,7 @@
     "question_id": 116,
     "category": "NextJS",
     "answer": "{Image}",
-    "question": "This Next.js component is an extension of the HTML <imb> element and inclusdes a variety of built-in performance optimizations."
+    "question": "This Next.js component is an extension of the HTML <imb> element and includes a variety of built-in performance optimizations."
   },
   {
     "question_id": 117,
@@ -698,13 +698,13 @@
   {
     "question_id": 118,
     "category": "NextJS",
-    "answer": "{useRouter(), useRouter}",
+    "answer": "{useRouter(),useRouter}",
     "question": "In Next.js, if you want to access the router object inside any function component in your app, you can use this hook."
   },
   {
     "question_id": 119,
     "category": "NextJS",
-    "answer": "{push(), push}",
+    "answer": "{push(),push}",
     "question": "This router object method handles client-side transitions, and is useful for cases where 'next/link' is not enough."
   }
 ]
