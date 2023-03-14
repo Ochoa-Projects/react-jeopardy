@@ -22,7 +22,7 @@ const DoubleResults = () => {
       <Results players={sortedPlayerValues} />
       <div className={styles.buttonsContainer}>
         <RestartButton />
-        <ContinueButton href="/gameboard/final" />
+        <ContinueButton />
       </div>
     </PageContainer>
   );

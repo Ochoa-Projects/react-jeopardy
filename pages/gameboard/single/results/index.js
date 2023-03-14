@@ -22,7 +22,7 @@ const SingleResults = () => {
       <Results players={sortedPlayerValues} />
       <div className={styles.buttonsContainer}>
         <RestartButton />
-        <ContinueButton href="/gameboard/double" />
+        <ContinueButton />
       </div>
     </PageContainer>
   );
