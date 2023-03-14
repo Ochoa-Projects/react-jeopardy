@@ -68,6 +68,7 @@ const FinalGameboard = () => {
           autoComplete="off"
           min="1"
           max={playerScoreString}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>

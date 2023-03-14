@@ -48,7 +48,7 @@ const DailyDoubleSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      if (!attempts.length) {
+      if (!attempts.length || attempts[0] === "FINAL") {
         router.push(`/gameboard/${prevGameStage}/results`);
       } else {
         router.push(`/gameboard/${gameStage}`);
@@ -86,6 +86,7 @@ const DailyDoubleSubmission = ({
           onChange={(e) => setAttemptedAnswer(e.target.value)}
           autoComplete="off"
           className={styles.answerInput}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <span className={styles.answerText}>?</span>
         <button
