@@ -6,8 +6,8 @@ import addToComputerScore from "../../utils/addToComputerScore";
 import styles from "./styles.module.css";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState(seconds);
-  const { setPlayerScores, gameStage, prevGameStage, attempts } = useGame();
+  const [secondsRemaining, setSecondsRemaining] = useState(1);
+  const { setPlayerScores, gameStage, attempts } = useGame();
   const { thinkingAudio, timesUpAudio } = useAudio();
   const router = useRouter();
 
@@ -27,8 +27,8 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
       });
       setTimeout(() => {
         value !== "daily-double" && addToComputerScore(value, setPlayerScores);
-        if (!attempts.length || attempts[0] === "FINAL") {
-          router.replace(`/gameboard/${prevGameStage}/results`);
+        if (attempts.length === 25 || attempts[0] === "FINAL") {
+          router.replace(`/gameboard/${gameStage}/results`);
         } else {
           router.replace(`/gameboard/${gameStage}`);
         }

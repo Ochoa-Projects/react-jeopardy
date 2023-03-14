@@ -1,9 +1,16 @@
 import Link from "next/link";
+import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
-const ContinueButton = ({ href }) => {
+const ContinueButton = () => {
+  const { gameStage, setAttempts } = useGame();
+
   return (
-    <Link href={href} className={styles.button}>
+    <Link
+      href={`/gameboard/${gameStage}`}
+      className={styles.button}
+      onClick={() => setAttempts([])}
+    >
       Continue
     </Link>
   );

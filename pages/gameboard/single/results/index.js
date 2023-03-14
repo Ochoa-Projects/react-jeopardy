@@ -5,11 +5,16 @@ import ContinueButton from "../../../../components/ContinueButton";
 import ResultsHeading from "../../../../components/ResultsHeading";
 import { useGame } from "../../../../context/GameContext";
 import styles from "./styles.module.css";
+import { useEffect } from "react";
 
 const SingleResults = () => {
-  const { playerScores } = useGame();
+  const { playerScores, setGameStage } = useGame();
   const playerValues = Object.values(playerScores);
   const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
+
+  useEffect(() => {
+    setGameStage("double");
+  }, []);
 
   return (
     <PageContainer>
@@ -17,7 +22,7 @@ const SingleResults = () => {
       <Results players={sortedPlayerValues} />
       <div className={styles.buttonsContainer}>
         <RestartButton />
-        <ContinueButton href="/gameboard/double" />
+        <ContinueButton />
       </div>
     </PageContainer>
   );

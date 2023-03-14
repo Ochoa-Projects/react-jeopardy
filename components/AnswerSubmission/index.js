@@ -19,7 +19,7 @@ const AnswerSubmission = ({
 }) => {
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
 
-  const { setPlayerScores, gameStage, prevGameStage, attempts } = useGame();
+  const { setPlayerScores, gameStage, attempts } = useGame();
   const router = useRouter();
 
   const answers = convertAnswers(answer);
@@ -43,8 +43,13 @@ const AnswerSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
+<<<<<<< HEAD
       if (!attempts.length || attempts[0] === "FINAL") {
         router.push(`/gameboard/${prevGameStage}/results`);
+=======
+      if (attempts.length === 25 || attempts[0] === "FINAL") {
+        router.push(`/gameboard/${gameStage}/results`);
+>>>>>>> 85b093acd9b64e1d0f620874ea7672536f4f6b61
       } else {
         router.push(`/gameboard/${gameStage}`);
       }
