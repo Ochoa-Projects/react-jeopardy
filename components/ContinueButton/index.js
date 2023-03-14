@@ -3,10 +3,14 @@ import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
 
 const ContinueButton = () => {
-  const { gameStage } = useGame();
+  const { gameStage, setAttempts } = useGame();
 
   return (
-    <Link href={`/gameboard/${gameStage}`} className={styles.button}>
+    <Link
+      href={`/gameboard/${gameStage}`}
+      className={styles.button}
+      onClick={() => setAttempts([])}
+    >
       Continue
     </Link>
   );
