@@ -59,7 +59,7 @@ const DailyDoubleSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      if (attempts.length === 2 || attempts[0] === "FINAL") {
+      if (attempts.length === 25 || attempts[0] === "FINAL") {
         router.push(`/gameboard/${gameStage}/results`);
       } else {
         router.push(`/gameboard/${gameStage}`);
