@@ -18,6 +18,7 @@ const DailyDoubleSubmission = ({
   const [attemptedAnswer, setAttemptedAnswer] = useState("");
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
+  const [error, setError] = useState();
 
   const { playerScores, setPlayerScores, gameStage, attempts } = useGame();
   const { smallWinAudio, thinkingAudio, timesUpAudio } = useAudio();
@@ -25,13 +26,24 @@ const DailyDoubleSubmission = ({
 
   const answers = convertAnswers(answer);
   const correctAnswer = convertFirstAnswer(answer);
+  const highestBoardValue = gameStage === "single" ? 1000 : 2000;
   const playerScore = playerScores.player1.score;
-  const playerScoreString = playerScore.toString();
+  const bidLimit =
+    playerScore < highestBoardValue ? highestBoardValue : playerScore;
+  const bidLimitToString = playerScore.toString();
 
   const handleSubmit = () => {
-    if (bid > playerScore || bid < 1) {
+    if (bid > bidLimit || bid < 1) {
       setIsBidValid(false);
+      setError(
+        `Bid must be greater than 0 and no more than your bid limit: {$${bidLimit}}!`
+      );
       return;
+    }
+
+    if ((playerScore < 0 && bid > bidLimit) || bid < 1) {
+      setIsBidValid(false);
+      setError(`Bid`);
     }
     thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
@@ -47,7 +59,7 @@ const DailyDoubleSubmission = ({
       setIsVisible(false);
     }, 1000);
     setTimeout(() => {
-      if (attempts.length === 25 || attempts[0] === "FINAL") {
+      if (attempts.length === 2 || attempts[0] === "FINAL") {
         router.push(`/gameboard/${gameStage}/results`);
       } else {
         router.push(`/gameboard/${gameStage}`);
@@ -68,14 +80,10 @@ const DailyDoubleSubmission = ({
           onChange={(e) => setBid(e.target.value)}
           className={styles.bidInput}
           min="1"
-          max={playerScoreString}
+          max={bidLimitToString}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
-        {!isBidValid && (
-          <span className={styles.validation}>
-            {`Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
-          </span>
-        )}
+        {!isBidValid && <span className={styles.validation}>{error}</span>}
       </div>
       <div className={styles.inputContainer}>
         <span className={styles.answerText}>What is</span>
