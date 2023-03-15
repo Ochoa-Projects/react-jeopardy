@@ -3,10 +3,13 @@ import { useGame } from "../../../context/GameContext";
 import PageContainer from "../../../components/PageContainer";
 import { useEffect } from "react";
 import FinalBid from "../../../components/FinalBid";
+import FinalMissed from "../../../components/FinalMissed";
 
 const FinalGameboard = () => {
-  const { finalSlug } = useGame();
+  const { finalSlug, playerScores } = useGame();
   const router = useRouter();
+
+  const playerScore = playerScores.player1.score;
 
   useEffect(() => {
     if (!finalSlug) {
@@ -28,7 +31,7 @@ const FinalGameboard = () => {
 
   return (
     <PageContainer>
-      <FinalBid />
+      {playerScore <= 0 ? <FinalMissed /> : <FinalBid />}
     </PageContainer>
   );
 };
