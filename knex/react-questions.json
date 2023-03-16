@@ -644,7 +644,7 @@
   {
     "question_id": 109,
     "category": "Misc",
-    "answer": "{NextJS}",
+    "answer": "{NextJS,next,next.js}",
     "question": "This web development framework created by Vercel enables React-based web applications with server-side rendering and generating static websites."
   },
   {
@@ -680,14 +680,14 @@
   {
     "question_id": 115,
     "category": "NextJS",
-    "answer": "{brackets,[]}",
+    "answer": "{brackets,[],square brackets}",
     "question": "In Next.js, you can add these to a page in the file structure to create a dynamic route."
   },
   {
     "question_id": 116,
     "category": "NextJS",
     "answer": "{Image}",
-    "question": "This Next.js component is an extension of the HTML <imb> element and includes a variety of built-in performance optimizations."
+    "question": "This Next.js component is an extension of the HTML <img> element and includes a variety of built-in performance optimizations."
   },
   {
     "question_id": 117,
