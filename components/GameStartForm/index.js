@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useGame } from "../../context/GameContext";
 import { useAudio } from "../../context/AudioContext";
 import styles from "./styles.module.css";
+import FadeInAnimation from "../FadeInAnimation";
 
 const GameStartForm = () => {
   const [inputName, setInputName] = useState("");
@@ -48,43 +49,40 @@ const GameStartForm = () => {
   };
 
   return (
-    <m.div
-      className={styles.homepageForm}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    >
-      <h2 className={styles.difficultyHeading}>Game Difficulty</h2>
-      <div className={styles.difficultySelection}>
-        {difficulties.map((difficulty) => (
-          <div
-            key={difficulty}
-            className={`${
-              selectedDifficulty === difficulty && styles.selected
-            } ${styles.difficultyButton}`}
-            onClick={() => handleSelected(difficulty)}
-          >
-            {difficulty}
-          </div>
-        ))}
+    <FadeInAnimation>
+      <div className={styles.homepageForm}>
+        <h2 className={styles.difficultyHeading}>Game Difficulty</h2>
+        <div className={styles.difficultySelection}>
+          {difficulties.map((difficulty) => (
+            <div
+              key={difficulty}
+              className={`${
+                selectedDifficulty === difficulty && styles.selected
+              } ${styles.difficultyButton}`}
+              onClick={() => handleSelected(difficulty)}
+            >
+              {difficulty}
+            </div>
+          ))}
+        </div>
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          className={styles.nameInput}
+          value={inputName}
+          onChange={(e) => setInputName(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleStart()}
+        />
+        <div className={styles.buttonsContainer}>
+          <button className={styles.startButton} onClick={handleClear}>
+            CLEAR
+          </button>
+          <button className={styles.startButton} onClick={handleStart}>
+            START
+          </button>
+        </div>
       </div>
-      <input
-        type="text"
-        placeholder="Enter Your Name"
-        className={styles.nameInput}
-        value={inputName}
-        onChange={(e) => setInputName(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && handleStart()}
-      />
-      <div className={styles.buttonsContainer}>
-        <button className={styles.startButton} onClick={handleClear}>
-          CLEAR
-        </button>
-        <button className={styles.startButton} onClick={handleStart}>
-          START
-        </button>
-      </div>
-    </m.div>
+    </FadeInAnimation>
   );
 };
 
