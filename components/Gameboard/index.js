@@ -8,6 +8,7 @@ import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
 import MuteButton from "../MuteButton";
 import HomeButton from "../HomeButton";
+import DropAnimation from "../DropAnimation";
 
 const Gameboard = () => {
   const { singleCategories, doubleCategories, gameStage } = useGame();
@@ -25,15 +26,12 @@ const Gameboard = () => {
     <>
       <HomeButton />
       <MuteButton />
-      <m.div
-        className={styles.topRow}
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ ease: "backOut", duration: 0.4 }}
-      >
-        <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
-        <PlayerScores />
-      </m.div>
+      <DropAnimation>
+        <div className={styles.topRow}>
+          <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
+          <PlayerScores />
+        </div>
+      </DropAnimation>
       <m.div
         className={styles.gameboardBorder}
         initial={{ x: "-100vw" }}
