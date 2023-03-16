@@ -1,4 +1,3 @@
-import { motion as m } from "framer-motion";
 import { useEffect } from "react";
 import { useGame } from "../../context/GameContext";
 import { useAudio } from "../../context/AudioContext";
@@ -9,6 +8,7 @@ import styles from "./styles.module.css";
 import MuteButton from "../MuteButton";
 import HomeButton from "../HomeButton";
 import DropAnimation from "../DropAnimation";
+import PushAnimation from "../PushAnimation";
 
 const Gameboard = () => {
   const { singleCategories, doubleCategories, gameStage } = useGame();
@@ -32,15 +32,12 @@ const Gameboard = () => {
           <PlayerScores />
         </div>
       </DropAnimation>
-      <m.div
-        className={styles.gameboardBorder}
-        initial={{ x: "-100vw" }}
-        animate={{ x: 0 }}
-        transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
-      >
-        <CatergoriesRow categories={categories} />
-        <ValueBoard />
-      </m.div>
+      <PushAnimation>
+        <div className={styles.gameboardBorder}>
+          <CatergoriesRow categories={categories} />
+          <ValueBoard />
+        </div>
+      </PushAnimation>
     </>
   );
 };
