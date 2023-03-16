@@ -6,6 +6,7 @@ import RestartButton from "../../../../components/RestartButton";
 import ResultsHeading from "../../../../components/ResultsHeading";
 import { useGame } from "../../../../context/GameContext";
 import { useAudio } from "../../../../context/AudioContext";
+import styles from "./styles.module.css";
 
 const FinalResults = () => {
   const { playerScores } = useGame();
@@ -28,7 +29,9 @@ const FinalResults = () => {
       <Confetti recycle={false} numberOfPieces={3000} />
       <ResultsHeading gameStage={"Final"} />
       <Results players={sortedPlayerValues} />
-      <RestartButton />
+      <div className={styles.buttonContainer}>
+        <RestartButton />
+      </div>
     </PageContainer>
   );
 };

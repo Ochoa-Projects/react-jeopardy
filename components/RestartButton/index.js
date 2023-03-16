@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useGame } from "../../context/GameContext";
+import FadeInAnimation from "../FadeInAnimation";
 import styles from "./styles.module.css";
 
 const RestartButton = () => {
@@ -10,9 +11,11 @@ const RestartButton = () => {
   };
 
   return (
-    <Link href="/" className={styles.button} onClick={handleRestart}>
-      Restart
-    </Link>
+    <FadeInAnimation>
+      <Link href="/" className={styles.button} onClick={handleRestart}>
+        Restart
+      </Link>
+    </FadeInAnimation>
   );
 };
 
