@@ -40,11 +40,6 @@ const DailyDoubleSubmission = ({
       );
       return;
     }
-
-    if ((playerScore < 0 && bid > bidLimit) || bid < 1) {
-      setIsBidValid(false);
-      setError(`Bid`);
-    }
     thinkingAudio.pause();
     if (answers.includes(attemptedAnswer.toLowerCase())) {
       smallWinAudio.play();
