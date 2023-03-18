@@ -76,7 +76,9 @@ const DailyDoubleSubmission = ({
           className={styles.bidInput}
           min="1"
           max={bidLimitToString}
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          onKeyDown={(e) =>
+            correct === null && e.key === "Enter" && handleSubmit()
+          }
         />
         {!isBidValid && <span className={styles.validation}>{error}</span>}
       </div>
@@ -89,7 +91,9 @@ const DailyDoubleSubmission = ({
           onChange={(e) => setAttemptedAnswer(e.target.value)}
           autoComplete="off"
           className={styles.answerInput}
-          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          onKeyDown={(e) =>
+            correct === null && e.key === "Enter" && handleSubmit()
+          }
         />
         <span className={styles.answerText}>?</span>
         <button
