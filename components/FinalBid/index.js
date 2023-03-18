@@ -8,7 +8,13 @@ const FinalBid = () => {
   const [bid, setBid] = useState(1);
   const [isBidValid, setIsBidValid] = useState(true);
 
-  const { finalSlug, finalCategory, playerScores, setAttempts } = useGame();
+  const {
+    finalSlug,
+    finalCategory,
+    playerScores,
+    setAttempts,
+    setPlayerScores,
+  } = useGame();
   const router = useRouter();
 
   const playerScore = playerScores.player1.score;
@@ -20,7 +26,8 @@ const FinalBid = () => {
     } else {
       randomizeComputerFinalBid(
         playerScores.player2.score,
-        playerScores.player3.score
+        playerScores.player3.score,
+        setPlayerScores
       );
       setAttempts(["FINAL"]);
       router.push({

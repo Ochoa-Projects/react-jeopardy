@@ -1,4 +1,8 @@
-const randomizeComputerFinalBid = (player2Score, player3Score) => {
+const randomizeComputerFinalBid = (
+  player2Score,
+  player3Score,
+  setPlayerScores
+) => {
   console.log("player2Score", player2Score);
   console.log("player3Score", player3Score);
 
@@ -17,6 +21,20 @@ const randomizeComputerFinalBid = (player2Score, player3Score) => {
   console.log("player3SetBid", player3SetBid);
 
   // Add or Subtract player scores based on correctness
+  setPlayerScores((prev) => ({
+    ...prev,
+    player2: {
+      ...prev.player2,
+      score: prev.player2.score + player2SetBid,
+    },
+  }));
+  setPlayerScores((prev) => ({
+    ...prev,
+    player3: {
+      ...prev.player3,
+      score: prev.player3.score + player3SetBid,
+    },
+  }));
 };
 
 export default randomizeComputerFinalBid;
