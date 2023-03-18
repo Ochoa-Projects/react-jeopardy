@@ -18,8 +18,10 @@ const FinalBid = () => {
     if (bid > playerScore || bid < 0) {
       setIsBidValid(false);
     } else {
-      randomizeComputerFinalBid(playerScores.player2.score);
-      randomizeComputerFinalBid(playerScores.player3.score);
+      randomizeComputerFinalBid(
+        playerScores.player2.score,
+        playerScores.player3.score
+      );
       setAttempts(["FINAL"]);
       router.push({
         pathname: `/gameboard/final/questions/${finalSlug}`,
