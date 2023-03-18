@@ -26,7 +26,9 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
         setIsVisible(false);
       });
       setTimeout(() => {
-        value !== "daily-double" && addToComputerScore(value, setPlayerScores);
+        value !== "daily-double" &&
+          gameStage !== "final" &&
+          addToComputerScore(value, setPlayerScores);
         if (attempts.length === 25 || attempts[0] === "FINAL") {
           router.push(`/gameboard/${gameStage}/results`);
         } else {
