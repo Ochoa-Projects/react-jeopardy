@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useGame } from "../../context/GameContext";
 import styles from "./styles.module.css";
+import randomizeComputerFinalBid from "../../utils/radomizeComputerFinalBid";
 
 const FinalBid = () => {
   const [bid, setBid] = useState(1);
@@ -17,6 +18,8 @@ const FinalBid = () => {
     if (bid > playerScore || bid < 0) {
       setIsBidValid(false);
     } else {
+      randomizeComputerFinalBid(playerScores.player2.score);
+      randomizeComputerFinalBid(playerScores.player3.score);
       setAttempts(["FINAL"]);
       router.push({
         pathname: `/gameboard/final/questions/${finalSlug}`,
