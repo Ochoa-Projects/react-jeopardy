@@ -66,7 +66,7 @@ export default function Home({
 }
 
 export async function getServerSideProps() {
-  const [singleCategories, doubleCategories, finalCategory] =
+  const { singleCategories, doubleCategories, finalCategory } =
     await randomizeCategories();
   const singleSlugs = await randomizeSlugs(singleCategories);
   const doubleSlugs = await randomizeSlugs(doubleCategories);

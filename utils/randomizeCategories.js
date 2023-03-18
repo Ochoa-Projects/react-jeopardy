@@ -11,7 +11,7 @@ const randomizeCategories = async () => {
   const doubleCategories = shuffledCategories.slice(5, 10);
   const finalCategory = shuffledCategories.slice(10);
 
-  return [singleCategories, doubleCategories, finalCategory];
+  return { singleCategories, doubleCategories, finalCategory };
 };
 
 export default randomizeCategories;
