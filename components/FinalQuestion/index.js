@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import getTimerDuration from "../../utils/getTimerDuration";
+import randomizeComputerFinalBid from "../../utils/radomizeComputerFinalBid";
 import QuestionHeading from "../QuestionHeading";
 import QuestionText from "../QuestionText";
 import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
 import FlipAnimation from "../FlipAnimation";
 import { useAudio } from "../../context/AudioContext";
+import { useGame } from "../../context/GameContext";
 import MuteButton from "../MuteButton";
 
 const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
 
+  const { playerScores, setPlayerScores } = useGame();
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
 
@@ -25,6 +28,7 @@ const FinalQuestion = ({ questionResponse, value, selectedDifficulty }) => {
     });
     return () => {
       thinkingAudio.pause();
+      randomizeComputerFinalBid(playerScores, setPlayerScores);
     };
   }, []);
 

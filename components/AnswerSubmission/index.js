@@ -37,7 +37,7 @@ const AnswerSubmission = ({
       timesUpAudio.play();
       setCorrect(false);
       subtractFromPlayerScore(value, setPlayerScores);
-      addToComputerScore(value, setPlayerScores);
+      gameStage !== "final" && addToComputerScore(value, setPlayerScores);
     }
     setTimeout(() => {
       setIsVisible(false);
