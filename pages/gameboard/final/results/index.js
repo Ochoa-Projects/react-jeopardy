@@ -4,17 +4,19 @@ import PageContainer from "../../../../components/PageContainer";
 import Results from "../../../../components/Results";
 import RestartButton from "../../../../components/RestartButton";
 import ResultsHeading from "../../../../components/ResultsHeading";
+import randomizeComputerFinalBid from "../../../../utils/radomizeComputerFinalBid";
 import { useGame } from "../../../../context/GameContext";
 import { useAudio } from "../../../../context/AudioContext";
 import styles from "./styles.module.css";
 
 const FinalResults = () => {
-  const { playerScores } = useGame();
+  const { playerScores, setPlayerScores } = useGame();
   const { endAudio } = useAudio();
   const playerValues = Object.values(playerScores);
   const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
 
   useEffect(() => {
+    randomizeComputerFinalBid(playerScores, setPlayerScores);
     setTimeout(() => {
       endAudio.currentTime = 0.8;
       endAudio.play();

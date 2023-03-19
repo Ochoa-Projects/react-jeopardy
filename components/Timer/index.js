@@ -4,6 +4,7 @@ import { useGame } from "../../context/GameContext";
 import { useAudio } from "../../context/AudioContext";
 import addToComputerScore from "../../utils/addToComputerScore";
 import styles from "./styles.module.css";
+import subtractFromPlayerScore from "../../utils/subtractFromPlayerScore";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
   const [secondsRemaining, setSecondsRemaining] = useState(seconds);
@@ -29,6 +30,8 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
         value !== "daily-double" &&
           gameStage !== "final" &&
           addToComputerScore(value, setPlayerScores);
+        gameStage === "final" &&
+          subtractFromPlayerScore(value, setPlayerScores);
         if (attempts.length === 25 || attempts[0] === "FINAL") {
           router.push(`/gameboard/${gameStage}/results`);
         } else {
