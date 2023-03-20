@@ -31,7 +31,7 @@ const FinalBid = () => {
         WELCOME TO FINAL <br /> JEOPARDY!
       </h1>
       <h1>
-        TODAY'S CATEGORY IS
+        TODAY&apos;S CATEGORY IS
         <span className={styles.finalCategory}> {finalCategory}!</span>
       </h1>
       <h2 className={styles.bidMessage}>
