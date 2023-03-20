@@ -25,7 +25,7 @@ const FinalMissed = () => {
     >
       <div className={styles.sorryContainer}>
         <h2>
-          Sorry, You don't have sufficient funds <br /> to paricipate in
+          Sorry, You don&apos;t have sufficient funds <br /> to paricipate in
         </h2>
         <h1>Final Jeopardy!</h1>
         <h2 className={styles.sorry}>Better luck next time!</h2>
