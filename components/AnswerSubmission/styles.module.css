@@ -1,0 +1,51 @@
+.answerForm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 800px;
+  padding: 60px 0;
+  font-size: x-large;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.answerInput {
+  padding: 12px;
+  font-size: large;
+  font-weight: 700;
+  width: 320px;
+  color: var(--blue);
+  border: none;
+}
+
+.answerForm > button {
+  font-family: "gyparody";
+  cursor: pointer;
+  border: 1px solid var(--yellow);
+  border-radius: 4px;
+  color: var(--yellow);
+  background: var(--blue-radial-gradient);
+  font-size: x-large;
+  font-weight: 800;
+  padding: 12px 32px;
+  margin: 20px 0;
+  text-shadow: 1px 1px 1px black;
+}
+
+.answerForm > button:disabled {
+  background: #797979;
+  color: antiquewhite;
+  cursor: not-allowed;
+}
+
+.answerText {
+  color: var(--yellow);
+  font-family: "gyparody";
+  font-size: 40px;
+  text-shadow: 1px 1px 2px black;
+}

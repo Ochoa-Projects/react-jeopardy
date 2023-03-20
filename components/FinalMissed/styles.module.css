@@ -1,0 +1,24 @@
+.sorryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sorryContainer > h2 {
+  color: var(--yellow);
+  text-align: center;
+  font-family: "gyparody";
+  font-size: 55px;
+  text-shadow: 1px 2px 3px black;
+}
+
+.sorryContainer > h1 {
+  margin: 32px 0;
+  font-size: 100px;
+  font-family: "gyparody";
+  color: var(--yellow);
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
+    0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+}

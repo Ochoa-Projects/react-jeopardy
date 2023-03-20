@@ -1,0 +1,23 @@
+.topRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1003px;
+  margin-top: 32px;
+}
+
+.topRow > h1 {
+  font-family: "gyparody";
+  font-size: 70px;
+  color: var(--yellow);
+  text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
+    0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gameboardBorder {
+  padding: 12px;
+  margin-top: 32px;
+  background: linear-gradient(#240080, #634bc3, #240080);
+  border: 1px solid rgb(80, 64, 255);
+  border-radius: 6px;
+}
