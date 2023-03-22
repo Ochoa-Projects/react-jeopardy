@@ -3,14 +3,20 @@
   border-image: linear-gradient(#ffe341, #ffffff, #ffe341) 30;
   border-width: 16px;
   border-style: solid;
-  min-width: 1037px;
 }
 
 .homepageTitle {
   font-family: "gyparody";
   font-size: 120px;
+  text-align: center;
   color: var(--yellow);
   text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
     0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
   margin-bottom: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .homepageTitle {
+    font-size: 100px;
+  }
 }
