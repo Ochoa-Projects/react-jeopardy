@@ -8,9 +8,7 @@ import styles from "./styles.module.css";
 import { useEffect } from "react";
 
 const DoubleResults = () => {
-  const { playerScores, setGameStage } = useGame();
-  const playerValues = Object.values(playerScores);
-  const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
+  const { setGameStage } = useGame();
 
   useEffect(() => {
     setGameStage("final");
@@ -19,7 +17,7 @@ const DoubleResults = () => {
   return (
     <PageContainer>
       <ResultsHeading gameStage={"Double"} />
-      <Results players={sortedPlayerValues} />
+      <Results />
       <div className={styles.buttonsContainer}>
         <RestartButton />
         <ContinueButton />
