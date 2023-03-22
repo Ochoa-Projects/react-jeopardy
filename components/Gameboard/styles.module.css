@@ -4,6 +4,7 @@
   align-items: center;
   margin-top: 32px;
   width: 100%;
+  max-width: 1096px;
 }
 
 .topRow > h1 {
@@ -21,4 +22,17 @@
   border: 1px solid rgb(80, 64, 255);
   border-radius: 6px;
   width: 100%;
+  max-width: 1096px;
+}
+
+@media (max-width: 1072px) {
+  .topRow {
+    margin-top: 64px;
+  }
+  .topRow > h1 {
+    font-size: 55px;
+  }
+  .gameboardBorder {
+    margin-top: 0;
+  }
 }
