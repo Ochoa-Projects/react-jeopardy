@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 1003px;
   margin-top: 32px;
+  width: 100%;
 }
 
 .topRow > h1 {
@@ -20,4 +20,5 @@
   background: linear-gradient(#240080, #634bc3, #240080);
   border: 1px solid rgb(80, 64, 255);
   border-radius: 6px;
+  width: 100%;
 }
