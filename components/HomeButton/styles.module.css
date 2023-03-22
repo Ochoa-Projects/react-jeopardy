@@ -1,10 +1,19 @@
-.homeButton {
+.homeButtonContainer {
   position: absolute;
   top: 0;
   left: 0;
   margin: 32px 0 0 32px;
+  width: 40px;
+  height: 40px;
 }
 
 .homeButton > svg {
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+@media (max-width: 768px) {
+  .homeButtonContainer {
+    width: 32px;
+    height: 32px;
+  }
 }
