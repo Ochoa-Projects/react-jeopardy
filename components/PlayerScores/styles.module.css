@@ -24,3 +24,21 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 1072px) {
+  .playerScoresBorder {
+    padding: 6px;
+    width: 35%;
+  }
+  .playerScores {
+    height: 64px;
+    font-size: smaller;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+  .playerContainer {
+    padding: 0 4px;
+  }
+}
