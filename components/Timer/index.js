@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 import subtractFromPlayerScore from "../../utils/subtractFromPlayerScore";
 
 const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState(seconds);
+  const [secondsRemaining, setSecondsRemaining] = useState(1);
   const { setPlayerScores, gameStage, attempts } = useGame();
   const { thinkingAudio, timesUpAudio } = useAudio();
   const router = useRouter();

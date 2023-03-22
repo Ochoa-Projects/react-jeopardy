@@ -9,10 +9,7 @@ import { useAudio } from "../../../../context/AudioContext";
 import styles from "./styles.module.css";
 
 const FinalResults = () => {
-  const { playerScores } = useGame();
   const { endAudio } = useAudio();
-  const playerValues = Object.values(playerScores);
-  const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,7 +25,7 @@ const FinalResults = () => {
     <PageContainer>
       <Confetti recycle={false} numberOfPieces={3000} />
       <ResultsHeading gameStage={"Final"} />
-      <Results players={sortedPlayerValues} />
+      <Results />
       <div className={styles.buttonContainer}>
         <RestartButton />
       </div>
