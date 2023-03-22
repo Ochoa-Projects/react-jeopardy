@@ -23,3 +23,9 @@
     border-bottom: 2px solid black;
   }
 }
+
+@media (max-width: 768px) {
+  .valueBoardItem {
+    font-size: 28px;
+  }
+}
