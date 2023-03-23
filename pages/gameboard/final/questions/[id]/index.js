@@ -7,11 +7,11 @@ import getQuestion from "../../../../../utils/getQuestion";
 import FinalQuestion from "../../../../../components/FinalQuestion";
 
 export default function FinalQuestionPage({ questionResponse, value }) {
-  const { selectedDifficulty, doubleCategories } = useGame();
+  const { selectedDifficulty, finalCategory } = useGame();
   const router = useRouter();
 
   useEffect(() => {
-    if (!doubleCategories.length) {
+    if (!finalCategory.length) {
       window.location.href = "/";
     }
 
