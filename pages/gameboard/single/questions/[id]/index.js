@@ -1,28 +1,18 @@
 import { useEffect } from "react";
-import { useRouter } from "next/router";
 import { useGame } from "../../../../../context/GameContext";
+import { useRouter } from "next/router";
 import Question from "../../../../../components/Question";
 import DailyDoubleQuestion from "../../../../../components/DailyDoubleQuestion";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
+import handleGameFlowNav from "../../../../../utils/handleGameFlowNav";
 
 export default function SingleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, singleCategories } = useGame();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!singleCategories.length) {
-      window.location.href = "/";
-    }
-
-    window.onbeforeunload = () => true;
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = () => {
-      alert("Cannot use back button on question pages. You lose!");
-      router.push("/gameboard/single");
-    };
-  }, []);
+  useEffect(() => handleGameFlowNav("single", singleCategories, router), []);
 
   if (!singleCategories.length) {
     return <Loading />;
