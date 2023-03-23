@@ -5,23 +5,13 @@ import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
 import FinalQuestion from "../../../../../components/FinalQuestion";
+import handleGameFlowNav from "../../../../../utils/handleGameFlowNav";
 
 export default function FinalQuestionPage({ questionResponse, value }) {
-  const { selectedDifficulty, doubleCategories } = useGame();
+  const { selectedDifficulty, finalCategory } = useGame();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!doubleCategories.length) {
-      window.location.href = "/";
-    }
-
-    window.onbeforeunload = () => true;
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = () => {
-      alert("Cannot use back button on question pages. You lose!");
-      router.push("/gameboard/double");
-    };
-  }, []);
+  useEffect(() => handleGameFlowNav("final", finalCategory, router), []);
 
   if (!doubleCategories.length) {
     return <Loading />;

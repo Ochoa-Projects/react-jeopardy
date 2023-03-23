@@ -6,23 +6,13 @@ import DailyDoubleQuestion from "../../../../../components/DailyDoubleQuestion";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
+import handleGameFlowNav from "../../../../../utils/handleGameFlowNav";
 
 export default function DoubleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, doubleCategories } = useGame();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!doubleCategories.length) {
-      window.location.href = "/";
-    }
-
-    window.onbeforeunload = () => true;
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = () => {
-      alert("Cannot use back button on question pages. You lose!");
-      router.push("/gameboard/double");
-    };
-  }, []);
+  useEffect(() => handleGameFlowNav("double", doubleCategories, router), []);
 
   if (!doubleCategories.length) {
     return <Loading />;
