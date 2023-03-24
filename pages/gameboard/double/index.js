@@ -4,29 +4,13 @@ import PageContainer from "../../../components/PageContainer";
 import Loading from "../../../components/Loading";
 import { useGame } from "../../../context/GameContext";
 import Gameboard from "../../../components/Gameboard";
+import handleGameboardNav from "../../../utils/handleGameboardNav";
 
 export default function DoubleGameboard() {
   const { doubleCategories } = useGame();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!doubleCategories.length) {
-      window.location.href = "/";
-    }
-
-    window.onbeforeunload = () => true;
-    history.pushState(null, null, window.location.href);
-    window.onpopstate = () => {
-      const leavePage = confirm(
-        "This will end your progress. Are you sure you want to do this?"
-      );
-      if (leavePage) {
-        router.push("/");
-      } else {
-        history.pushState(null, null, window.location.href);
-      }
-    };
-  }, []);
+  useEffect(() => handleGameboardNav(doubleCategories, router), []);
 
   if (!doubleCategories.length) {
     return <Loading />;
