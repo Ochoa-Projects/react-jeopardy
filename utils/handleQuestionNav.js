@@ -1,4 +1,4 @@
-const handleGameFlowNav = (gameStage, categories, router) => {
+const handleQuestionNav = (gameStage, categories, router) => {
   if (!categories.length) {
     window.location.href = "/";
   }
@@ -13,4 +13,4 @@ const handleGameFlowNav = (gameStage, categories, router) => {
   };
 };
 
-export default handleGameFlowNav;
+export default handleQuestionNav;

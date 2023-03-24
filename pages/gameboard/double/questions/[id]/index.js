@@ -6,13 +6,13 @@ import DailyDoubleQuestion from "../../../../../components/DailyDoubleQuestion";
 import PageContainer from "../../../../../components/PageContainer";
 import Loading from "../../../../../components/Loading";
 import getQuestion from "../../../../../utils/getQuestion";
-import handleGameFlowNav from "../../../../../utils/handleGameFlowNav";
+import handleQuestionNav from "../../../../../utils/handleQuestionNav";
 
 export default function DoubleQuestion({ questionResponse, value }) {
   const { selectedDifficulty, doubleCategories } = useGame();
   const router = useRouter();
 
-  useEffect(() => handleGameFlowNav("double", doubleCategories, router), []);
+  useEffect(() => handleQuestionNav("double", doubleCategories, router), []);
 
   if (!doubleCategories.length) {
     return <Loading />;
