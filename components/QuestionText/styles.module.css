@@ -3,14 +3,14 @@
   align-items: center;
   justify-content: center;
   max-width: 800px;
-  height: 45%;
-  padding: 80px;
+  height: 60%;
 }
 
 .questionContainer > h2 {
   font-size: 48px;
   text-align: center;
   text-shadow: 1px 1px 2px black;
+  padding: 0 48px;
 }
 
 @media (max-width: 1000px) {
