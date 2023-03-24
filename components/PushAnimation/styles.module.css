@@ -1,5 +1,6 @@
 .push {
   width: 80%;
+  height: 65%;
   display: flex;
   justify-content: center;
 }
