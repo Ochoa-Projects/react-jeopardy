@@ -9,6 +9,7 @@ import Timer from "../Timer";
 import AnswerSubmission from "../AnswerSubmission";
 import MuteButton from "../MuteButton";
 import { useAudio } from "../../context/AudioContext";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const Question = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
@@ -16,6 +17,7 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
   const router = useRouter();
 
   const { thinkingAudio } = useAudio();
+  const { width, height } = useWindowSize();
 
   const seconds = getTimerDuration(selectedDifficulty);
   const { question, category, answer } = questionResponse;
@@ -35,7 +37,14 @@ const Question = ({ questionResponse, selectedDifficulty }) => {
 
   return (
     <>
-      {correct && <Confetti recycle={false} numberOfPieces={1000} />}
+      {correct && (
+        <Confetti
+          recycle={false}
+          numberOfPieces={1000}
+          width={width}
+          height={height}
+        />
+      )}
       <FlipAnimation
         isVisible={isVisible}
         background={"var(--light-blue-gradient)"}

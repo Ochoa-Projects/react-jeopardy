@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-around;
   min-width: 800px;
-  padding: 44px 0;
+  padding: 44px 32px;
   font-size: x-large;
   gap: 16px;
 }
@@ -70,4 +70,13 @@
   font-size: small;
   color: red;
   font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .answerForm {
+    min-width: auto;
+  }
+  .answerInput {
+    width: auto;
+  }
 }

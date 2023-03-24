@@ -13,7 +13,7 @@ export default function FinalQuestionPage({ questionResponse, value }) {
 
   useEffect(() => handleQuestionNav("final", finalCategory, router), []);
 
-  if (!doubleCategories.length) {
+  if (!finalCategory) {
     return <Loading />;
   }
 

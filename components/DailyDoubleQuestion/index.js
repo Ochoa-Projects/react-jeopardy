@@ -9,6 +9,7 @@ import FlipAnimation from "../FlipAnimation";
 import DailyDoubleSubmission from "../DailyDoubleSubmission";
 import MuteButton from "../MuteButton";
 import { useAudio } from "../../context/AudioContext";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   const [correct, setCorrect] = useState(null);
@@ -20,6 +21,7 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
   } = router;
 
   const { thinkingAudio, dailyDoubleAudio } = useAudio();
+  const { width, height } = useWindowSize();
 
   const seconds = getTimerDuration(selectedDifficulty) * 2;
 
@@ -36,7 +38,14 @@ const DailyDoubleQuestion = ({ questionResponse, selectedDifficulty }) => {
 
   return (
     <>
-      {correct && <Confetti recycle={false} numberOfPieces={1000} />}
+      {correct && (
+        <Confetti
+          recycle={false}
+          numberOfPieces={1000}
+          width={width}
+          height={height}
+        />
+      )}
       <FlipAnimation isVisible={isVisible} background={'url("/stars.jpg")'}>
         <MuteButton />
         <QuestionHeading category={category} value={"Daily Double"} />
