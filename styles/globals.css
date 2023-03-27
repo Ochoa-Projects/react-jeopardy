@@ -23,3 +23,7 @@ body {
   background: url("../public/subtle-prism.svg");
   background-size: cover;
 }
+
+#__next {
+  height: 100%;
+}

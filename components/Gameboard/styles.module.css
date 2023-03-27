@@ -40,3 +40,9 @@
     font-size: 40px;
   }
 }
+
+@media (max-height: 636px) and (min-width: 636px) {
+  .topRow {
+    margin-top: 40px;
+  }
+}
