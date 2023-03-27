@@ -2,7 +2,6 @@
   border: solid 12px var(--yellow);
   border-radius: 8px;
   box-shadow: 1px 1px 2px black;
-  max-height: 276px;
 }
 
 .playerList {
@@ -47,4 +46,13 @@
 .playerName {
   color: #d04eff;
   font-size: 36px;
+}
+
+@media (max-width: 768px) {
+  .playerListBorder {
+    width: 100%;
+  }
+  .playerList {
+    width: auto;
+  }
 }
