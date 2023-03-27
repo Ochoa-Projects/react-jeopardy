@@ -32,7 +32,7 @@ const Gameboard = () => {
           <PlayerScores />
         </div>
       </DropAnimation>
-      <PushAnimation>
+      <PushAnimation isGameboard={true}>
         <div className={styles.gameboardBorder}>
           <CatergoriesRow categories={categories} />
           <ValueBoard />

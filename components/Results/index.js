@@ -8,7 +8,7 @@ const Results = () => {
   const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
 
   return (
-    <PushAnimation>
+    <PushAnimation isGameboard={false}>
       <div className={styles.playerListBorder}>
         <ol className={styles.playerList}>
           {sortedPlayerValues.map((player, index) => (
