@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useGame } from "../../context/GameContext";
 import { useAudio } from "../../context/AudioContext";
+import useWindowSize from "../../hooks/useWindowSize";
 import PlayerScores from "../PlayerScores";
+import PlayerScoresSmall from "../PlayerScoresSmall";
 import CatergoriesRow from "../CategoriesRow";
 import ValueBoard from "../ValueBoard";
 import styles from "./styles.module.css";
@@ -14,6 +16,7 @@ const Gameboard = () => {
   const { singleCategories, doubleCategories, gameStage } = useGame();
 
   const { boardFillAudio } = useAudio();
+  const { width } = useWindowSize();
 
   const categories =
     gameStage === "single" ? singleCategories : doubleCategories;
@@ -29,7 +32,7 @@ const Gameboard = () => {
       <DropAnimation>
         <div className={styles.topRow}>
           <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
-          <PlayerScores />
+          {width > 700 ? <PlayerScores /> : <PlayerScoresSmall />}
         </div>
       </DropAnimation>
       <PushAnimation isGameboard={true}>
