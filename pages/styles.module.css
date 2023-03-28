@@ -26,6 +26,10 @@
 }
 
 @media (max-width: 414px) {
+  .homeBorder {
+    border-width: 8px;
+    height: calc(100vh - 16px);
+  }
   .homepageTitle {
     font-size: 64px;
   }
