@@ -2,10 +2,7 @@ import { motion as m } from "framer-motion";
 import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./styles.module.css";
 
-const PushAnimation = ({ children, isGameboard }) => {
-  const { width } = useWindowSize();
-  console.log(width);
-
+const PushAnimation = ({ children, isGameboard, width }) => {
   return (
     <>
       {width > 414 ? (
