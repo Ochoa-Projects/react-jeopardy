@@ -8,13 +8,13 @@ const FinalMissed = () => {
 
   const router = useRouter();
   useEffect(() => {
-    // setTimeout(() => {
-    //   setIsVisible(false);
-    // }, 1000);
-    // const pushTimeout = setTimeout(() => {
-    //   router.push("/gameboard/final/results");
-    // }, 5000);
-    // return () => clearTimeout(pushTimeout);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 1000);
+    const pushTimeout = setTimeout(() => {
+      router.push("/gameboard/final/results");
+    }, 5000);
+    return () => clearTimeout(pushTimeout);
   }, []);
 
   return (
