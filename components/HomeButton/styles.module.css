@@ -17,3 +17,9 @@
     height: 32px;
   }
 }
+
+@media (max-width: 414px) {
+  .homeButtonContainer {
+    margin: 24px 0 0 24px;
+  }
+}

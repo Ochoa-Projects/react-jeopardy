@@ -8,7 +8,7 @@ const PushAnimation = ({ children, isGameboard }) => {
       animate={{ x: 0 }}
       transition={{ delay: 0.4, ease: "backOut", duration: 0.6 }}
       className={styles.push}
-      style={isGameboard && { height: "70%" }}
+      style={!isGameboard && { height: "auto" }}
     >
       {children}
     </m.div>

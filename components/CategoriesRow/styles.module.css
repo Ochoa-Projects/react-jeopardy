@@ -35,3 +35,9 @@
     border-bottom: 2px solid black;
   }
 }
+
+@media (max-width: 636px) {
+  .categoryContainer {
+    font-size: 10px;
+  }
+}

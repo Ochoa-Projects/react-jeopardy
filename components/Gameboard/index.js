@@ -32,7 +32,7 @@ const Gameboard = () => {
       <DropAnimation>
         <div className={styles.topRow}>
           <h1>{gameStage === "single" ? "SINGLE" : "DOUBLE"} JEOPARDY</h1>
-          {width > 700 ? <PlayerScores /> : <PlayerScoresSmall />}
+          <PlayerScores />
         </div>
       </DropAnimation>
       <PushAnimation isGameboard={true}>

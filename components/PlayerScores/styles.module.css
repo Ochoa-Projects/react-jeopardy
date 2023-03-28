@@ -42,3 +42,19 @@
     padding: 0 4px;
   }
 }
+
+@media (max-width: 414px) {
+  .playerScoresBorder {
+    width: 85%;
+    height: 70%;
+  }
+  .playerScores {
+    height: 84px;
+  }
+}
+
+@media (max-height: 784px) {
+  .playerScores {
+    height: 64px;
+  }
+}
