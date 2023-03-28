@@ -18,3 +18,21 @@
     font-size: 36px;
   }
 }
+
+@media (max-width: 572px) {
+  .questionContainer {
+    height: 35%;
+  }
+}
+
+@media (max-width: 414px) {
+  .questionContainer > h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-height: 668px) {
+  .questionContainer > h2 {
+    font-size: 24px;
+  }
+}

@@ -33,11 +33,14 @@ const DailyDoubleSubmission = ({
   const bidLimitToString = playerScore.toString();
 
   const handleSubmit = () => {
-    if (bid > bidLimit || bid < 1) {
+    if (bid > bidLimit) {
       setIsBidValid(false);
-      setError(
-        `Bid must be greater than 0 and no more than your bid limit: {$${bidLimit}}!`
-      );
+      setError(`Bid limit: {$${bidLimit}}`);
+      return;
+    }
+    if (bid < 1) {
+      setIsBidValid(false);
+      setError(`Enter Bid > 0`);
       return;
     }
     thinkingAudio.pause();
@@ -82,20 +85,22 @@ const DailyDoubleSubmission = ({
         />
         {!isBidValid && <span className={styles.validation}>{error}</span>}
       </div>
-      <div className={styles.inputContainer}>
-        <span className={styles.answerText}>What is</span>
-        <input
-          id="answer"
-          placeholder="Enter answer here..."
-          value={attemptedAnswer}
-          onChange={(e) => setAttemptedAnswer(e.target.value)}
-          autoComplete="off"
-          className={styles.answerInput}
-          onKeyDown={(e) =>
-            correct === null && e.key === "Enter" && handleSubmit()
-          }
-        />
-        <span className={styles.answerText}>?</span>
+      <div className={styles.inputAndButton}>
+        <div className={styles.inputContainer}>
+          <span className={styles.answerText}>What is</span>
+          <input
+            id="answer"
+            placeholder="Enter answer here..."
+            value={attemptedAnswer}
+            onChange={(e) => setAttemptedAnswer(e.target.value)}
+            autoComplete="off"
+            className={styles.answerInput}
+            onKeyDown={(e) =>
+              correct === null && e.key === "Enter" && handleSubmit()
+            }
+          />
+          <span className={styles.answerText}>?</span>
+        </div>
         <button
           onClick={handleSubmit}
           disabled={correct === true || correct === false || !attemptedAnswer}
