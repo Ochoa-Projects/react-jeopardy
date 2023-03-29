@@ -51,4 +51,7 @@
   .topRow {
     flex-direction: column;
   }
+  .gameboardBorder {
+    padding: 8px;
+  }
 }
