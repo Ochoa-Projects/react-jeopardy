@@ -15,3 +15,16 @@
   fill: var(--yellow);
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
+
+@media (max-width: 768px) {
+  .muteButtonContainer {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 414px) {
+  .muteButtonContainer {
+    margin: 20px 20px 0 0;
+  }
+}

@@ -47,3 +47,36 @@
   color: #d04eff;
   font-size: 36px;
 }
+
+@media (max-width: 768px) {
+  .playerListBorder {
+    width: 100%;
+  }
+  .playerList {
+    width: auto;
+  }
+}
+
+@media (max-width: 636px) {
+  .playerList > li {
+    font-size: 32px;
+  }
+  .numerator {
+    font-size: 32px;
+  }
+  .playerName {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 414px) {
+  .playerList > li {
+    font-size: 28px;
+  }
+  .numerator {
+    font-size: 28px;
+  }
+  .playerName {
+    font-size: 24px;
+  }
+}

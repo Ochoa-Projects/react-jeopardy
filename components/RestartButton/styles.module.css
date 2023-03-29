@@ -9,3 +9,16 @@
   padding: 12px 32px;
   text-shadow: 1px 1px 2px black;
 }
+
+@media (max-width: 636px) {
+  .button {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 414px) {
+  .button {
+    font-size: 24px;
+    padding: 8px 20px;
+  }
+}

@@ -1,0 +1,14 @@
+.push {
+  width: 80%;
+  min-width: 414px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 414px) {
+  .push {
+    width: 100%;
+    min-width: auto;
+  }
+}

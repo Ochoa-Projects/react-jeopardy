@@ -1,7 +1,15 @@
 .valueGrid {
   display: grid;
-  grid-template-columns: repeat(5, 200px);
-  grid-template-rows: repeat(5, 110px);
+  height: calc(100% * 5 / 6);
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 20%);
   border-top: 3px solid black;
   border-left: 3px solid black;
+}
+
+@media (max-width: 1072px) {
+  .valueGrid {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+  }
 }

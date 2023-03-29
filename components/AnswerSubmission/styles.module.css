@@ -3,9 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  min-width: 800px;
   padding: 60px 0;
   font-size: x-large;
+  gap: 16px;
 }
 
 .inputContainer {
@@ -48,4 +48,33 @@
   font-family: "gyparody";
   font-size: 40px;
   text-shadow: 1px 1px 2px black;
+}
+
+@media (max-width: 1000px) {
+  .answerForm {
+    min-width: auto;
+  }
+
+  .answerInput {
+    width: auto;
+  }
+}
+
+@media (max-width: 572px) {
+  .answerForm {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 414px) {
+  .answerForm {
+    padding: 28px 0;
+  }
+  .answerInput {
+    font-size: 16px;
+    padding: 8px;
+  }
+  .answerText {
+    font-size: 28px;
+  }
 }

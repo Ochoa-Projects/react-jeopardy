@@ -7,3 +7,21 @@
   opacity: 0.85;
   text-shadow: black 1px 2px 2px;
 }
+
+@media (max-width: 1000px) {
+  .incorrectX {
+    font-size: 500px;
+  }
+}
+
+@media (max-width: 414px) {
+  .incorrectX {
+    font-size: 400px;
+  }
+}
+
+@media (max-width: 414px) and (max-height: 784px) {
+  .incorrectX {
+    font-size: 350px;
+  }
+}

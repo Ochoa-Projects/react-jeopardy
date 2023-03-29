@@ -21,4 +21,9 @@ body {
   height: 100vh;
   color: var(--white);
   background: url("../public/subtle-prism.svg");
+  background-size: cover;
+}
+
+#__next {
+  height: 100%;
 }

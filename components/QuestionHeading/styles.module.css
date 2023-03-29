@@ -4,3 +4,17 @@
   color: var(--yellow);
   text-shadow: 1px 2px 3px black;
 }
+
+@media (max-width: 1000px) {
+  .questionHeading {
+    font-size: 48px;
+    margin: 56px 0;
+  }
+}
+
+@media (max-width: 414px) or (max-height: 668px) {
+  .questionHeading {
+    margin-bottom: 28px;
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,13 @@
+.drop {
+  width: 80%;
+  min-width: 414px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 414px) {
+  .drop {
+    width: 100%;
+    min-width: auto;
+  }
+}

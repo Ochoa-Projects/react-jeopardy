@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 1003px;
   margin-top: 32px;
+  width: 100%;
+  max-width: 1096px;
 }
 
 .topRow > h1 {
@@ -12,6 +13,7 @@
   color: var(--yellow);
   text-shadow: 0 1px 0 #3c391e, 0 2px 0 #3c391e, 0 3px 0 #3c391e,
     0 4px 0 #3c391e, 0 5px 0 #3c391e, 0 20px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 .gameboardBorder {
@@ -20,4 +22,36 @@
   background: linear-gradient(#240080, #634bc3, #240080);
   border: 1px solid rgb(80, 64, 255);
   border-radius: 6px;
+  width: 100%;
+  max-width: 1096px;
+}
+
+@media (max-width: 1072px) {
+  .topRow {
+    margin-top: 60px;
+  }
+  .topRow > h1 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topRow > h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-height: 636px) and (min-width: 636px) {
+  .topRow {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 414px) {
+  .topRow {
+    flex-direction: column;
+  }
+  .gameboardBorder {
+    padding: 8px;
+  }
 }

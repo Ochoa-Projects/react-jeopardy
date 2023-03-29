@@ -14,7 +14,6 @@ const FinalMissed = () => {
     const pushTimeout = setTimeout(() => {
       router.push("/gameboard/final/results");
     }, 5000);
-
     return () => clearTimeout(pushTimeout);
   }, []);
 

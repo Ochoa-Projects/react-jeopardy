@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 
 const FinalBid = () => {
   const [bid, setBid] = useState(1);
-  const [isBidValid, setIsBidValid] = useState(true);
+  const [error, setError] = useState("");
 
   const { finalSlug, finalCategory, playerScores, setAttempts } = useGame();
   const router = useRouter();
@@ -14,8 +14,10 @@ const FinalBid = () => {
   const playerScoreString = playerScore.toString();
 
   const handleSubmit = () => {
-    if (bid > playerScore || bid < 0) {
-      setIsBidValid(false);
+    if (bid > playerScore) {
+      setError(`Bid Limit: {$${playerScore}}`);
+    } else if (bid < 1) {
+      setError("Enter Bid > 0");
     } else {
       setAttempts(["FINAL"]);
       router.push({
@@ -30,7 +32,7 @@ const FinalBid = () => {
       <h1 className={styles.header}>
         WELCOME TO FINAL <br /> JEOPARDY!
       </h1>
-      <h1>
+      <h1 className={styles.categoryMessage}>
         TODAY&apos;S CATEGORY IS
         <span className={styles.finalCategory}> {finalCategory}!</span>
       </h1>
@@ -53,11 +55,7 @@ const FinalBid = () => {
         />
         <button onClick={handleSubmit}>Submit</button>
       </div>
-      {!isBidValid && (
-        <span className={styles.validation}>
-          {` Bid must be greater than 0 and no more than your current score {$${playerScore}}!`}
-        </span>
-      )}
+      {error && <span className={styles.validation}>{error}</span>}
     </>
   );
 };
