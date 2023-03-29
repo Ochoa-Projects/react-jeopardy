@@ -27,12 +27,21 @@
 
 @media (max-width: 414px) {
   .questionContainer > h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
 @media (max-height: 668px) {
   .questionContainer > h2 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 414px) and (max-height: 668px) {
+  .questionContainer {
+    height: auto;
+  }
+  .questionContainer > h2 {
+    font-size: 20px;
   }
 }
