@@ -15,8 +15,26 @@
   margin-bottom: 0.5em;
 }
 
+.homeBorder h3 {
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .homepageTitle {
     font-size: 100px;
+  }
+}
+
+@media (max-width: 414px) {
+  .homeBorder {
+    border-width: 8px;
+    height: calc(100vh - 16px);
+  }
+  .homepageTitle {
+    font-size: 64px;
+  }
+  .homeBorder h3 {
+    font-size: 16px;
+    text-align: center;
   }
 }

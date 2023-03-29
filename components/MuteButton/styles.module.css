@@ -22,3 +22,9 @@
     height: 32px;
   }
 }
+
+@media (max-width: 414px) {
+  .muteButtonContainer {
+    margin: 20px 20px 0 0;
+  }
+}

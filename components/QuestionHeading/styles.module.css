@@ -11,3 +11,10 @@
     margin: 56px 0;
   }
 }
+
+@media (max-width: 414px) or (max-height: 668px) {
+  .questionHeading {
+    margin-bottom: 28px;
+    font-size: 32px;
+  }
+}

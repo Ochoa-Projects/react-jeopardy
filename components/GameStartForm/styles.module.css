@@ -81,4 +81,22 @@
   .difficultyHeading {
     font-size: 55px;
   }
+  .nameInput {
+    width: 80%;
+  }
+}
+
+@media (max-width: 414px) {
+  .difficultyHeading {
+    font-size: 40px;
+  }
+  .difficultyButton {
+    font-size: 16px;
+  }
+  .nameInput {
+    font-size: 12px;
+  }
+  .startButton {
+    font-size: 24px;
+  }
 }

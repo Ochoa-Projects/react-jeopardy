@@ -28,7 +28,7 @@
 
 @media (max-width: 1072px) {
   .topRow {
-    margin-top: 80px;
+    margin-top: 60px;
   }
   .topRow > h1 {
     font-size: 55px;
@@ -38,5 +38,17 @@
 @media (max-width: 768px) {
   .topRow > h1 {
     font-size: 40px;
+  }
+}
+
+@media (max-height: 636px) and (min-width: 636px) {
+  .topRow {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 414px) {
+  .topRow {
+    flex-direction: column;
   }
 }
