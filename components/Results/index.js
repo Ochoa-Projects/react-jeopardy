@@ -1,6 +1,5 @@
 import { useGame } from "../../context/GameContext";
 import useWindowSize from "../../hooks/useWindowSize";
-import Loading from "../Loading";
 import PushAnimation from "../PushAnimation";
 import styles from "./styles.module.css";
 
@@ -10,10 +9,6 @@ const Results = () => {
 
   const playerValues = Object.values(playerScores);
   const sortedPlayerValues = playerValues.sort((a, b) => b.score - a.score);
-
-  if (!width) {
-    return <Loading />;
-  }
 
   return (
     <PushAnimation isGameboard={false} width={width}>
