@@ -9,7 +9,6 @@ import MuteButton from "../MuteButton";
 import HomeButton from "../HomeButton";
 import DropAnimation from "../DropAnimation";
 import PushAnimation from "../PushAnimation";
-import Loading from "../Loading";
 import styles from "./styles.module.css";
 
 const Gameboard = () => {
@@ -24,10 +23,6 @@ const Gameboard = () => {
   useEffect(() => {
     boardFillAudio.play();
   }, []);
-
-  if (!width) {
-    return <Loading />;
-  }
 
   return (
     <>
