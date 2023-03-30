@@ -11,8 +11,11 @@ const PushAnimation = ({ children, isGameboard, width }) => {
   }, [windowWidth]);
 
   if (!width) {
+    console.log("inside");
     return <Loading />;
   }
+
+  console.log("outside");
 
   return (
     <m.div
