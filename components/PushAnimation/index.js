@@ -1,7 +1,12 @@
 import { motion as m } from "framer-motion";
+import Loading from "../Loading";
 import styles from "./styles.module.css";
 
 const PushAnimation = ({ children, isGameboard, width }) => {
+  if (!width) {
+    return <Loading />;
+  }
+
   return (
     <m.div
       initial={{ x: "-100vw" }}

@@ -25,7 +25,7 @@ const Timer = ({ seconds, correct, setCorrect, setIsVisible, value }) => {
       setCorrect(false);
       setTimeout(() => {
         setIsVisible(false);
-      });
+      }, 1000);
       setTimeout(() => {
         value !== "daily-double" &&
           gameStage !== "final" &&
