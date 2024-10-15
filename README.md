@@ -4,6 +4,12 @@ This is a web-app intended to assist others in learning React.js.
 
 First, run the development server:
 
+`npx knex migrate:latest`
+and
+`npx knex seed:run`
+
+Then, run
+
 ```bash
 npm run dev
 # or
